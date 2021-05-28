@@ -1,0 +1,182 @@
+"ranger" : {
+		regExpSearch : /^((?=.*(ranger|strider))|((?=.*(nature|natural))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
+		name : "Ranger",
+		source : [["SRD", 35], ["P", 89]],
+		primaryAbility : "Dexterity and Wisdom",
+		abilitySave : 5,
+		prereqs : "Dexterity 13 and Wisdom 13",
+		improvements : [0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5],
+		die : 10,
+		saves : ["Str", "Dex"],
+		skillstxt : {
+			primary : "Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival",
+			secondary : "Choose one from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, or Survival"
+		},
+		armorProfs : {
+			primary : [true, true, false, true],
+			secondary : [true, true, false, true]
+		},
+		weaponProfs : {
+			primary : [true, true],
+			secondary : [true, true]
+		},
+		equipment : "Ranger starting equipment:" +
+			"\n \u2022 Scale mail -or- leather armor;" +
+			"\n \u2022 Two shortswords -or- two simple melee weapons;" +
+			"\n \u2022 A dungeoneer's pack -or- an explorer's pack;" +
+			"\n \u2022 A longbow and a quiver of 20 arrows." +
+			"\n\nAlternatively, choose 5d4 \xD7 10 gp worth of starting equipment instead of both the class' and the background's starting equipment.",
+		subclasses : ["Ranger Archetype", ["ranger-hunter"]],
+		attacks : [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+		spellcastingFactor : 2,
+		spellcastingKnown : {
+			spells : [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]
+		},
+		features : {
+			"favored foe" : {
+				name : "Favored Foe",
+	      source : ["T", 56],
+	      usages: "Proficiency bonus per ",
+	      usagescalc : "event.value = What('Proficiency Bonus')",
+	      recovery : "long rest",
+				description : "\n   " + "When I hit a creature with an attack roll, I can mark it as my favored enemy for 1 minute or" + "\n   " + "until I lose Conc"
+			}
+   },
+   "natural explorer" : {
+				name : "Natural Explorer",
+				source : [["SRD", 36], ["P", 91]],
+				minlevel : 1,
+				description : '\n   Use the "Choose Feature" button above to add a favored terrain to the third page',
+				additional :  levels.map(function (n) {
+					return n < 6 ? "1 favored terrain" : (n < 10 ? 2 : 3) + " favored terrains";
+				}),
+				extraname : "Favored Terrain",
+				extrachoices : ["Arctic", "Coast", "Desert", "Forest", "Grassland", "Mountain", "Swamp", "Underdark"],
+				extraTimes : levels.map(function (n) { return n < 6 ? 1 : n < 10 ? 2 : 3; }),
+				"arctic" : {
+					name : "Arctic",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"coast" : {
+					name : "Coast",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"desert" : {
+					name : "Desert",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"forest" : {
+					name : "Forest",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"grassland" : {
+					name : "Grassland",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"mountain" : {
+					name : "Mountain",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"swamp" : {
+					name : "Swamp",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"underdark" : {
+					name : "Underdark",
+					source : [["SRD", 36], ["P", 91]],
+					description : ""
+				},
+				"travel benefits" : {
+					name : "Favored Terrain Travel Benefits",
+					source : [["SRD", 36], ["P", 91]],
+					extraname : "Ranger 1",
+					description : desc([
+						"I can double my proficiency bonus for Int/Wis checks concerning my favored terrains",
+						"While traveling for an hour or more in a favored terrain, I gain the following benefits:",
+						" \u2022 My allies and I are not slowed by difficult terrain and can't get lost except by magic",
+						" \u2022 I am alert to danger even when doing something else; I forage twice as much food",
+						" \u2022 If alone (or alone with beast companion), I can move stealthily at my normal pace",
+						" \u2022 When tracking, I also learn the exact number, size, and time since passing"
+					])
+				},
+				autoSelectExtrachoices : [{
+					extrachoice : "travel benefits"
+				}]
+			},
+			"fighting style" : {
+				name : "Fighting Style",
+				source : [["SRD", 36], ["P", 91]],
+				minlevel : 2,
+				description : "\n   " + "Choose a Fighting Style for the ranger using the \"Choose Feature\" button above",
+				choices : ["Archery", "Defense", "Dueling", "Two-Weapon Fighting"],
+				"archery" : FightingStyles.archery,
+				"defense" : FightingStyles.defense,
+				"dueling" : FightingStyles.dueling,
+				"two-weapon fighting" : FightingStyles.two_weapon
+			},
+			"spellcasting" : {
+				name : "Spellcasting",
+				source : [["SRD", 36], ["P", 91]],
+				minlevel : 2,
+				description : "\n   " + "I can cast ranger spells that I know, using Wisdom as my spellcasting ability",
+				additional : levels.map(function (n, idx) {
+					return n < 2 ? "" : [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11][idx] + " spells known";
+				})
+			},
+			"subclassfeature3" : {
+				name : "Ranger Archetype",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 3,
+				description : "\n   " + "Choose a Ranger Archetype you strive to emulate and put it in the \"Class\" field" + "\n   " + "Choose either Beast Master or Hunter"
+			},
+			"primeval awareness" : {
+				name : "Primeval Awareness",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 3,
+				description : "\n   " + "As an action, I can use a spell slot to focus my awareness for 1 min per spell slot level" + "\n   " + "Out to 1 mile (6 in favored terrain), I sense if certain types of creatures are present",
+				additional : "aber./celest./dragon/elem./fey/fiend/undead",
+				action : ["action", ""]
+			},
+			"land's stride" : {
+				name : "Land's Stride",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 8,
+				description : "\n   " + "I can travel through nonmagical, difficult terrain without penalty" + "\n   " + "I have advantage on saves vs. plants that impede movement by magical influence",
+				savetxt : { adv_vs : ["magical plants that impede movement"] }
+			},
+			"hide in plain sight" : {
+				name : "Hide in Plain Sight",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 10,
+				description : "\n   " + "I can hide with +10 to Dex (Stealth) after spending 1 minute creating camouflage" + "\n   " + "Once I move or take an action or a reaction, the benefit is lost"
+			},
+			"vanish" : {
+				name : "Vanish",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 14,
+				description : "\n   " + "I can't be nonmagically tracked if I don't want to be and can Hide as a bonus action",
+				action : ["bonus action", ""]
+			},
+			"feral senses" : {
+				name : "Feral Senses",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 18,
+				description : "\n   " + "When not blinded or deafened, I'm aware of invisible, non-hidden creatures in 30 ft" + "\n   " + "I don't have disadvantage when attacking creatures I am aware of but can't see",
+				vision : [["Feral senses", 30]]
+			},
+			"foe slayer" : {
+				name : "Foe Slayer",
+				source : [["SRD", 37], ["P", 92]],
+				minlevel : 20,
+				description : "\n   " + "Once per turn, I can add my Wis mod to the attack or damage roll vs. a favored enemy"
+			}
+		}
+	};
+};
