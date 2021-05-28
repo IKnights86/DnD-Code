@@ -1,4 +1,4 @@
-"ranger" : {
+ClassList["ranger"] = {
 		regExpSearch : /^((?=.*(ranger|strider))|((?=.*(nature|natural))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 		name : "Ranger",
 		source : [["SRD", 35], ["P", 89]],
