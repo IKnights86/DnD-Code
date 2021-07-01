@@ -1,0 +1,114 @@
+MagicItemsList["lash of shadows"] = {
+	name : "Lash of Shadows",
+	source : ["W", 276],
+	type : "weapon (whip)",
+	rarity : "artifact",
+	attunement : true,
+	description : "This snakeskin whip is touched by the power of Zehir and ends in five animated serpent heads. See notes page for more information.",
+	choices : ["dormant state", "awakened state", "exaulted state"],
+	"dormant state" : {
+		name : "Lash of Shadows: Dormant",
+		languageProfs : ["Abyssal", "Draconic"],
+    dmgres : ["Poison"],
+    weaponsAdd : ["Lash of Shadows"],
+    weaponOptions : {
+		baseWeapon : "whip",
+		regExpSearch : /^(?=.*lash)(?=.*of)(?=.*shadows).*$/i,
+		name : "Lash of Shadows",
+		source : ["W", 276],
+		range : "Melee",
+		damage : [1, 4, "slashing"],
+		description : "Poison(DC 13); reach",
+		modifiers : [1, 1]
+	  },
+		toNotesPage : [{
+			name : "Features",
+			popupName : "Features of Lash of Shadows",
+			note : "\n  \u2022 Dormant State (EGtW 276)" + desc([
+				"You can speak, read, and write Abyssal and Draconic.",
+				"You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+        "You gain resistance to poison damage.",
+        "You can attempt to poison any creature that is hit by the whip. The creature must succeed on a DC 13 Constitution saving throw or suffer the effect of one of the following poisons of your choice; once a poison other than Serpent Venom has been used, that poison can't be used again until the next dawn:",
+        "   Dead Eyes. A creature that fails the saving throw against this poison is poisoned for 1 hour. While poisoned in this way, the creature is blinded.",
+        "   Serpent Venom. A creature that fails the saving throw against this poison takes 3d6 poison damage, or half as much damage on a successful save.",
+			])  
+		}]
+	},
+	"awakened state" : {
+		name : "Lash of Shadows: Awakened",
+		languageProfs : ["Abyssal", "Draconic"],
+    dmgres : ["Poison"],
+		weaponsAdd : ["Lash of Shadows"],
+    weaponOptions : {
+		baseWeapon : "whip",
+		regExpSearch : /^(?=.*lash)(?=.*of)(?=.*shadows).*$/i,
+		name : "Lash of Shadows",
+		source : ["W", 276],
+		range : "Melee",
+		damage : [1, 4, "slashing"],
+		description : "Poison(DC 15); reach",
+		modifiers : [2, 2]
+	  },
+    toNotesPage : [{
+			name : "Features",
+			popupName : "Features of Lash of Shadows",
+			note : "\n  \u2022 Dormant State (EGtW 276)" + desc([
+				"You can speak, read, and write Abyssal and Draconic.",
+				"You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+        "You gain resistance to poison damage.",
+        "You can attempt to poison any creature that is hit by the whip. The creature must succeed on a DC 13 Constitution saving throw or suffer the effect of one of the following poisons of your choice; once a poison other than Serpent Venom has been used, that poison can't be used again until the next dawn:",
+        "   Dead Eyes. A creature that fails the saving throw against this poison is poisoned for 1 hour. While poisoned in this way, the creature is blinded.",
+        "   Serpent Venom. A creature that fails the saving throw against this poison takes 3d6 poison damage, or half as much damage on a successful save.",
+			]) + "\n  \u2022 Awakened State (EGtW 273)" + desc([
+				"The weapon's bonus to attack and damage rolls increases to +2.",
+				"The saving throw DC for the weapon's poisons increases to 15.",
+        "The weapon gains a new poison option called Ghoul's Blood. A creature that fails the saving throw against this poison is poisoned for 1 minute. While poisoned in this way, the creature is paralyzed. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+			]) 
+		}]
+	},
+	"exaulted state" : {
+		name : "Lash of Shadows: Exaulted",
+		languageProfs : ["Abyssal", "Draconic"],
+		weaponsAdd : ["Lash of Shadows"],
+    weaponOptions : {
+		baseWeapon : "whip",
+		regExpSearch : /^(?=.*lash)(?=.*of)(?=.*shadows).*$/i,
+		name : "Lash of Shadows",
+		source : ["W", 276],
+		range : "Melee",
+		damage : [1, 4, "slashing"],
+		description : "Poison(DC 17); reach; If creature damaged last turn +1d6 hp",
+		modifiers : [3, 3]
+	  },
+    spellcastingAbility : "class",
+		spellcastingBonus : {
+			name : "Once per dawn",
+			spells : ["suggestion"],
+			selection : ["suggestion"],
+			firstCol : 'oncelr',
+			times : 1
+		},
+		toNotesPage : [{
+			name : "Features",
+			popupName : "Features of Lash of Shadows",
+			note : "\n  \u2022 Dormant State (EGtW 276)" + desc([
+				"You can speak, read, and write Abyssal and Draconic.",
+				"You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+        "You gain resistance to poison damage.",
+        "You can attempt to poison any creature that is hit by the whip. The creature must succeed on a DC 13 Constitution saving throw or suffer the effect of one of the following poisons of your choice; once a poison other than Serpent Venom has been used, that poison can't be used again until the next dawn:",
+        "   Dead Eyes. A creature that fails the saving throw against this poison is poisoned for 1 hour. While poisoned in this way, the creature is blinded.",
+        "   Serpent Venom. A creature that fails the saving throw against this poison takes 3d6 poison damage, or half as much damage on a successful save.",
+			]) + "\n  \u2022 Awakened State (EGtW 276)" + desc([
+				"The weapon's bonus to attack and damage rolls increases to +2.",
+				"The saving throw DC for the weapon's poisons increases to 15.",
+        "You can cast Suggestion once per day using your spellcasting ability.",
+        "The weapon gains a new poison option called Ghoul's Blood. A creature that fails the saving throw against this poison is poisoned for 1 minute. While poisoned in this way, the creature is paralyzed. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+			])  + "\n  \u2022 Exaulted State (EGtW 276)" + desc([
+				"The weapon's bonus to attack and damage rolls increases to +3.",
+				"The saving throw DC for the weapon's poisons increases to 17.",
+        "If you hit a creature with the Lash of Shadows on your last turn you regain 1d6 hp at the top of your next turn.",
+        "The weapon gains a new poison option called Cockatrice Tears. A creature that fails the saving throw against this poison begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified for 24 hours.",
+			]) 
+		}]
+	}
+};
