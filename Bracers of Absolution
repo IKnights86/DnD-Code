@@ -4,27 +4,16 @@ MagicItemsList["bracers of absolution"] = {
 	type : "wondrous item",
 	rarity : "legendary",
 	attunement : true,
-	description : "It is believed that these polished and beautifully detailed leather bracers was a gift from Sarenrae, bestowed on a long-forgotten paladin and champion before the terrors of the Calamity. See notes page for more info.",
-		},
+	description : "It is believed that these polished and beautifully detailed leather bracers was a gift from Sarenrae, bestowed on a long-forgotten paladin and champion before the terrors of the Calamity. See notes page for more info.
 	choices : ["dormant state", "awakened state", "exaulted state"],
 	"dormant state" : {
 		name : "Bracers of Absolution: Dormant",
-		armorAdd : "Bracers of Absolution",
-		armorOptions : {
-			regExpSearch : /^(?=.*bracers)(?=.*absolution).*$/i,
-			name : "Bracers of Absolution",
-			source : ["H", 0],
-			extraAC : [{
-			mod : 1,
-			magic : true
-		}]
-		},
-		action : [["reaction", " parry"]],
+		action : [["reaction", "parry"]],
 		toNotesPage : [{
 			name : "Features",
 			popupName : "Features of Bracers of Absolution",
-			note : "\n  \u2022 Dormant State (EGtW 271)" + desc([
-				"You gain a +1 bonus to AC while you wear these bracers.",
+			note : "\n  \u2022 Dormant State (HMBW 0)" + desc([
+				"The armor grants you a +1 bonus to AC.",
 				"While you wear these bracers you gain the ability to parry attacks. You can use your reaction to to parry an attack when you are hit. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your level.",
 			])  
 		}]
