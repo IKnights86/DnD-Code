@@ -1,0 +1,53 @@
+var iFileName = "Hand_of_the_Goddess.js";
+RequiredSheetVersion(13);
+
+// Define the source
+SourceList.HG={
+	name : "Hand of the Goddess",
+	abbreviation : "HG",
+	group : "HG",
+	url : "bruh",
+	date : "2021/07/04"
+};
+
+MagicItemsList["hand of the goddess"] = {
+	name : "Hand of the Goddess",
+	source : ["HG", 0],
+	type : "weapon (claw)",
+	rarity : "artifact",
+	description : "A golden exoskeletal gauntlet with a gemstone on each ring. Left hand. The hand attaches to your hand from your wrist (as a bracelet) to your knuckles (as four rings) and is fused to your skin.",
+  weaponsAdd : ["Hand of the Goddess"],
+		weaponOptions : {
+			regExpSearch : /^(?=.*hand)(?=.*of)(?=.*the)(?=.*goddess).*$/i,
+			name : "Hand of the Goddess",
+			source : ["HG", 0],
+      list : "melee",
+      ability : 5,
+      type : "Simple",
+			range : "Melee",
+			damage : [1, 4, "slashing"],
+			description : "light, 2d4 radiant, 1d8 vs undead",
+      abilitytodamage : true,
+			modifiers : [3, 3]
+		},
+    action : ["bonus action", "Hand of the Goddess(attack)"],
+    extraLimitedFeatures : [{
+			name : "Hand of the Goddess(max all non d20 rolls)",
+			usages : 3,
+			recovery : "dawn"
+		}],
+	toNotesPage : [{
+		name : "Features",
+		popupName : "Features of Hand of the Goddess",
+		note: "\n  \u2022 Hand of the Goddess (HG 0)" + desc([
+		"Acts as a +3 weapon.",
+		"+3 Wisdom.",
+		"While wearing the hand you feel the weight of all life on you. You have a -1 Constitution.",
+		"Regenerate 1d6 hp at the start of your turn.",
+    "All healing spells double effectiveness.",
+    "Claw damage: 1d4 slashing plus 2d4 radiant plus Wis modifier, plus 1d8 radiant damage vs undead.",
+    "May make 1 claw attack as a bonus action.",
+    "3x/day can max all non-d20 rolls for 1 round, Each usage has a 2% chance of drawing the attention of a powerful fiend."
+		])
+	}]
+};
