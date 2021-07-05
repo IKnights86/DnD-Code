@@ -1,3 +1,14 @@
+var iFileName = "Bracers of Absolution.js";
+RequiredSheetVersion(12.999);
+
+SourceList["Bracers of Absolution"] = {
+	name : "Bracers of Absolution",
+	abbreviation : "BoA",
+	group : "Bracers of Absolution",
+	url : "Bracers of Absolution",
+	date : "2021/07/05"
+};
+
 MagicItemsList["bracers of absolution"] = {
 	name : "Bracers of Absolution",
 	source : ["H", 0],
@@ -26,30 +37,44 @@ MagicItemsList["bracers of absolution"] = {
 		name : "Bracers of Absolution: Awakened",
 		action : [["reaction", "Parry(1d10)"]],
 		extraAC : [{
-			mod : 1,
+			mod : 2,
 			magic : true,
 		}],
 		toNotesPage : [{
 			name : "Features",
 			popupName : "Features of Bracers of Absolution",
-			note : "\n  \u2022 Awakened State" + desc([
+			note : "\n  \u2022 Dormant State" + desc([
+				"You gain a +1 bonus to AC while you wear these bracers.",
+				"While you wear these bracers you gain the ability to parry attacks. You can use your reaction to to parry an attack when you are hit. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your level.",
+			]) + "\n  \u2022 Awakened State" + desc([
 				"Your bonus to AC is now +2.",
-				"When you reduce all the damage from an attack you parry with these bracers, you gain temporary hit points equal to the damage of that attack.",
-			]) 
+				"If you reduce all the damage from an attack you parry with these bracers, you gain temporary hit points equal to the damage of that attack.",
+			])
 		}]
 	},
 	"exaulted state" : {
 		name : "Bracers of Absolution: Exaulted",
-		action : [["reaction", "Parry(2d10)"]],
+		action : [["reaction", "Parry(2d10)"], ["bonus action", "Activate Bracers"]],
 		extraAC : [{
 			mod : 3,
 			magic : true,
 		}],
 		dmgres : [["Bludgeoning", "Bludgeoning"], ["Piercing", "Piercing"], ["Slashing", "Slashing"]],
+		extraLimitedFeatures : [{
+			name : "Bracers of Absolution (dmg resistance)",
+			usages : 1,
+			recovery : "long rest"
+		}],
 		toNotesPage : [{
 			name : "Features",
 			popupName : "Features of Bracers of Absolution",
-			note : "\n  \u2022 Exaulted State" + desc([
+			note : "\n  \u2022 Dormant State" + desc([
+				"You gain a +1 bonus to AC while you wear these bracers.",
+				"While you wear these bracers you gain the ability to parry attacks. You can use your reaction to to parry an attack when you are hit. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your level.",
+			]) + "\n  \u2022 Awakened State" + desc([
+				"Your bonus to AC is now +2.",
+				"If you reduce all the damage from an attack you parry with these bracers, you gain temporary hit points equal to the damage of that attack.",
+			]) + "\n  \u2022 Exaulted State" + desc([
 				"Your bonus to AC is +3",
 				"When you attempt to parry an attack you can now roll 2d10 + your Dexterity modifier + your level.",
 				"Once per long rest you can activate these bracers using a bonus action, when you do so you gain resistance to bludgeoning, piercing, and slashing damage for 1 min.",
