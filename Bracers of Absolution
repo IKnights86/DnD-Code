@@ -4,89 +4,55 @@ MagicItemsList["bracers of absolution"] = {
 	type : "wondrous item",
 	rarity : "legendary",
 	attunement : true,
-	description : "It is believed that these polished and beautifully detailed leather bracers was a gift from Sarenrae, bestowed on a long-forgotten paladin and champion before the terrors of the Calamity. See notes page for more info.
+	description : "It is believed that these polished and beautifully detailed leather bracers was a gift from Sarenrae, bestowed on a long-forgotten paladin and champion before the terrors of the Calamity. See notes page for more info.",
 	choices : ["dormant state", "awakened state", "exaulted state"],
 	"dormant state" : {
 		name : "Bracers of Absolution: Dormant",
-		action : [["reaction", "parry"]],
+		action : [["reaction", "Parry(1d10)"]],
+		extraAC : [{
+			mod : 1,
+			magic : true,
+		}],
 		toNotesPage : [{
 			name : "Features",
 			popupName : "Features of Bracers of Absolution",
-			note : "\n  \u2022 Dormant State (HMBW 0)" + desc([
-				"The armor grants you a +1 bonus to AC.",
+			note : "\n  \u2022 Dormant State" + desc([
+				"You gain a +1 bonus to AC while you wear these bracers.",
 				"While you wear these bracers you gain the ability to parry attacks. You can use your reaction to to parry an attack when you are hit. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your level.",
 			])  
 		}]
 	},
 	"awakened state" : {
-		name : "Hide of the Feral Guardian: Awakened",
-		armorAdd : "Hide of the Feral Guardian: Awakened",
-		armorOptions : {
-			regExpSearch : /^(?=.*hide)(?=.*feral)(?=.*guardian).*$/i,
-			name : "Hide of the Feral Guardian: Awakened",
-			source : ["W", 271],
-			type : "light",
-			ac : 14,
-			weight : 13,
-		},
-		action : [["action", " (polymorph)"]],
-		spellcastingBonus : [{
-			name : "1/LR no spell slot",
-			spells : ["polymorph"],
-			selection : ["polymorph"],
-			firstCol : "oncelr",
+		name : "Bracers of Absolution: Awakened",
+		action : [["reaction", "Parry(1d10)"]],
+		extraAC : [{
+			mod : 1,
+			magic : true,
 		}],
-		spellChanges : {
-			"polymorph" : {
-				name : "Polymorph (special)",
-				range : "Self",
-				description : "I transform into a giant owl/cave bear (polar bear), but I keep my Int, Wis, Cha.",
-				changes : "Using my Hide of the Feral Guardian, I can cast Polymorph once per dawn without using a spell slot, but when I do so I can only cast it on myself and transform into a giant owl or a cave bear (polar bear). I keep my Int, Wis, Cha."
-			},
-		},
 		toNotesPage : [{
 			name : "Features",
-			popupName : "Features of Hide of the Feral Guardian",
-			note : "\n  \u2022 Awakened State (EGtW 271)" + desc([
-				"The armor grants you a +2 bonus to AC.",
-				"While you are transformed by an effect that replaces any of your game statistics with those of another creature, you have a +2 bonus to melee attack and damage rolls, and you retain the benefits of this armor.",
-				"As an action, you can use the armor to cast polymorph on yourself, transforming into a giant owl or a cave bear (polar bear) while retaining your Intelligence, Wisdom, and Charisma scores. This property can’t be used again until the next dawn.",
+			popupName : "Features of Bracers of Absolution",
+			note : "\n  \u2022 Awakened State" + desc([
+				"Your bonus to AC is now +2.",
+				"When you reduce all the damage from an attack you parry with these bracers, you gain temporary hit points equal to the damage of that attack.",
 			]) 
 		}]
 	},
 	"exaulted state" : {
-		name : "Hide of the Feral Guardian: Exaulted",
-		armorAdd : "Hide of the Feral Guardian: Exaulted",
-		armorOptions : {
-			regExpSearch : /^(?=.*hide)(?=.*feral)(?=.*guardian).*$/i,
-			name : "Hide of the Feral Guardian: Exaulted",
-			source : ["W", 271],
-			type : "light",
-			ac : 15,
-			weight : 13,
-		},
-		action : [["action", " (polymorph)"]],
-		spellcastingBonus : [{
-			name : "1/LR no spell slot",
-			spells : ["polymorph"],
-			selection : ["polymorph"],
-			firstCol : "oncelr",
+		name : "Bracers of Absolution: Exaulted",
+		action : [["reaction", "Parry(2d10)"]],
+		extraAC : [{
+			mod : 3,
+			magic : true,
 		}],
-		spellChanges : {
-			"polymorph" : {
-				name : "Polymorph (special)",
-				range : "Self",
-				description : "I transform into a giant owl/cave bear (polar bear)/guardian wolf, but I keep my Int, Wis, Cha.",
-				changes : "Using my Hide of the Feral Guardian, I can cast Polymorph once per dawn without using a spell slot, but when I do so I can only cast it on myself and transform into a giant owl, cave bear (polar bear), or guardian wolf. I keep my Int, Wis, Cha."
-			},
-		},
+		dmgres : [["Bludgeoning", "Bludgeoning"], ["Piercing", "Piercing"], ["Slashing", "Slashing"]],
 		toNotesPage : [{
 			name : "Features",
-			popupName : "Features of Hide of the Feral Guardian",
-			note : "\n  \u2022 Exaulted State (EGtW 271)" + desc([
-				"The armor grants you a +3 bonus to AC.",
-				"While you are transformed by an effect that replaces any of your game statistics with those of another creature, you have a +3 bonus to melee attack and damage rolls, and you retain the benefits of this armor.",
-				"As an action, you can use the armor to cast polymorph on yourself, transforming into a giant owl, cave bear (polar bear), or guardian wolf while retaining your Intelligence, Wisdom, and Charisma scores. This property can’t be used again until the next dawn.",
+			popupName : "Features of Bracers of Absolution",
+			note : "\n  \u2022 Exaulted State" + desc([
+				"Your bonus to AC is +3",
+				"When you attempt to parry an attack you can now roll 2d10 + your Dexterity modifier + your level.",
+				"Once per long rest you can activate these bracers using a bonus action, when you do so you gain resistance to bludgeoning, piercing, and slashing damage for 1 min.",
 			]) 
 		}]
 	}
