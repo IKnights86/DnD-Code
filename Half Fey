@@ -1,0 +1,31 @@
+var iFileName = "Awakened Ooze [RedCxy's work, transcribed by MPMB].js";
+RequiredSheetVersion(12.999);
+
+RaceList["half fey"] = {
+		regExpSearch : /^(?=.*half)(?=.*fey).*$/i,
+		name : "Half fey",
+		source : ["HB", 0],
+		plural : "Half feys",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		vision : [["Darkvision", 60]],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+		age : " typically claim adulthood around age 75 and can live to be 500 years old",
+		height : " range from under 5 to over 6 feet tall (4'9\" + 2d8\")",
+		weight : " weigh around 110 lb (110 + 2d8 x 2d4 \xD7 1d4 lb)",
+		scores : [0, 1, 0, 0, 0, 2],
+		trait : "Half Fey (+2 Charisma, +1 Dexterity)\nAcclimation: Having grown up in the unpredictable climates of the Feywilds, you are highly adaptable. As part of a short rest, you may concentrate your energies on the environment around you to attune to it. For example, if you enter an area of Extreme Cold, you may use this trait to adapt to the chill, therefore not requiring Constitution saving throws every hour. This adaptation lasts until the end of your next long rest.\nTrickster: You know the ways to make people jump with small, harmless tricks. You know the prestidigitation cantrip.",
+		spellcastingAbility : 6,
+		spellcastingBonus : {
+			name : "Trickster",
+			spells : ["prestidigitation"],
+			selection : ["prestidigitation"],
+			firstCol : 'atwill'
+		}
+	}
