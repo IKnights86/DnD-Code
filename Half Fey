@@ -1,4 +1,4 @@
-var iFileName = "Awakened Ooze [RedCxy's work, transcribed by MPMB].js";
+var iFileName = "Half Fey [from dandwiki, transcribed by Ian].js";
 RequiredSheetVersion(12.999);
 
 RaceList["half fey"] = {
@@ -28,4 +28,4 @@ RaceList["half fey"] = {
 			selection : ["prestidigitation"],
 			firstCol : 'atwill'
 		}
-	}
+	};
