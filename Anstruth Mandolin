@@ -1,0 +1,40 @@
+var iFileName = "Anstruth_Mandolin.js";
+RequiredSheetVersion(13);
+
+// Define the source
+SourceList.HG={
+	name : "Anstruth Mandolin",
+	abbreviation : "AM",
+	group : "AM",
+	url : "bruhment",
+	date : "2021/07/28"
+};
+
+MagicItemsList["anstruth mandolin"] = {
+	name : "Anstruth Mandolin",
+	source : ["H", 0],
+	type : "instrument",
+	rarity : "very rare",
+	description : "If I play this exquisite, magical instruments while casting a spell that has a somatic or material component and charms on a failed save, it imposes disadvantage on that save. I can also use it to cast a set of spells, each once per dawn, using my spellcasting ability and spell save DC.",
+  descriptionFull : "An instrument of the bards is an exquisite example of its kind, superior to an ordinary instrument in every way. Seven types of these instruments exist, each named after a legendary bard college. A creature that attempts to play the instrument without being attuned to it must succeed on a DC 15 Wisdom saving throw or take 2d4 psychic damage.\n   You can use an action to play the instrument and cast one of its spells. Once the instrument has been used to cast a spell, it can't be used to cast that spell again until the next dawn. The spells use your spellcasting ability and spell save DC.\n   You can play the instrument while casting a spell that causes any of its targets to be charmed on a failed saving throw, thereby imposing disadvantage on the save. This effect applies only if the spell has a somatic or a material component.\n   All instruments of the bards can be used to cast the following spells: Fly, Invisibility, Levitate, and Protection from Evil and Good.\n   In addition, the Anstruth mandolin can be used to cast Control Weather, Cure Wounds (5th level), and Wall of Thorns."
+  spellcastingBonus : {
+			name : "Once per long rest",
+			spells : ["fly", "invisibility", "levitate", "protection from evil and good", "control weather", "cure wounds", "wall of thorns"],
+			selection : ["fly", "invisibility", "levitate", "protection from evil and good", "control weather", "cure wounds", "wall of thorns"],
+			firstCol : "oncelr",
+			times : 7,
+			spellcastingAbility : "class"
+		},
+		spellChanges : {
+			"cure wounds" : {
+				description : "1 living creature heals 5d8+spellcasting ability modifier HP",
+				changes : "When using the Anstruth Mandolin to cast Cure Wounds, it is cast at 5th-level."
+			},
+			spellChanges : {
+				"control weather" : {
+					time : "1 a",
+					changes : "Casting time is only an action."
+				}
+			}
+		}
+	};
