@@ -1,0 +1,13 @@
+WeaponsList["katana"] = {
+	regExpSearch : /\bkatana\b/i,
+	name : "Katana",
+	source : ["JM:EAG", 4],
+	list : "melee",
+	ability : 1,
+	type : "Martial",
+	damage : [1, 8, "slashing"],
+	range : "Melee",
+	weight : 3,
+	description : "Finesse, versatile (1d10)",
+	abilitytodamage : true
+};
