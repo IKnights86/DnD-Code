@@ -26,21 +26,21 @@ RaceList["growth myconid"] = {
 	age : " are considered young until they are 4 and live about 25 years",
 	height : " stand between 8 and 10 feet tall",
 	scores : [1, 0, 2, 0, 0, 0],
-  features : {
-			"mycelial restoration" : {
-				name : "Mycelial Restoration (Others)",
-				minlevel : 1,
-				usages : 1,
-				recovery : "long rest"
+	trait : "Growth Myconid (+1 Strength, +2 Constitution)\nMycelial Restoration: When I or another creature rolls a 1 on a die roll that restores my hit points, I can reroll the die and must use the new roll. I can reroll a number of 1s equal to my level.\nOnce per long rest, I can also use this feature on up to 10 creatures during a short rest.\nPowerful Build: I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift.\nSunlight Sensitivity: Disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when I or what I am trying to attack/perceive is in direct sunlight.",
+  	features : {
+		"mycelial restoration" : {
+			name : "Mycelial Restoration (Others)",
+			minlevel : 1,
+			usages : 1,
+			recovery : "long rest"
 			}
-      "pheremone spores" : {
-				name : "Pheremone Spores",
-				minlevel : 1,
-				usages : "Constitution modifier per",
-        usagescalc : "event.value = Math.max(1, What('Con Mod'));",
-				recovery : "long rest",
-        action : ["action", ""]
+      		"pheremone spores" : {
+			name : "Pheremone Spores",
+			minlevel : 1,
+			//usages : "Constitution modifier per",
+        		usagescalc : "event.value = Math.max(1, What('Con Mod'));",
+			recovery : "long rest",
+        		action : ["action", ""]
 			}
-   },
-	trait : "Growth Myconid (+1 Strength, +2 Constitution)\nMycelial Restoration: When I or another creature rolls a 1 on a die roll that restores my hit points, I can reroll the die and must use the new roll. I can reroll a number of 1s equal to my level.\nOnce per long rest, I can also use this feature on up to 10 creatures during a short rest.\nPowerful Build: I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift.\nSunlight Sensitivity: Disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when I or what I am trying to attack/perceive is in direct sunlight."
+   	}
 };
