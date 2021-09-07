@@ -1,7 +1,7 @@
 var iFileName = "Myconid_GM_Binder.js";
 RequiredSheetVersion(13);
 
-SourceList.P={
+SourceList.GMB={
 	name : "GM Binder",
 	abbreviation : "GMB",
 	group : "GM Binder",
@@ -34,12 +34,13 @@ RaceList["growth myconid"] = {
 			usages : 1,
 			recovery : "long rest"
 			}
-      		"pheremone spores" : {
+   		},
+	extraLimitedFeatures : [{
 			name : "Pheremone Spores",
 			minlevel : 1,
+			usages : "Con",
 			usagescalc : "event.value = Math.max(1, What('Con Mod'));",
 			recovery : "long rest",
         		action : ["action", ""]
-			}
-   		}
+		}]
 };
