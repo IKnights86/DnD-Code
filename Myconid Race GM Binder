@@ -37,7 +37,7 @@ RaceList["growth myconid"] = {
       		"pheremone spores" : {
 			name : "Pheremone Spores",
 			minlevel : 1,
-			//usages : "Constitution modifier per",
+			usages : "Constitution modifier per",
         		usagescalc : "event.value = Math.max(1, What('Con Mod'));",
 			recovery : "long rest",
         		action : ["action", ""]
