@@ -10,7 +10,7 @@ SourceList.GMB={
 };
 
 RaceList["growth myconid"] = {
-	regExpSearch : /^((?=.*(growth))|((?=.*\b(myconid)\b))).*$/i,
+	regExpSearch : /^(?=.*myconid)(?=.*growth).*$/i,
 	name : "Growth Myconid",
 	sortname : "Myconid, Growth",
 	source : ["GMB", 0],
@@ -46,7 +46,7 @@ RaceList["growth myconid"] = {
 };
 
 RaceList["sporemaster myconid"] = {
-	regExpSearch : /^((?=.*(sporemaster))|((?=.*\b(myconid)\b))).*$/i,
+	regExpSearch : /^(?=.*myconid)(?=.*sporemaster).*$/i,
 	name : "Sporemaster Myconid",
 	sortname : "Myconid, Sporemaster",
 	source : ["GMB", 0],
@@ -106,7 +106,7 @@ RaceList["sporemaster myconid"] = {
 };
 
 RaceList["animation myconid"] = {
-	regExpSearch : /^((?=.*(animation))|((?=.*\b(myconid)\b))).*$/i,
+	regExpSearch : /^(?=.*myconid)(?=.*animation).*$/i,
 	name : "Animation Myconid",
 	sortname : "Myconid, Animation",
 	source : ["GMB", 0],
