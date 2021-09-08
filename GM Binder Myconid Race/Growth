@@ -1,3 +1,14 @@
+var iFileName = "Growth_Myconid [From GM binder, transcribed by IKnights86].js";
+RequiredSheetVersion(13);
+
+SourceList.TMP={
+	name : "The Myconid Package",
+	abbreviation : "TMP",
+	group : "homebrew",
+	url : "https://www.gmbinder.com/share/-LDJHDtETJ7Z916te-D6",
+	date : "09/07/2021"
+};
+
 RaceList["growth myconid"] = {
 	regExpSearch : /^((?=.*(growth))|((?=.*\b(myconid)\b))).*$/i,
 	name : "Growth Myconid",
