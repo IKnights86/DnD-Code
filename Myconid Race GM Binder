@@ -9,6 +9,14 @@ SourceList.TMP={
 	date : "09/07/2021"
 };
 
+SourceList.MoM={
+	name : "Mashiro's Manuel of Monstrous Magic",
+	abbreviation : "MoM",
+	group : "homebrew",
+	url : "https://www.gmbinder.com/share/-LeVTwgh3BSkwd5sBkyc",
+	date : "09/08/2021"
+};
+
 RaceList["growth myconid"] = {
 	regExpSearch : /^(?=.*myconid)(?=.*growth).*$/i,
 	name : "Growth Myconid",
