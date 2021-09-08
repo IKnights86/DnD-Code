@@ -44,3 +44,63 @@ RaceList["growth myconid"] = {
         		action : ["action", ""]
 		}]
 };
+
+RaceList["sporemaster myconid"] = {
+	regExpSearch : /^((?=.*(sporemaster))|((?=.*\b(myconid)\b))).*$/i,
+	name : "Sporemaster Myconid",
+	sortname : "Myconid, Sporemaster",
+	source : ["GMB", 0],
+	plural : "Sporemaster Myconids",
+	size : 4,
+	speed : {
+		walk : { spd : 20, enc : 10 }
+	},
+	languageProfs : ["Common (Can't speak)"],
+	vision : [["Darkvision", 60], ["Telepathy", 30], ["Sunlight Sensitivity", 0]],
+	savetxt : { adv_vs : ["poison"] },
+	dmgres : ["Poison"],
+	toolProfs : ["Alchemist's Supplies"],
+	age : " are considered young until they are 4 and live about 25 years",
+	height : " stand between 2 and 4 feet tall",
+	scores : [0, 0, 2, 0, 1, 0],
+	trait : "Sporemaster Myconid (+1 Wisdom, +2 Constitution)\nSpores(See Notes): As I level up, I gain access to more powerful spores. The saving throw for these is 8+proficiency+Con modifier, I can only do each of these once per LR.\nPheremone Spores: As an action I can cover one creature within 30 feet of me with spores, for 1 minute you and all other myconids/spore servants have adv. on attack rolls vs. that creature. I can do this an amount equal to my Con modifier per LR.\nSunlight Sensitivity: Disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when I or what I am trying to attack/perceive is in direct sunlight.",
+  	features : {
+		"Pheremone Spores" : {
+			name : "Pheremone Spores",
+			minlevel : 1,
+			usages : "Con",
+			usagescalc : "event.value = Math.max(1, What('Con Mod'));",
+			recovery : "long rest",
+        		action : ["action", ""]
+			},
+		"Distress Spores" : {
+			name : "Distress Spores",
+			minlevel : 1,
+			usages : 1,
+			recovery : "long rest"
+			},
+		"Hallucination Spores" : {
+			name : "Hallucination Spores",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			action : ["action", ""]
+			},
+		"Pacifying Spores" : {
+			name : "Pacifying Spores",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			action : ["action", ""]
+			}
+   		},
+	toNotesPage : [{
+		name : "Features",
+		popupName : "Sporemaster Spores",
+		note: "\n  \u2022 Sporemaster (GMB 0)" + desc([
+		"Distress Spores (lvl 1): When I take damage anyone I choose within 240 ft are alerted.",
+		"Hallucination Spores(lvl 3): As an action I can make one crature within 5ft of me make a Con save or be poisoned(incapacitated) for 1 min, gets a save every turn.",
+		"Pacifying Spores(lvl 5): As an action I can make one crature within 5ft of me make a Con save or be stunned for 1 min, gets a save every turn."
+		])
+	}]
+};
