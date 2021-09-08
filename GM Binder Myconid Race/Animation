@@ -1,11 +1,11 @@
 var iFileName = "Animation_Myconid [From GM binder, transcribed by IKnights86].js";
 RequiredSheetVersion(13);
 
-SourceList.GMB={
-	name : "GM Binder",
-	abbreviation : "GMB",
-	group : "GM Binder",
-	url : "https://www.gmbinder.com/",
+SourceList.TMP={
+	name : "The Myconid Package",
+	abbreviation : "TMP",
+	group : "homebrew",
+	url : "https://www.gmbinder.com/share/-LDJHDtETJ7Z916te-D6",
 	date : "09/07/2021"
 };
 
