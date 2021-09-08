@@ -1,11 +1,11 @@
-var iFileName = "Myconid_GM_Binder.js";
+var iFileName = "The_Myconid_Package [Grom GM binder, transcribed by IKnights86].js";
 RequiredSheetVersion(13);
 
-SourceList.GMB={
-	name : "GM Binder",
-	abbreviation : "GMB",
-	group : "GM Binder",
-	url : "https://www.gmbinder.com/",
+SourceList.TMP={
+	name : "The Myconid Package",
+	abbreviation : "TMP",
+	group : "homebrew",
+	url : "https://www.gmbinder.com/share/-LDJHDtETJ7Z916te-D6",
 	date : "09/07/2021"
 };
 
@@ -13,7 +13,7 @@ RaceList["growth myconid"] = {
 	regExpSearch : /^(?=.*myconid)(?=.*growth).*$/i,
 	name : "Growth Myconid",
 	sortname : "Myconid, Growth",
-	source : ["GMB", 0],
+	source : ["TMP", 0],
 	plural : "Growth Myconids",
 	size : 3,
 	speed : {
@@ -49,7 +49,7 @@ RaceList["sporemaster myconid"] = {
 	regExpSearch : /^(?=.*myconid)(?=.*sporemaster).*$/i,
 	name : "Sporemaster Myconid",
 	sortname : "Myconid, Sporemaster",
-	source : ["GMB", 0],
+	source : ["TMP", 0],
 	plural : "Sporemaster Myconids",
 	size : 4,
 	speed : {
@@ -97,7 +97,7 @@ RaceList["sporemaster myconid"] = {
 	toNotesPage : [{
 		name : "Features",
 		popupName : "Sporemaster Spores",
-		note: "\n  \u2022 Sporemaster (GMB 0)" + desc([
+		note: "\n  \u2022 Sporemaster (TMP 0)" + desc([
 		"Distress Spores (lvl 1): When I take damage anyone I choose within 240 ft are alerted.",
 		"Hallucination Spores(lvl 3): As an action I can make one crature within 5ft of me make a Con save or be poisoned(incapacitated) for 1 min, gets a save every turn.",
 		"Pacifying Spores(lvl 5): As an action I can make one crature within 5ft of me make a Con save or be stunned for 1 min, gets a save every turn."
@@ -109,7 +109,7 @@ RaceList["animation myconid"] = {
 	regExpSearch : /^(?=.*myconid)(?=.*animation).*$/i,
 	name : "Animation Myconid",
 	sortname : "Myconid, Animation",
-	source : ["GMB", 0],
+	source : ["TMP", 0],
 	plural : "Animation Myconids",
 	size : 3,
 	speed : {
@@ -143,9 +143,71 @@ RaceList["animation myconid"] = {
 	toNotesPage : [{
 		name : "Features",
 		popupName : "Animating Spores",
-		note: "\n  \u2022 Animation (GMB 0)" + desc([
+		note: "\n  \u2022 Animation (TMP 0)" + desc([
 		"Your spores, unlike other myconids can animate the dead. You can use an action to target the body of a Large or smaller creature that had a CR no higher than your level divied by 4. That creature rises as a spore servant, which acts on your initiative and follows your telepathic orders. You can use this feature once, and must finish a long rest before you do so again.\n Elementals, oozes, undead, constructs, and plants cannot become Spore Servants. If you create a new one, the first spore servant sloughs into a pile of unusable flesh.",
 		"Spore Servant Template", "Retained characteristics: The servant retains it Armor Class, hit points, Hit Dice, Strength, Dexterity, Constitution, vulnerabilities, resistances, and immunities.", "Lost Characteristics: The servant loses its original saving throw and skill bonuses, special sense, and special traits. It loses any action that isn't Multiattack or a melee weapon attack that deals bludgeoning, piercing, or slashing damage. If those attack do not deal or deal additional damage of a type not bludgeoning, piercing, or slashing, that damage is lost, unless it originates from a piece of equipment, such as a magic item. It also cannot regain hit points by completing a short or long rest.\n Type: The creature's type is plant and it loses any tags.", "Alignment: The servant is unaligned.", "Speed: Reduce all the servant's speeds by 10 feet, to a minimum of 5 feet.", "Ability Scores: The servant's ability scores change as follows: Int 2 (-4), Wis 6 (-2), Cha 1 (-5).", "Senses: The servant has blindsight with a radius of 30 feet and is blind beyond that radius.", "Condition Immunities: The servant can't be blinded, charmed, frightened, or paralyzed.", "Languages: The servant loses all known languages, but responds to orders given to it via rapport spores. The servant gives the highest priority to the myconid that created it, or the most powerful myconid if its creator is absent.", "Attacks: If the servant has no other means of dealing damage, it can use its fists or limbs to make unarmed strikes. On a hit, the unarmed strike deals bludgeoning damage equal to 1d4 + the servant's Strength modifier, or, if the servant is Large, 2d4 + its Strength modifier."
 		])
 	}]
+};
+
+RaceList["compost myconid"] = {
+	regExpSearch : /^(?=.*myconid)(?=.*compost).*$/i,
+	name : "Compost Myconid",
+	sortname : "Myconid, Compost",
+	source : ["TMP", 0],
+	plural : "Compost Myconids",
+	size : 3,
+	speed : {
+		walk : { spd : 20, enc : 10 }
+	},
+	languageProfs : ["Common (Can't speak)"],
+	vision : [["Darkvision", 60], ["Telepathy", 30], ["Sunlight Sensitivity", 0]],
+	savetxt : { adv_vs : ["poison"] },
+	dmgres : ["Poison"],
+	age : " are considered young until they are 4 and live about 25 years",
+	height : " stand between 6 and 8 feet tall",
+	scores : [0, 1, 2, 0, 0, 0],
+	trait : "Compost Myconid (+1 Dexterity, +2 Constitution)\nFertilizer: I know the rotting gaze cantrip. At 3rd level I can cast locate animals or plants once per LR. At 5th level I can cast plant growth once per LR. Wisdom is my spellcasting ability for these spells.\nToxic Body: When a creature toches me or hits me with a melee attack I can deal 1d4 poison damage to it. My unarmed strikes also do 1d4 poison damage once per turn.\nSunlight Sensitivity: Disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when I or what I am trying to attack/perceive is in direct sunlight.",
+  	spellcastingBonus : {
+			name : "Fertilizer (level 1)",
+			spells : ["rotting gaze"],
+			selection : ["rotting gaze"],
+			firstCol : 'atwill'
+		},
+	features : {
+		"Pheremone Spores" : {
+			name : "Pheremone Spores",
+			minlevel : 1,
+			usages : "Con",
+			usagescalc : "event.value = Math.max(1, What('Con Mod'));",
+			recovery : "long rest",
+        		action : ["action", ""]
+			},
+		"locate animals or plants" : {
+			name : "Fertilizer (level 3)",
+			limfeaname : "Locate Animals and Plants",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Fertilizer (level 3)",
+				spells : ["locate animals or plants"],
+				selection : ["locate animals or plants"],
+				firstCol : "oncelr"
+			}
+   		},
+		"plant growth" : {
+			name : "Fertilizer (level 5)",
+			limfeaname : "Plant Growth",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Fertilizer (level 5)",
+				spells : ["plant growth"],
+				selection : ["plant growth"],
+				firstCol : "oncelr"
+			}
+		}
+	}
 };
