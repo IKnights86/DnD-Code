@@ -219,3 +219,19 @@ RaceList["compost myconid"] = {
 		}
 	}
 };
+
+SpellsList["rotting gaze"] = {
+  		name : "Rotting Gaze",
+   		regExpSearch : /^(?=.*rotting)(?=.*gaze).*$/i,
+		source : ["MoM", 17],
+  		classes : ["cleric", "druid", "sorcerer", "warlock"],
+    		level : 0,
+    		school : "Necro",
+    		time : "1 a",
+    		range : "30 ft",
+    		components : "S",
+    		save : "Con",
+    		description : "1 crea save or 1d10 Necrotic dmg (1d12 vs. plant/diseased); +1d10/1d12 at CL 5, 11, \u0026 17",
+		descriptionCantripDie : "1 crea save or `CD`d10 Necrotic damage (d12 instead of d10 if plant/diseased)",
+    		descriptionFull : "You shoot a beam of necrotic energy from your eyes at a creature you can see within range. The target must succeed on a Constitution saving throw or take 1d10 necrotic damage. If the target is a plant or is suffering from a disease, it instead takes 1d12 necrotic damage. The spell's damage increases by one die when you reach 5th level (2d10 or 2d12), 11th level (3d10 or 3d12), and 17th level (4d10 or 4d12)."
+};
