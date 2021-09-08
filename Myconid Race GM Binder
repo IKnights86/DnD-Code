@@ -176,7 +176,8 @@ RaceList["compost myconid"] = {
 	height : " stand between 6 and 8 feet tall",
 	scores : [0, 1, 2, 0, 0, 0],
 	trait : "Compost Myconid (+1 Dexterity, +2 Constitution)\nFertilizer: I know the rotting gaze cantrip. At 3rd level I can cast locate animals or plants once per LR. At 5th level I can cast plant growth once per LR. Wisdom is my spellcasting ability for these spells.\nToxic Body: When a creature toches me or hits me with a melee attack I can deal 1d4 poison damage to it. My unarmed strikes also do 1d4 poison damage once per turn.\nSunlight Sensitivity: Disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when I or what I am trying to attack/perceive is in direct sunlight.",
-  	spellcastingBonus : {
+  	spellcastingAbility : 5,
+	spellcastingBonus : {
 			name : "Fertilizer (level 1)",
 			spells : ["rotting gaze"],
 			selection : ["rotting gaze"],
@@ -193,7 +194,7 @@ RaceList["compost myconid"] = {
 			},
 		"locate animals or plants" : {
 			name : "Fertilizer (level 3)",
-			limfeaname : "Locate Animals and Plants",
+			limfeaname : "Locate Animals or Plants",
 			minlevel : 3,
 			usages : 1,
 			recovery : "long rest",
@@ -230,6 +231,7 @@ SpellsList["rotting gaze"] = {
     		time : "1 a",
     		range : "30 ft",
     		components : "S",
+		duration : "Instantaneous",
     		save : "Con",
     		description : "1 crea save or 1d10 Necrotic dmg (1d12 vs. plant/diseased); +1d10/1d12 at CL 5, 11, \u0026 17",
 		descriptionCantripDie : "1 crea save or `CD`d10 Necrotic damage (d12 instead of d10 if plant/diseased)",
