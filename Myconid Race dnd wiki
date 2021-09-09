@@ -1,0 +1,52 @@
+  
+var iFileName = "Myconid_race [From dnd wiki, transcribed by IKnights86].js";
+RequiredSheetVersion(13);
+
+SourceList.DnDW={
+	name : "DnD Wiki",
+	abbreviation : "DnDW",
+	group : "homebrew",
+	url : "https://www.dandwiki.com/wiki/Myconid_%285e_Race%29",
+	date : "09/09/2021"
+};
+
+RaceList["mystic myconid"] = {
+	regExpSearch : /^(?=.*myconid)(?=.*mystic).*$/i,
+	name : "Mystic Myconid",
+	sortname : "Myconid, Mystic",
+	source : ["DnDW", 0],
+	plural : "Mystic Myconids",
+	size : 3,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	languageProfs : ["Common (Can't speak)", "Undercommon (Can't speak)"],
+	vision : [["Darkvision", 120], ["Sun Sickness", 0]],
+	age : " are considered young until they are 6 and live about 1000 years",
+	height : " stand between 4 and 6 feet tall",
+	scores : [0, 0, 1, 0, 2, 0],
+	trait : "Mystic Myconid (+1 Constitution, +2 Wisdom)\nPacifying Spores(See Notes): As an action I can eject spores at a creature within 15ft, must make Con. save equal to 8+prof. bonus+Con. modifier or be stunned for 1 minute or until damaged.\nRapport Spores(See notes): As an action I can extend spores in a 20ft radius giving all creatures other than undead, constructs, and elementals 30ft of telepathy.\nAnimating Spores(See notes): As an action I can target a corpse of a humanoid or up to a large beast within 5ft of me with my spores, in 24 hours they will rise as a spore servant(MM p.231).\nSun Sickness: Disadvantage on Str, Dex, and Con ability checks, attack rolls, and saving throws while in direct sunlight.",
+  features : {
+		  "pacifying spores" : {
+			      name : "Pacifying Spores",
+			      minlevel : 1,
+			      usages : 1,
+			      recovery : "short rest"
+			      },
+      "animating spores" : {
+            name : "Animating Spores",
+            minlevel : 1,
+            usages : 1,
+            recovery : "long rest"
+            }
+      },
+  toNotesPage : [{
+		name : "Features",
+		popupName : "Myconid Spores",
+		note: "\n  \u2022 Myconid (DnDW 0)" + desc([
+		"Pacifying Spores: As an action, you can eject spores at one creature you can see within 15 foot of you. The target must succeed on a Constitution saving throw equal to 8 + your proficiency modifier + your Constitution modifier or be stunned for 1 minute or until it takes damage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. You regain use of this trait once you have completed a short or long rest.",
+		"Rapport Spores: You may as an action, extend rapport spores in a 20-foot radius. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour.",
+		"Animating Spores: As an action, you can target one corpse of a humanoid or a Large or smaller beast within 5 feet and releases spores at the corpse. In 24 hours, the corpse rises as a spore servant(MM p.231). The corpse stays animated for 1d4 + 1 days or until destroyed, and it can't be animated again in this way. You can only have one spore servant at a time. You regain spent use of this trait when you complete a long rest."
+		])
+	}]
+};
