@@ -1,4 +1,4 @@
-var iFileName = "The_Myconid_Package [Grom GM binder, transcribed by IKnights86].js";
+var iFileName = "The_Myconid_Package [From GM binder, transcribed by IKnights86].js";
 RequiredSheetVersion(13);
 
 SourceList.TMP={
