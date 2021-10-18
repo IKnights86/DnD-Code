@@ -1,0 +1,64 @@
+var iFileName = "Fairy [From TWBtW, transcribed by IKnights86].js";
+RequiredSheetVersion(13);
+
+SourceList.TWBtW={
+	name : "The Wild Beyond the Witchlight",
+	abbreviation : "TWBtW",
+	group : "Adventure Books",
+	url : "https://www.dndbeyond.com/posts/1075-sneak-peek-check-out-the-fairy-race-in-the-wild#fairy-racial-traits",
+	date : "10/18/2021"
+};
+
+RaceList["fairy"] = {
+	regExpSearch : /^(?=.*fairy).*$/i,
+	name : "Fairy",
+	sortname : "Fairy",
+	source : ["TWBtW", 0],
+	plural : "Faries",
+	size : 2,
+	speed : {
+		walk : { spd : 30, enc : 20 },
+    fly : { spd : 30, enc : 0 }
+	},
+	languageProfs : ["Common", 1],
+	age : " live about a century",
+  //The scores can be changed, this is just for my character
+	scores : [0, 1, 2, 0, 0, 0],
+	trait : "Fairy (+2/+1 or +1/+1/+1)\n",
+  //This can be changed between Int, Wis, or Charisma
+  spellcastingAbility : 5,
+	spellcastingBonus : {
+			name : "Fairy Magic (level 1)",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+	features : {
+		"fairy magic" : {
+			name : "Fairy Magic",
+			limfeaname : "Fairy Magic",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Fairy Magic (level 3)",
+				spells : ["faerie fire"],
+				selection : ["faerie fire"],
+				firstCol : "oncelr"
+			}
+   	},
+		"fairy magic" : {
+			name : "Fairy Magic",
+			limfeaname : "Fairy Magic",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Fairy Magic (level 5)",
+				spells : ["enlarge/reduce"],
+				selection : ["enlarge/reduce"],
+				firstCol : "oncelr"
+			}
+		}
+	}
+};
