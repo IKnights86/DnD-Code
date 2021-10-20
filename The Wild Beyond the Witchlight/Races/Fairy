@@ -22,10 +22,10 @@ RaceList["fairy"] = {
 	},
 	languageProfs : ["Common", 1],
 	age : " live about a century",
-  //The scores can be changed, this is just for my character
+  //The scores can be changed, this is just for my friends character, order = str, dex, con, int, wis, cha
 	scores : [0, 1, 0, 0, 2, 0],
 	trait : "Fairy (+2/+1 or +1/+1/+1)\nFairy Magic:  I can cast druidcraft. At 3rd level I can cast faerie fire. At 5th level I can also cast enlarge/reduce. Once I cast faerie fire or enlarge/reduce with this trait I cant cast that spell with it until I finish a LR. Alternatively I can use spell slots to cast these spells.\n\nFlight: I gain a fly speed of 30 ft while I'm not wearing medium or heavy armor.",
-  //This can be changed between Int, Wis, or Charisma
+  //This can be changed between Int(4), Wis(5), or Charisma(6)
   spellcastingAbility : 5,
 	spellcastingBonus : {
 			name : "Fairy Magic (level 1)",
