@@ -44,7 +44,7 @@ RaceList["spore elf"] = {
 					name : "Spore Elf (level 3)",
 					spells : ["plant growth"],
 					selection : ["plant growth"],
-					firstCol : "3x/SR"
+					firstCol : "(3)"
 				}
 			},
 			"darkness" : {
