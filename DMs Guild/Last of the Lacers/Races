@@ -12,7 +12,7 @@ SourceList.LotL={
 };
 
 RaceList["dragon fire folk"] = {
-		regExpSearch : /dragon fire folk/i,
+		regExpSearch : /^(?=.*dragon)(?=.*fire)(?=.*folk).*$/i,
 		name : "Dragon Fire Folk",
     		sortname : "Fire Folk, Dragon",
 		source : ["LotL", 0],
@@ -79,7 +79,7 @@ RaceList["qilin fire folk"] = {
 		weight : " weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Charisma and +1 to Strength",
 		scores : [1, 0, 0, 0, 0, 2],
-		trait : "Qilin Fire Folk (+2 Charisma, +1 Strength)\n Positive Jing: When you roll a 1 on an attack you can reroll and must take the new roll\n Savage Elements: When you score a critical hit with an elemental attack, roll 1 more damage die\n Qilin Weapon/Armor Training: Gain proficiency in certain armor and weapons",
+		trait : "Qilin Fire Folk (+2 Charisma, +1 Strength)\n Positive Jing: When you roll a 1 on an attack you can reroll and must take the new roll\n Savage Elements: When you score a critical hit with an elemental attack, roll 1 more damage die\n Qilin Weapon/Armor Training: Gain proficiency in certain armor and weapons"
 };
 
 RaceList["cenobite air monk"] = {
@@ -115,7 +115,7 @@ RaceList["cenobite air monk"] = {
 				  firstCol : "oncelr"
 			  }
 		  }
-    }
+    	}
 };
 
 RaceList["nomad air monk"] = {
@@ -151,7 +151,7 @@ RaceList["nomad air monk"] = {
 				  firstCol : "oncelr"
 			  }
 		  }
-    }
+    	}
 };
 
 RaceList["polar water clan"] = {
@@ -172,7 +172,7 @@ RaceList["polar water clan"] = {
 		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Constitution and +1 to Strength",
 		scores : [1, 0, 2, 0, 0, 0],
-		trait : "Polar Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Extreme Environment: Once per LR you can succeed on the first saving throw you would take to gain exhaustion",
+		trait : "Polar Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Extreme Environment: Once per LR you can succeed on the first saving throw you would take to gain exhaustion"
 };
 
 RaceList["swamp water clan"] = {
@@ -192,7 +192,7 @@ RaceList["swamp water clan"] = {
 		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Constitution and +1 to Strength",
 		scores : [0, 0, 2, 0, 1, 0],
-		trait : "Swamp Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Plant Familiarity: You have advantage on Intelligence(Nature) checks with plants\n Mask of the Wild: You can attempt to hide when you are only lightly obscured by natural phenomena",
+		trait : "Swamp Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Plant Familiarity: You have advantage on Intelligence(Nature) checks with plants\n Mask of the Wild: You can attempt to hide when you are only lightly obscured by natural phenomena"
 };
 
 RaceList["city earth kin"] = {
@@ -213,7 +213,7 @@ RaceList["city earth kin"] = {
 		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Strength and +1 to Charisma",
 		scores : [2, 0, 0, 0, 0, 1],
-		trait : "City Earth Kin (+2 Strength, +1 Charisma)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Tough People: Natural AC is 12\n Resilience: Adv. on saves vs. poison, also resistant",
+		trait : "City Earth Kin (+2 Strength, +1 Charisma)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Tough People: Natural AC is 12\n Resilience: Adv. on saves vs. poison, also resistant"
 };
 
 RaceList["desert earth kin"] = {
@@ -233,5 +233,5 @@ RaceList["desert earth kin"] = {
 		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Strength and +1 to Constitution",
 		scores : [2, 0, 1, 0, 0, 0],
-		trait : "City Earth Kin (+2 Strength, +1 Constitution)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Harsh Sun: No exhaustion due to natural hot environments\n Hardy: Hit Point Max increases by 1 every level",
+		trait : "City Earth Kin (+2 Strength, +1 Constitution)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Harsh Sun: No exhaustion due to natural hot environments\n Hardy: Hit Point Max increases by 1 every level"
 };
