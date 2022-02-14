@@ -14,7 +14,7 @@ SourceList.LotL={
 RaceList["dragon fire folk"] = {
 		regExpSearch : /dragon fire folk/i,
 		name : "Dragon Fire Folk",
-    sortname : "Fire Folk, Dragon",
+    		sortname : "Fire Folk, Dragon",
 		source : ["LotL", 0],
 		plural : "Fire Folk",
 		size : 3,
@@ -64,7 +64,7 @@ RaceList["dragon fire folk"] = {
 RaceList["qilin fire folk"] = {
 		regExpSearch : /qilin fire folk/i,
 		name : "Qilin Fire Folk",
-    sortname : "Fire Folk, Qilin",
+    		sortname : "Fire Folk, Qilin",
 		source : ["LotL", 0],
 		plural : "Fire Folk",
 		size : 3,
@@ -72,8 +72,8 @@ RaceList["qilin fire folk"] = {
 			walk : { spd : 30, enc : 20 }
 		},
 		languageProfs : ["Common", "Kasai"],
-    weaponProfs : [false, false, ["hand crossbow", "light crossbow", "heavy crossbow", "halberd", "longsword", "shortsword", "spear"]],
-    armorProfs : [true, true, false, true],
+    		weaponProfs : [false, false, ["hand crossbow", "light crossbow", "heavy crossbow", "halberd", "longsword", "shortsword", "spear"]],
+    		armorProfs : [true, true, false, true],
 		age : " Fire folk reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Fire folk are typically between 5 and 6 feet tall (4'8\" + 2d10\")",
 		weight : " weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
@@ -85,7 +85,7 @@ RaceList["qilin fire folk"] = {
 RaceList["cenobite air monk"] = {
 		regExpSearch : /cenobite air monk/i,
 		name : "Cenobite Air Monk",
-    sortname : "Air Monk, Cenobite",
+    		sortname : "Air Monk, Cenobite",
 		source : ["LotL", 0],
 		plural : "Air Monks",
 		size : 3,
@@ -93,15 +93,15 @@ RaceList["cenobite air monk"] = {
 			walk : { spd : 35, enc : 25 }
 		},
 		languageProfs : ["Common", "Vaayu"],
-    skills : ["Acrobatics"],
+    		skills : ["Acrobatics"],
 		age : " Air Monks reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Air Monks are typically between 4 and 5 feet tall",
 		weight : " weigh around 100 lb",
 		scorestxt : "+2 to Dexterity and +1 to Wisdom",
 		scores : [0, 2, 0, 0, 1, 0],
 		trait : "Cenobite Air Monk (+2 Dexterity, +1 Wisdom)\n Swift: You can't roll lower than 5 + Dex for initiative\n Sky Legs: You can travel normally in altitudes up to 10,000 feet, and are not disadvantaged by strong winds\n Light Foot: Any distance you fall counts as though the fall were 20 feet shorter than it actually is\n Deep Meditation: You only need meditate for 4 hours to achieve a LR\n Nonviolence: You can cast Sanctuary once per LR and use Wisdom to cast it",
-    spellcastingAbility : 5,
-	  features : {
+    		spellcastingAbility : 5,
+	  	features : {
 		  "sanctuary" : {
 			  name : "Nonviolence",
 			  limfeaname : "Sanctuary",
@@ -121,7 +121,7 @@ RaceList["cenobite air monk"] = {
 RaceList["nomad air monk"] = {
 		regExpSearch : /nomad air monk/i,
 		name : "nomad Air Monk",
-    sortname : "Air Monk, Nomad",
+    		sortname : "Air Monk, Nomad",
 		source : ["LotL", 0],
 		plural : "Air Monks",
 		size : 3,
@@ -129,15 +129,15 @@ RaceList["nomad air monk"] = {
 			walk : { spd : 35, enc : 25 }
 		},
 		languageProfs : ["Common", "Vaayu"],
-    skills : ["Acrobatics"],
+	    	skills : ["Acrobatics"],
 		age : " Air Monks reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Air Monks are typically between 4 and 5 feet tall",
 		weight : " weigh around 100 lb",
 		scorestxt : "+2 to Dexterity and +1 to Wisdom",
 		scores : [0, 2, 0, 0, 1, 0],
 		trait : "Cenobite Air Monk (+2 Dexterity, +1 Charisma)\n Swift: You can't roll lower than 5 + Dex for initiative\n Sky Legs: You can travel normally in altitudes up to 10,000 feet, and are not disadvantaged by strong winds\n Light Foot: Any distance you fall counts as though the fall were 20 feet shorter than it actually is\n Ascetic Diet: You only need half the food and water you normally would\n Charming Personality: You can use Wisdom to cast Charm Person once per LR",
-    spellcastingAbility : 5,
-	  features : {
+    		spellcastingAbility : 5,
+	  	features : {
 		  "charm person" : {
 			  name : "Charming Personality",
 			  limfeaname : "Charm Person",
@@ -157,7 +157,7 @@ RaceList["nomad air monk"] = {
 RaceList["polar water clan"] = {
 		regExpSearch : /polar water clan/i,
 		name : "Polar Water Clan",
-    sortname : "Water Clan, Polar",
+    		sortname : "Water Clan, Polar",
 		source : ["LotL", 0],
 		plural : "Polar Clan Members",
 		size : 3,
@@ -165,8 +165,8 @@ RaceList["polar water clan"] = {
 			walk : { spd : 30, enc : 20 }
 		},
 		languageProfs : ["Common", "Imiq"],
-    skills : ["Medicine"],
-    dmgres : ["Cold"],
+    		skills : ["Medicine"],
+    		dmgres : ["Cold"],
 		age : " Water Folk reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Water Folk are typically between 5 and 6 feet tall",
 		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
@@ -178,7 +178,7 @@ RaceList["polar water clan"] = {
 RaceList["swamp water clan"] = {
 		regExpSearch : /swamp water clan/i,
 		name : "Swamp Water Clan",
-    sortname : "Water Clan, Swamp",
+    		sortname : "Water Clan, Swamp",
 		source : ["LotL", 0],
 		plural : "Swamp Clan Members",
 		size : 3,
@@ -186,7 +186,7 @@ RaceList["swamp water clan"] = {
 			walk : { spd : 30, enc : 20 }
 		},
 		languageProfs : ["Common", "Imiq"],
-    skills : ["Medicine"],
+    		skills : ["Medicine"],
 		age : " Water Folk reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Water Folk are typically between 5 and 6 feet tall",
 		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
@@ -198,7 +198,7 @@ RaceList["swamp water clan"] = {
 RaceList["city earth kin"] = {
 		regExpSearch : /city earth kin/i,
 		name : "City Earth Kin",
-    sortname : "Earth Kin, City",
+    		sortname : "Earth Kin, City",
 		source : ["LotL", 0],
 		plural : "Earth Kin",
 		size : 3,
@@ -206,8 +206,8 @@ RaceList["city earth kin"] = {
 			walk : { spd : 30, enc : 20 }
 		},
 		languageProfs : ["Common", "Shi"],
-    skills : ["Perception"],
-    dmgres : ["Poison"],
+    		skills : ["Perception"],
+    		dmgres : ["Poison"],
 		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Earth Kin are typically between 5 and 6 feet tall",
 		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
@@ -219,7 +219,7 @@ RaceList["city earth kin"] = {
 RaceList["desert earth kin"] = {
 		regExpSearch : /desert earth kin/i,
 		name : "Desert Earth Kin",
-    sortname : "Earth Kin, Desert",
+    		sortname : "Earth Kin, Desert",
 		source : ["LotL", 0],
 		plural : "Earth Kin",
 		size : 3,
@@ -227,7 +227,7 @@ RaceList["desert earth kin"] = {
 			walk : { spd : 30, enc : 20 }
 		},
 		languageProfs : ["Common", "Shi"],
-    skills : ["Perception"],
+    		skills : ["Perception"],
 		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
 		height : " Earth Kin are typically between 5 and 6 feet tall",
 		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
