@@ -1,0 +1,237 @@
+var iFileName = "Last_of_the_Lacers.js";
+RequiredSheetVersion(13);
+// This file adds all material from the Player's Handbook to MPMB's Character Record Sheet
+
+// Define the source
+SourceList.LotL={
+	name : "Last of the Lacers",
+	abbreviation : "LotL",
+	group : "DMs Guild",
+	url : "https://www.dmsguild.com/product/191837/Incarnate-The-Last-of-the-Lacers",
+	date : "2022/02/11"
+};
+
+RaceList["dragon fire folk"] = {
+		regExpSearch : /dragon fire folk/i,
+		name : "Dragon Fire Folk",
+    sortname : "Fire Folk, Dragon",
+		source : ["LotL", 0],
+		plural : "Fire Folk",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Kasai"],
+		age : " Fire folk reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Fire folk are typically between 5 and 6 feet tall (4'8\" + 2d10\")",
+		weight : " weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		heightMetric : " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+		weightMetric : " weigh around 75 kg (50 + 5d10 \xD7 4d4 / 10 kg)",
+		scorestxt : "+2 to Charisma and +1 to Dexterity",
+		scores : [0, 1, 0, 0, 0, 2],
+		trait : "Dragon Fire Folk (+2 Charisma, +1 Dexterity)\n Positive Jing: When you roll a 1 on an attack you can reroll and must take the new roll\n Savage Elements: When you score a critical hit with an elemental attack, roll 1 more damage die\n Dragon Worshipper: You can use Charisma to cast Cause Fear and at 3rd level you can cast Calm Emotions",
+    spellcastingAbility : 6,
+	  features : {
+		  "cause fear" : {
+			  name : "Dragon Worshipper (level 1)",
+			  limfeaname : "Cause Fear",
+			  minlevel : 1,
+			  usages : 1,
+			  recovery : "long rest",
+			  spellcastingBonus : {
+				  name : "Dragon Worshipper (level 1)",
+				  spells : ["cause fear"],
+				  selection : ["cause fear"],
+				  firstCol : "oncelr"
+			  }
+		  },
+		  "darkness" : {
+			  name : "Dragon Worshipper (level 3)",
+			  limfeaname : "Calm Emotions",
+			  minlevel : 3,
+			  usages : 1,
+			  recovery : "long rest",
+			  spellcastingBonus : {
+				  name : "Dragon Worshipper (level 3)",
+				  spells : ["calm emotions"],
+				  selection : ["calm emotions"],
+				  firstCol : "oncelr"
+			  }
+		  }
+	  }
+};
+
+RaceList["qilin fire folk"] = {
+		regExpSearch : /qilin fire folk/i,
+		name : "Qilin Fire Folk",
+    sortname : "Fire Folk, Qilin",
+		source : ["LotL", 0],
+		plural : "Fire Folk",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Kasai"],
+    weaponProfs : [false, false, ["hand crossbow", "light crossbow", "heavy crossbow", "halberd", "longsword", "shortsword", "spear"]],
+    armorProfs : [true, true, false, true],
+		age : " Fire folk reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Fire folk are typically between 5 and 6 feet tall (4'8\" + 2d10\")",
+		weight : " weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		scorestxt : "+2 to Charisma and +1 to Strength",
+		scores : [1, 0, 0, 0, 0, 2],
+		trait : "Qilin Fire Folk (+2 Charisma, +1 Strength)\n Positive Jing: When you roll a 1 on an attack you can reroll and must take the new roll\n Savage Elements: When you score a critical hit with an elemental attack, roll 1 more damage die\n Qilin Weapon/Armor Training: Gain proficiency in certain armor and weapons",
+};
+
+RaceList["cenobite air monk"] = {
+		regExpSearch : /cenobite air monk/i,
+		name : "Cenobite Air Monk",
+    sortname : "Air Monk, Cenobite",
+		source : ["LotL", 0],
+		plural : "Air Monks",
+		size : 3,
+		speed : {
+			walk : { spd : 35, enc : 25 }
+		},
+		languageProfs : ["Common", "Vaayu"],
+    skills : ["Acrobatics"],
+		age : " Air Monks reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Air Monks are typically between 4 and 5 feet tall",
+		weight : " weigh around 100 lb",
+		scorestxt : "+2 to Dexterity and +1 to Wisdom",
+		scores : [0, 2, 0, 0, 1, 0],
+		trait : "Cenobite Air Monk (+2 Dexterity, +1 Wisdom)\n Swift: You can't roll lower than 5 + Dex for initiative\n Sky Legs: You can travel normally in altitudes up to 10,000 feet, and are not disadvantaged by strong winds\n Light Foot: Any distance you fall counts as though the fall were 20 feet shorter than it actually is\n Deep Meditation: You only need meditate for 4 hours to achieve a LR\n Nonviolence: You can cast Sanctuary once per LR and use Wisdom to cast it",
+    spellcastingAbility : 5,
+	  features : {
+		  "sanctuary" : {
+			  name : "Nonviolence",
+			  limfeaname : "Sanctuary",
+			  minlevel : 1,
+			  usages : 1,
+			  recovery : "long rest",
+			  spellcastingBonus : {
+				  name : "Nonviolence",
+				  spells : ["sanctuary"],
+				  selection : ["sanctuary"],
+				  firstCol : "oncelr"
+			  }
+		  }
+    }
+};
+
+RaceList["nomad air monk"] = {
+		regExpSearch : /nomad air monk/i,
+		name : "nomad Air Monk",
+    sortname : "Air Monk, Nomad",
+		source : ["LotL", 0],
+		plural : "Air Monks",
+		size : 3,
+		speed : {
+			walk : { spd : 35, enc : 25 }
+		},
+		languageProfs : ["Common", "Vaayu"],
+    skills : ["Acrobatics"],
+		age : " Air Monks reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Air Monks are typically between 4 and 5 feet tall",
+		weight : " weigh around 100 lb",
+		scorestxt : "+2 to Dexterity and +1 to Wisdom",
+		scores : [0, 2, 0, 0, 1, 0],
+		trait : "Cenobite Air Monk (+2 Dexterity, +1 Charisma)\n Swift: You can't roll lower than 5 + Dex for initiative\n Sky Legs: You can travel normally in altitudes up to 10,000 feet, and are not disadvantaged by strong winds\n Light Foot: Any distance you fall counts as though the fall were 20 feet shorter than it actually is\n Ascetic Diet: You only need half the food and water you normally would\n Charming Personality: You can use Wisdom to cast Charm Person once per LR",
+    spellcastingAbility : 5,
+	  features : {
+		  "charm person" : {
+			  name : "Charming Personality",
+			  limfeaname : "Charm Person",
+			  minlevel : 1,
+			  usages : 1,
+			  recovery : "long rest",
+			  spellcastingBonus : {
+				  name : "Charming Personality",
+				  spells : ["charm person"],
+				  selection : ["charm person"],
+				  firstCol : "oncelr"
+			  }
+		  }
+    }
+};
+
+RaceList["polar water clan"] = {
+		regExpSearch : /polar water clan/i,
+		name : "Polar Water Clan",
+    sortname : "Water Clan, Polar",
+		source : ["LotL", 0],
+		plural : "Polar Clan Members",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Imiq"],
+    skills : ["Medicine"],
+    dmgres : ["Cold"],
+		age : " Water Folk reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Water Folk are typically between 5 and 6 feet tall",
+		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		scorestxt : "+2 to Constitution and +1 to Strength",
+		scores : [1, 0, 2, 0, 0, 0],
+		trait : "Polar Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Extreme Environment: Once per LR you can succeed on the first saving throw you would take to gain exhaustion",
+};
+
+RaceList["swamp water clan"] = {
+		regExpSearch : /swamp water clan/i,
+		name : "Swamp Water Clan",
+    sortname : "Water Clan, Swamp",
+		source : ["LotL", 0],
+		plural : "Swamp Clan Members",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Imiq"],
+    skills : ["Medicine"],
+		age : " Water Folk reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Water Folk are typically between 5 and 6 feet tall",
+		weight : " Water Folk weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		scorestxt : "+2 to Constitution and +1 to Strength",
+		scores : [0, 0, 2, 0, 1, 0],
+		trait : "Swamp Water Clan (+2 Constitution, +1 Strength)\n Natural Healer: If you roll a 1 while healing HP (such as resting) you can reroll the die but must use the new roll\n Waterborne: You have advantage on Strength(Athletics) and Dexterity(Acrobatics) checks made underwater\n Plant Familiarity: You have advantage on Intelligence(Nature) checks with plants\n Mask of the Wild: You can attempt to hide when you are only lightly obscured by natural phenomena",
+};
+
+RaceList["city earth kin"] = {
+		regExpSearch : /city earth kin/i,
+		name : "City Earth Kin",
+    sortname : "Earth Kin, City",
+		source : ["LotL", 0],
+		plural : "Earth Kin",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Shi"],
+    skills : ["Perception"],
+    dmgres : ["Poison"],
+		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Earth Kin are typically between 5 and 6 feet tall",
+		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		scorestxt : "+2 to Strength and +1 to Charisma",
+		scores : [2, 0, 0, 0, 0, 1],
+		trait : "City Earth Kin (+2 Strength, +1 Charisma)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Tough People: Natural AC is 12\n Resilience: Adv. on saves vs. poison, also resistant",
+};
+
+RaceList["desert earth kin"] = {
+		regExpSearch : /desert earth kin/i,
+		name : "Desert Earth Kin",
+    sortname : "Earth Kin, Desert",
+		source : ["LotL", 0],
+		plural : "Earth Kin",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Shi"],
+    skills : ["Perception"],
+		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Earth Kin are typically between 5 and 6 feet tall",
+		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
+		scorestxt : "+2 to Strength and +1 to Constitution",
+		scores : [2, 0, 1, 0, 0, 0],
+		trait : "City Earth Kin (+2 Strength, +1 Constitution)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Harsh Sun: No exhaustion due to natural hot environments\n Hardy: Hit Point Max increases by 1 every level",
+};
