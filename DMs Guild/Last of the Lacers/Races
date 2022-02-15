@@ -255,7 +255,7 @@ RaceList["bake-danuki obake"] = {
 			adv_vs : ["charmed"]
 		},
     		vision : [["Darkvision", 30]],
-		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
 		height : " Obake are typically between 3 and 4 feet tall",
 		weight : " Obake weigh around 40 lb",
 		scorestxt : "+2 to either Wisdom or Charisma and +1 to Constitution",
@@ -644,7 +644,7 @@ RaceList["ningyo obake"] = {
 		toNotesPage : [{
 		name : "Transformation",
 		popupName : "Animal Transformation",
-		note: "\n  \u2022 Animal Transformation (Dog)" + desc([
+		note: "\n  \u2022 Animal Transformation (Koi)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
 			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
 			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
