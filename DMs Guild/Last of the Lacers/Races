@@ -238,3 +238,423 @@ RaceList["desert earth kin"] = {
 			hp : function (totalHD) { return [totalHD, "Hardy"]; }
 		}
 };
+
+RaceList["bake-danuki obake"] = {
+		regExpSearch : /^(?=.*bake)(?=.*danuki)(?=.*obake).*$/i,
+		name : "Bake-Danuki Obake",
+    		sortname : "Obake, Bake-Danuki",
+		source : ["LotL", 0],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Earth Kin reach adulthood at the age of 18 and typically live for less than a century",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Constitution",
+		scores : [0, 0, 1, 0, 0, 0],
+		trait : "Bake-Danuki Obake (+2 Wisdom or Charisma, +1 Constitution)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Tanuki Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller tanuki and other canines. Your Transformation ability allows you to assume the form of a tanuki, see notes\n Statue Form: Can use action to become a statue, counts as petrified until dismissed",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Tanuki)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["hebi obake"] = {
+		regExpSearch : /^(?=.*hebi)(?=.*obake).*$/i,
+		name : "hebi Obake",
+    		sortname : "Obake, Hebi",
+		source : ["LotL", 16],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Intelligence",
+		scores : [0, 0, 0, 1, 0, 0],
+		trait : "Hebi Obake (+2 Wisdom or Charisma, +1 Intelligence)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Snake Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller snakes and other serpents. Your Transformation ability allows you to assume the form of a poisonous snake, see notes\n Camouflage: Creatures have disadv. on Wisdom(Perception) checks when you remain still while hiding",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Poisonous Snake)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["inugami obake"] = {
+		regExpSearch : /^(?=.*inugami)(?=.*obake).*$/i,
+		name : "Inugami Obake",
+    		sortname : "Obake, Inugami",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Strength",
+		scores : [1, 0, 0, 0, 0, 0],
+		trait : "Inugami Obake (+2 Wisdom or Charisma, +1 Strength)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Dog Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller dogs and other canines. Your Transformation ability allows you to assume the form of a dog, see notes\n Keen Senses: Adv. on Wisdom(Perception) checks with hear/smell",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Dog)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+
+RaceList["jorogumo obake"] = {
+		regExpSearch : /^(?=.*jorogumo)(?=.*obake).*$/i,
+		name : "Jorogumo Obake",
+    		sortname : "Obake, Jorogumo",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 },
+			climb : { spd : 10, enc : 5 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Dexterity",
+		scores : [0, 1, 0, 0, 0, 0],
+		trait : "Inugami Obake (+2 Wisdom or Charisma, +1 Dexterity)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Spider Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller spiders and other arachnids. Your Transformation ability allows you to assume the form of a spider, see notes\n Skittering Climber: You gain a climb speed of 10 feet",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Spider)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["kawauso obake"] = {
+		regExpSearch : /^(?=.*kawauso)(?=.*obake).*$/i,
+		name : "Kawauso Obake",
+    		sortname : "Obake, Kawauso",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 },
+			swim : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Dexterity",
+		scores : [0, 1, 0, 0, 0, 0],
+		trait : "Kawauso Obake (+2 Wisdom or Charisma, +1 Dexterity)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Otter Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller otters and other mustelids. Your Transformation ability allows you to assume the form of an otter, see notes\n Swift Swim: You gain a swim speed of 30 feet",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Otter)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["kitsune obake"] = {
+		regExpSearch : /^(?=.*kitsune)(?=.*obake).*$/i,
+		name : "Kitsune Obake",
+    		sortname : "Obake, Kitsune",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		skills : ["Deception"],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Intelligence",
+		scores : [0, 0, 0, 1, 0, 0],
+		trait : "Kitsune Obake (+2 Wisdom or Charisma, +1 Intelligence)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Fox Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller foxes and other canines. Your Transformation ability allows you to assume the form of a fox, see notes\n Cunning Trickster: You gain preficiency in Deception",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Fox)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["mujina obake"] = {
+		regExpSearch : /^(?=.*mujina)(?=.*obake).*$/i,
+		name : "Mujina Obake",
+    		sortname : "Obake, Mujina",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 },
+			burrow : { spd : 10, enc : 5}
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30], ["Tremorsense", 10]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Strength",
+		scores : [1, 0, 0, 0, 0, 0],
+		trait : "Mujina Obake (+2 Wisdom or Charisma, +1 Strength)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Badger Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller badgers and other mustelids. Your Transformation ability allows you to assume the form of a badger, see notes\n Earth Walk: You gain a burrow speed of 10 feet and tremorsense while burrowing",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Badger)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["nekomata obake"] = {
+		regExpSearch : /^(?=.*nekomata)(?=.*obake).*$/i,
+		name : "Nekomata Obake",
+    		sortname : "Obake, Nekomata",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Dexterity",
+		scores : [0, 1, 0, 0, 0, 0],
+		trait : "Nekomata Obake (+2 Wisdom or Charisma, +1 Dexterity)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Cat Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller cats and other felines. Your Transformation ability allows you to assume the form of a cat, see notes\n Agile Climber: You do not need to spend extra movement to climb",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Cat)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
+
+RaceList["ningyo obake"] = {
+		regExpSearch : /^(?=.*ningyo)(?=.*obake).*$/i,
+		name : "Ningyo Obake",
+    		sortname : "Obake, Ningyo",
+		source : ["LotL", 17],
+		plural : "Obake",
+		size : 3,
+		speed : {
+			walk : { spd : 25, enc : 15 },
+			swim : { spd : 15, enc : 5 }
+		},
+		languageProfs : ["Common", "Sylvan"],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+    		vision : [["Darkvision", 30]],
+		age : " Obake lives are mysterious but it seems they cannot die of old age",
+		height : " Obake are typically between 3 and 4 feet tall",
+		weight : " Obake weigh around 40 lb",
+		scorestxt : "+2 to either Wisdom or Charisma and +1 to Constitution",
+		scores : [0, 0, 1, 0, 0, 0],
+		trait : "Ningyo Obake (+2 Wisdom or Charisma, +1 Constitution)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Dog Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller koi and other fish. Your Transformation ability allows you to assume the form of a koi, see notes\n Water Breathing: You can breath water and gain a swim speed of 15 feet",
+		spellcastingBonus : {
+			name : "Spirit Magic",
+			spells : ["druidcraft"],
+			selection : ["druidcraft"],
+			firstCol : 'atwill'
+		},
+		toNotesPage : [{
+		name : "Transformation",
+		popupName : "Animal Transformation",
+		note: "\n  \u2022 Animal Transformation (Dog)" + desc([
+			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
+			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
+			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
+			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
+			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
+			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+		])
+	}]
+};
