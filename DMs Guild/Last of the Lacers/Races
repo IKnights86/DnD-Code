@@ -62,7 +62,7 @@ RaceList["dragon fire folk"] = {
 };
 
 RaceList["qilin fire folk"] = {
-		regExpSearch : /qilin fire folk/i,
+		regExpSearch : /^(?=.*qilin)(?=.*fire)(?=.*folk).*$/i,
 		name : "Qilin Fire Folk",
     		sortname : "Fire Folk, Qilin",
 		source : ["LotL", 0],
@@ -83,7 +83,7 @@ RaceList["qilin fire folk"] = {
 };
 
 RaceList["cenobite air monk"] = {
-		regExpSearch : /cenobite air monk/i,
+		regExpSearch : /^(?=.*cenobite)(?=.*air)(?=.*monk).*$/i,
 		name : "Cenobite Air Monk",
     		sortname : "Air Monk, Cenobite",
 		source : ["LotL", 0],
@@ -119,7 +119,7 @@ RaceList["cenobite air monk"] = {
 };
 
 RaceList["nomad air monk"] = {
-		regExpSearch : /nomad air monk/i,
+		regExpSearch : /^(?=.*nomad)(?=.*air)(?=.*monk).*$/i,
 		name : "nomad Air Monk",
     		sortname : "Air Monk, Nomad",
 		source : ["LotL", 0],
@@ -155,7 +155,7 @@ RaceList["nomad air monk"] = {
 };
 
 RaceList["polar water clan"] = {
-		regExpSearch : /polar water clan/i,
+		regExpSearch : /^(?=.*polar)(?=.*water)(?=.*clan).*$/i,
 		name : "Polar Water Clan",
     		sortname : "Water Clan, Polar",
 		source : ["LotL", 0],
@@ -176,7 +176,7 @@ RaceList["polar water clan"] = {
 };
 
 RaceList["swamp water clan"] = {
-		regExpSearch : /swamp water clan/i,
+		regExpSearch : /^(?=.*swamp)(?=.*water)(?=.*clan).*$/i,
 		name : "Swamp Water Clan",
     		sortname : "Water Clan, Swamp",
 		source : ["LotL", 0],
@@ -196,7 +196,7 @@ RaceList["swamp water clan"] = {
 };
 
 RaceList["city earth kin"] = {
-		regExpSearch : /city earth kin/i,
+		regExpSearch : /^(?=.*city)(?=.*earth)(?=.*kin).*$/i,
 		name : "City Earth Kin",
     		sortname : "Earth Kin, City",
 		source : ["LotL", 0],
@@ -217,7 +217,7 @@ RaceList["city earth kin"] = {
 };
 
 RaceList["desert earth kin"] = {
-		regExpSearch : /desert earth kin/i,
+		regExpSearch : /^(?=.*desert)(?=.*earth)(?=.*kin).*$/i,
 		name : "Desert Earth Kin",
     		sortname : "Earth Kin, Desert",
 		source : ["LotL", 0],
@@ -233,5 +233,8 @@ RaceList["desert earth kin"] = {
 		weight : " Earth Kin weigh around 165 lb (110 + 2d10 \xD7 2d4 lb)",
 		scorestxt : "+2 to Strength and +1 to Constitution",
 		scores : [2, 0, 1, 0, 0, 0],
-		trait : "City Earth Kin (+2 Strength, +1 Constitution)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Harsh Sun: No exhaustion due to natural hot environments\n Hardy: Hit Point Max increases by 1 every level"
+		trait : "Desert Earth Kin (+2 Strength, +1 Constitution)\n Protection of Earth: You may reroll 1 saving throw per SR\n Stance of the Mountain: You have adv. on checks/saving throws against being knocked prone\n Harsh Sun: No exhaustion due to natural hot environments\n Hardy: Hit Point Max increases by 1 every level",
+		calcChanges : {
+			hp : function (totalHD) { return [totalHD, "Hardy"]; }
+		}
 };
