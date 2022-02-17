@@ -1,0 +1,115 @@
+var iFileName = "Last_of_the_Lacers.js";
+RequiredSheetVersion(13);
+// This file adds all material from the Player's Handbook to MPMB's Character Record Sheet
+
+// Define the source
+SourceList.LotL={
+	name : "Last of the Lacers",
+	abbreviation : "LotL",
+	group : "DMs Guild",
+	url : "https://www.dmsguild.com/product/191837/Incarnate-The-Last-of-the-Lacers",
+	date : "2022/02/11"
+};
+
+AddSubClass("barbarian", "path of the elements", {
+	regExpSearch : /^(?=.*elements).*$/i,
+	subname : "Path of the Elements",
+	fullname : "Path of the Elements",
+	source : ["LotL", 19],
+	features : {
+		"subclassfeature3" : {
+			name : "Chosen Element",
+			source : ["LotL", 19],
+			minlevel : 3,
+			description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, once I choose my element I cannot change it even if I later get to choose again.",
+			choices : ["Air", "Earth", "Fire", "Water"],
+			"air" : {
+				name : "Airlacer",
+				description : "\n   " + "I gain basic Airlacing, I cannot use this while raging. (see notes)",
+        toNotesPage : [{
+				name : "Airlacing",
+				source : ["LotL", 66],
+				popupName : "Basic Airlacing",
+				note : [
+					"Initiation Time: 1 action",
+          "Range: 30 feet",
+          "Duration: Instantaneous\n",
+          " Anyone who is an Airlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          " You create a harmless sensory effect using air, such as causing leaves to rustle or wind to slam shutters.",
+          " Until the end of your next turn, ranged weapon attacks against you are made with disadvantage.",
+          " You create a small blast of air which moves one unattended object within 30 feet that weighs no more than 5 pounds up to 10 feet in any direction.",
+          " Your movement speed is doubled until the end of your turn.",
+          " The area you can affect increases by 5 feet and the weight of objects you can move increases by 5 pounds when you reach 5th level (10-foot cube, 10 pounds), 11th level (15-foot cube, 15 pounds), and 17th level (20-foot cube, 20 pounds)."
+				  ]
+			  }]
+			},
+			"earth" : {
+				name : "Earthlacer",
+				description : "\n   " + "I gain basic Earthlacing, I cannot use this while raging. (see notes)",
+        toNotesPage : [{
+				name : "Earthlacing",
+				source : ["LotL", 66],
+				popupName : "Basic Earthlacing",
+				note : [
+					"Initiation Time: 1 action",
+          "Range: 30 feet",
+          "Duration: Instantaneous\n",
+          " Anyone who is an Earthlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          " You cause earth to form into simple shapes and animate at your direction.",
+          " You can cause dirt or stone you target to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain.",
+          " You can target loose earth, instantly excavating it and depositing it up to 5 feet away. This movement doesn't have enough force to cause damage.",
+          " You target one stone or earthen wall within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          " The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15-foot cube), and 17th level (20-foot cube)."
+				  ]
+			  }]
+			},
+			"fire" : {
+				name : "Firelacer",
+				description : "\n   " + "I gain basic Firelacing, I cannot use this while raging. (see notes)",
+        toNotesPage : [{
+				name : "Firelacing",
+				source : ["LotL", 56],
+				popupName : "Basic Firelacing",
+				note : [
+					"Initiation Time: 1 action",
+          "Range: 30 feet",
+          "Duration: Instantaneous\n",
+          " Anyone who is an Firelacer can initiate the following effects as an action within a 5-foot cube.\n",
+          " You cause fire to form into simple shapes and animate at your direction.",
+          " You can cause a flickering flame to appear from your body (usually in your hand). The flame remains there as long as you concentrate, and harms neither you nor your equipment. The flame sheds bright light in a 30- foot radius and dim light for an additional 30 feet.",
+          " You can instantly expand any existing flame in one direction, provided that wood or other fuel is present in the location.",
+          " You instantly extinguish any flames within a 5-foot cube.",
+          " The area you can affect increases by 5 feet and the amount of bright light your fire produces increases by 10 feet when you reach 5th level (10-foot cube, 40 feet of bright light), 11th level (15-foot cube, 50 feet of bright light), and 17th level (20-foot cube, 60 feet of bright light)."
+				  ]
+			  }]
+			},
+      "water" : {
+        name : "Waterlacer",
+				description : "\n   " + "I gain basic Waterlacing, I cannot use this while raging. (see notes)",
+        toNotesPage : [{
+				name : "Waterlacing",
+				source : ["LotL", 76],
+				popupName : "Basic Waterlacing",
+				note : [
+					"Initiation Time: 1 action",
+          "Range: 30 feet",
+          "Duration: Instantaneous\n",
+          " Anyone who is an Waterlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          " You cause water to form into simple shapes and animate at your direction. This includes all forms of water, such as water vapor or ice, as do other basic lacing effects.",
+          " You freeze water. If a creature is in the water, it must use a bonus action to make a DC 5 Strength check to escape.",
+          " You concentrate, drawing out all impurities from water. All nonmagical drink is purified and separated from any poison.",
+          " You target one wall made of snow or ice within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          " The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15th-foot cube), and 17th level (20-foot cube)."
+				  ]
+			  }]
+		  }
+	  },
+		"subclassfeature3.1" : {
+      name : "Elemental Fury",
+			source : ["LotL", 19],
+			minlevel : 3,
+			description : "\n   " + "When I enter my rage and as a bonus action when I am raging I can cause my element to swirl around me in a 10 ft radius battering my foes. Choose one other creature to make a Dex save or take 1d6 blud. damage on a failed save or half as much on a success, +1d6 at 10th, 15th, and 20th lvl.",
+      action : ["bonus action", ""]
+		}
+  }
+});
