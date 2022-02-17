@@ -244,13 +244,6 @@ AddSubClass("fighter", "pro-lacer", {
 			minlevel : 3,
 			description : "\n   " + "As an action, I can become invisible in dim light or darkness until I attack/cast",
 			action : ["action", ""]
-		},
-		"subclassfeature17" : {
-			name : "Opportunist",
-			source : ["P", 80],
-			minlevel : 17,
-			description : "\n   " + "As a reaction, if a creature in 5 ft is hit by another, I can make a melee attack vs. it",
-			action : ["reaction", ""]
 		}
 	}
 });
