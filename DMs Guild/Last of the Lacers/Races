@@ -270,17 +270,12 @@ RaceList["bake-danuki obake"] = {
 		toNotesPage : [{
 		name : "Transformation",
 		popupName : "Animal Transformation",
-		note: "\n  \u2022 Animal Transformation (Tanuki)" + desc([
+		note : "\n  \u2022 Animal Transformation (Tanuki)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -318,15 +313,10 @@ RaceList["hebi obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Poisonous Snake)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -364,15 +354,10 @@ RaceList["inugami obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Dog)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -412,15 +397,10 @@ RaceList["jorogumo obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Spider)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -459,15 +439,10 @@ RaceList["kawauso obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Otter)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -506,15 +481,10 @@ RaceList["kitsune obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Fox)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -553,15 +523,10 @@ RaceList["mujina obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Badger)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -599,15 +564,10 @@ RaceList["nekomata obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Cat)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
@@ -634,7 +594,7 @@ RaceList["ningyo obake"] = {
 		weight : " Obake weigh around 40 lb",
 		scorestxt : "+2 to either Wisdom or Charisma and +1 to Constitution",
 		scores : [0, 0, 1, 0, 0, 0],
-		trait : "Ningyo Obake (+2 Wisdom or Charisma, +1 Constitution)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Dog Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller koi and other fish. Your Transformation ability allows you to assume the form of a koi, see notes\n Water Breathing: You can breath water and gain a swim speed of 15 feet",
+		trait : "Ningyo Obake (+2 Wisdom or Charisma, +1 Constitution)\n Fey Ancestry: adv. on saves vs charm and magic can't put you to sleep\n Spirit Magic: You know the druidcraft cantrip\n Koi Spirit: Through sounds and gestures, you can communicate simple ideas to Small or smaller koi and other fish. Your Transformation ability allows you to assume the form of a koi, see notes\n Water Breathing: You can breath water and gain a swim speed of 15 feet",
 		spellcastingBonus : {
 			name : "Spirit Magic",
 			spells : ["druidcraft"],
@@ -646,15 +606,10 @@ RaceList["ningyo obake"] = {
 		popupName : "Animal Transformation",
 		note: "\n  \u2022 Animal Transformation (Koi)" + desc([
 			"Your Transformation ability allows you to take the form of an animal. The following rules outline how this transformation works.",
-			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom,
-			and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
-			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had
-			before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you
-			take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
-			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form.
-			Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
-			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you
-			can't use any of your special senses, such as darkvision, unless your new form also has that sense."
+			"  When you take animal form, your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature.",
+			"  When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and only have 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
+			"  You can't initiate forms or cast spells, and your ability to speak or take any actions that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a form or spell you've already cast, however, or prevent you from taking actions that are part of a form or spell, such as smoke cloud.",
+			"  You retain the benefit of any features from your class, race, or other sources and can use them if your animal form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense."
 		])
 	}]
 };
