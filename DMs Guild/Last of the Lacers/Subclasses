@@ -1,8 +1,6 @@
-var iFileName = "Last_of_the_Lacers.js";
+var iFileName = "Last_of_the_Lacers_SubClasses.js";
 RequiredSheetVersion(13);
-// This file adds all material from the Player's Handbook to MPMB's Character Record Sheet
 
-// Define the source
 SourceList.LotL={
 	name : "Last of the Lacers",
 	abbreviation : "LotL",
@@ -155,6 +153,41 @@ AddSubClass("barbarian", "path of the elements"), {
 			source : ["LotL", 19],
 			minlevel : 14,
 			description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, must choose the element I chose at 3rd level.",
+			choices : ["Air", "Earth", "Fire", "Water"],
+			"air" : {
+				name : "Air",
+				description : "\n   " + "My movement increases by 20 feet and when I make a successful attack against a creature I can choose to blast it with air and move it 10 feet.",
+				speed : {
+					walk : { spd : "+20", enc : 0 }
+				}
+			},
+			"earth" : {
+				name : "Earth",
+				description : "\n   " + "I gain a burrow speed of 20 feet and my tremorsense increases to 30 feet. Additionally the ground around you in a 10ft radius is difficult terrain.",
+				vision : [["Tremorsense", 30]],
+				speed : {
+					burrow : { spd : 20, enc : 10 }
+				}
+			},
+			"fire" : {
+				name : "Fire",
+				description : "\n   " + "I am immune to fire damage and am resistant to cold damage. When I take damage from a creature within 5 ft of me I can use elemental fury as a reaction against that creature.",
+				dmgres : ["cold"],
+				savetxt : {
+					immune : ["fire"]
+				},
+				action : {
+					["reaction", "elemental fury"]
+				}
+			},
+      			"water" : {
+        			name : "Water",
+				description : "\n   " + "I am immune to cold damage and resistent to fire damage. Additionally when I miss an attack I can immediately make another attack once per turn.",
+				dmgres : ["fire"],
+				savetxt : {
+					immune : ["cold"]
+				}
+		  	}
 		}
 	}
 };
