@@ -1,0 +1,37 @@
+var iFileName = "Gnome [From Aaoe, transcribed by IKnights86].js";
+RequiredSheetVersion(13);
+
+SourceList.Aaoe={
+	name : "The World of Aaoe",
+	abbreviation : "Aaoe",
+	group : "Core Sources",
+	date : "12/26/2022"
+};
+
+RaceList["gnome"] = {
+	regExpSearch : /^(?=.*gnome).*$/i,
+	name : "Gnome",
+	sortname : "Gnome, Aaoe",
+	source : ["Aaoe", 0],
+	plural : "Gnomes",
+	size : 4,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	languageProfs : ["Gnomish"],
+	savetxt : { text : ["Adv. on Int/Wis/Cha saves"] },
+	age : " start adult life around age 40 and can live 350 to almost 500 years",
+	height : " are 3 to 4 feet tall (2'11\" + 2d4\")",
+	weight : " weigh around 40 lb (35 + 2d4 lb)",
+	heightMetric : " are 90 to 120 cm tall (2'11\" + 5d4)",
+	weightMetric : " weigh around 18 kg (16 + 5d4 / 10 kg)",
+	scores : [0, 0, 0, 3, 2, 0],
+	trait : "Gnome (+3 Intelligence, +2 Wisdom or Charisma)" + (typePF ? "\n" : " ") + "\nNatural Illusionist:\n   I know the Minor Illusion cantrip. Intelligence is my spellcasting ability for it.",
+	spellcastingAbility : 4,
+	spellcastingBonus : {
+		name : "Natural Illusionist",
+		spells : ["minor illusion"],
+		selection : ["minor illusion"],
+		firstCol : "atwill"
+	}
+};
