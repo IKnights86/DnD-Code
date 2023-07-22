@@ -1,0 +1,32 @@
+RaceList["clockwork"] = {
+	regExpSearch : /clockwork/i,
+	name : "Clockwork",
+	source : [["HB", 0]],
+	plural : "Clockwork",
+	size : 3,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	languageProfs : ["Bianar", 1],
+	toolProfs : [["Any tool", 1]],
+	skillstxt : "Choose any one skill and any one tool",
+	savetxt : {
+		text : ["Magic can't put me to sleep"],
+		immune : ["disease", "magical aging effects"],
+		adv_vs : ["poison"]
+	},
+	dmgres : ["Poison"],
+	age : " Clockworks are created with the knowledge of an adult mortal and could live indefinitely as long as their heart is fueled every day. You are immune to magical aging effects.",
+	height : " stand between 6 and 7 feet tall (5'10\" + 2d6\")",
+	weight : " weigh around 300 lb (270 + 2d6 \xD7 4 lb)",
+	heightMetric : " stand between 1,8 and 2,1 metres tall (178 + 5d6 cm)",
+	weightMetric : " weigh around 135 kg (125 + 5d6 \xD7 8 / 10 kg)",
+	scorestxt : "Ability score bonuses come from background",
+	scores : [0, 0, 0, 0, 0, 0],
+	trait : "Warforged (+2 Constitution and +1 to one other ability score" + (typePF ? "" : " of my choice") + ")\nWarforged Resilience: I do not need to sleep, eat, drink, or breathe.\nSentry's Rest: To benefit from a long rest, I need to enter an inactive state for 6 hours, during which I am not rendered unconscious and can see and hear as normal.\nIntegrated Protection: I gain +1 AC and I can don only armor with which I'm proficient. To don or doff armor, I must (un)incorporate it into my body over the course of 1 hour, which can be done during resting. My armor can't be removed against my will while I'm alive.",
+	extraAC : {
+		name : "Integrated Protection",
+		mod : 1,
+		text : "I gain a +1 bonus to AC."
+	}
+};
