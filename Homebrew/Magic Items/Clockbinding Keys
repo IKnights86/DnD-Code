@@ -1,0 +1,23 @@
+var iFileName = "Clockbinding Keys.js";
+
+RequiredSheetVersion("13.0.0");
+
+MagicItemsList["clockbinding keys"] = {
+	name : "Clockbinding Keys",
+	source : ["HB", 0],
+	defaultExcluded : true,
+	type : "wondrous item",
+	rarity : "artifact",
+	notLegalAL : true,
+	attunement : false,
+	allowDuplicates : false,
+	description : "Set of Tinkerer's Tools made of 3 keys rumored to fix anything. These tools allow you to cast mending at will. If you cast mending on an inorganic creature they instead regain 1d4 hit points. Tools fixed with this item give a +1 bonus to rolls when used.",
+	descriptionLong : "Tinkers tools from the lost city of Filigree. They make up three keys in a set, one thin and gold, one of thick iron, and a third of vorpal fold. These tools are rumored to repair anything. These tools allow you to cast mending at will. If you cast mending on an inorganic creature they instead regain 1d4 hit points. Tools fixed with this item give a +1 bonus to rolls when used.",
+  spellFirstColTitle : "at will",
+		spellcastingBonus : {
+			name : "at will",
+			spells : ["mending"],
+			selection : ["mending"],
+			firstCol : 1
+		}
+}
