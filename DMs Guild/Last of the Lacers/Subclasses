@@ -9,3 +9,310 @@ SourceList.LotL={
 	date : "2022/02/11"
 };
 
+AddSubClass("barbarian", "path of the elements"){
+
+		regExpSearch : /^(?=.*path)(?=.*of)(?=.*the)(?=.*elements).*$/i, //required; regular expression of what to look for (i.e. now it looks for any entry that has both the words "special" and "me" in it, disregarding capitalization). If this looks too complicated, just write: /specialme/i
+
+		subname : "Path of the Elements", //required; the name of the subclass
+
+		source : ["LotL", 19], //required; the source and the page number. "HB" stands for homebrew. See the "Complete SourceList" for an overview of sources that are already defined. Or define a new source using the "Homebrew Syntax - SourceList.js". // This can be an array of arrays to indicate the things appears in multiple sources. For example, if something appears on page 7 of the Elemental Evil Player's Companion and on page 115 of the Sword Coast Adventure Guide, use the following: [["E", 7], ["S", 115]]
+
+		// after defining the above three, you don't need to define anything more, but you can. Defining more stuff will overwrite the entries as they are given in the ClassList. So if you do not need something to be different than the basics of the class (for example, you subclass uses the same spellcasting ability), then you don't need to define it again.
+		// For the syntax of how to define more stuff, look at the ClassList (see "Homebrew Syntax - ClassList.js"). You can define all the same stuff in the same way. The below are a couple of examples:
+
+		fullname : "Path of the Elements", //if no fullname is defined it will be automatically generated as "Class Name (Subclass name)". In this example that would be: "MyClass (Path of SpecialMe)"
+
+		features : { //unlike the other entries, "features" will not delete all the features from the ClassList, but will add to the features in the ClassList. For this to work properly, the feature object has to be named "subclassfeatureX" and not something appropriate for the feature. The below are the features of the purple Dragon Knight
+
+			"subclassfeature3" : { 
+				name : "Chosen Element",
+				source : ["LotL", 19],
+				minlevel : 3,
+				description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, once I choose my element I cannot change it even if I later get to choose again.",
+				choices : ["Air", "Earth", "Fire", "Water"],
+				"air" : {
+					name : "Airlacer",
+					description : "\n   " + "I gain basic Airlacing, I cannot use this while raging. (see notes)",
+       	 				toNotesPage : [{
+						name : "Airlacing",
+						source : ["LotL", 66],
+						popupName : "Basic Airlacing",
+						note : [
+							"Initiation Time: 1 action",
+          						"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Airlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You create a harmless sensory effect using air, such as causing leaves to rustle or wind to slam shutters.",
+          						"Until the end of your next turn, ranged weapon attacks against you are made with disadvantage.",
+          						"You create a small blast of air which moves one unattended object within 30 feet that weighs no more than 5 pounds up to 10 feet in any direction.",
+          						"Your movement speed is doubled until the end of your turn.",
+          						"The area you can affect increases by 5 feet and the weight of objects you can move increases by 5 pounds when you reach 5th level (10-foot cube, 10 pounds), 11th level (15-foot cube, 15 pounds), and 17th level (20-foot cube, 20 pounds)."
+						]
+					}]
+				},
+				"earth" : {
+					name : "Earthlacer",
+					description : "\n   " + "I gain basic Earthlacing, I cannot use this while raging. (see notes)",
+        				toNotesPage : [{
+						name : "Earthlacing",
+						source : ["LotL", 66],
+						popupName : "Basic Earthlacing",
+						note : [
+							"Initiation Time: 1 action",
+          						"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Earthlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You cause earth to form into simple shapes and animate at your direction.",
+          						"You can cause dirt or stone you target to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain.",
+          						"You can target loose earth, instantly excavating it and depositing it up to 5 feet away. This movement doesn't have enough force to cause damage.",
+          						"You target one stone or earthen wall within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          						"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15-foot cube), and 17th level (20-foot cube)."
+				  		]
+			  		}]
+				},
+				"fire" : {
+					name : "Firelacer",
+					description : "\n   " + "I gain basic Firelacing, I cannot use this while raging. (see notes)",
+        				toNotesPage : [{
+						name : "Firelacing",
+						source : ["LotL", 56],
+						popupName : "Basic Firelacing",
+						note : [
+							"Initiation Time: 1 action",
+							"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Firelacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You cause fire to form into simple shapes and animate at your direction.",
+          						"You can cause a flickering flame to appear from your body (usually in your hand). The flame remains there as long as you concentrate, and harms neither you nor your equipment. The flame sheds bright light in a 30- foot radius and dim light for an additional 30 feet.",
+	          					"You can instantly expand any existing flame in one direction, provided that wood or other fuel is present in the location.",
+	          					"You instantly extinguish any flames within a 5-foot cube.",
+          						"The area you can affect increases by 5 feet and the amount of bright light your fire produces increases by 10 feet when you reach 5th level (10-foot cube, 40 feet of bright light), 11th level (15-foot cube, 50 feet of bright light), and 17th level (20-foot cube, 60 feet of bright light)."
+				  		]
+			  		}]
+				},
+      				"water" : {
+	        			name : "Waterlacer",
+					description : "\n   " + "I gain basic Waterlacing, I cannot use this while raging. (see notes)",
+	        			toNotesPage : [{
+						name : "Waterlacing",
+						source : ["LotL", 76],
+						popupName : "Basic Waterlacing",
+						note : [
+							"Initiation Time: 1 action",
+	          					"Range: 30 feet",
+	          					"Duration: Instantaneous\n",
+	          					"Anyone who is an Waterlacer can initiate the following effects as an action within a 5-foot cube.\n",
+	          					"You cause water to form into simple shapes and animate at your direction. This includes all forms of water, such as water vapor or ice, as do other basic lacing effects.",
+	          					"You freeze water. If a creature is in the water, it must use a bonus action to make a DC 5 Strength check to escape.",
+	          					"You concentrate, drawing out all impurities from water. All nonmagical drink is purified and separated from any poison.",
+	          					"You target one wall made of snow or ice within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+	          					"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15th-foot cube), and 17th level (20-foot cube)."
+					  	]
+				  	}]
+		  		},
+			},
+			"subclassfeature3.1" : {
+      				name : "Elemental Fury",
+				source : ["LotL", 19],
+				minlevel : 3,
+				description : "\n   " + "When I enter my rage and as a bonus action when I am raging I can cause my element to swirl around me in a 10 ft radius battering my foes. Choose one other creature to make a Dex save or take 1d6 blud. damage on a failed save or half as much on a success, +1d6 at 10th, 15th, and 20th lvl.",
+      				action : ["bonus action", ""]
+  			},
+			"subclassfeature6" : {
+				name : "Boon of the Elements",
+				source : ["LotL", 19],
+				minlevel : 6,
+				description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, must choose the element I chose at 3rd level.",
+				choices : ["Air", "Earth", "Fire", "Water"],
+				"air" : {
+					name : "Air",
+					description : "\n   " + "My jump distance is doubled, and falling damage is reduced by an amount equal to 5 times my barbarian level."
+				},
+				"earth" : {
+					name : "Earth",
+					description : "\n   " + "You are unaffected by difficult terrain, and gain tremorsense to a range of 10 feet. You gain the ability to move along vertical surfaces and ceilings made of earth or stone while leaving your hands free. You also gain a climbing speed equal to your walking speed.",
+					vision : [["Tremorsense", 10]],
+					speed : {
+						climb : { spd : "walk", enc : "walk" }
+					}
+				},
+				"fire" : {
+					name : "Fire",
+					description : "\n   " + "A creature that moves within 5 feet of you for the first time on a turn or starts its turn there takes 1d6 fire damage."
+				},
+	      			"water" : {
+	        			name : "Waterlacer",
+					description : "\n   " + "When you initiate a rage, you gain a number of temporary hit points equal to your Wisdom modifier + your barbarian level. Any remaining temporary hit points are lost when your rage ends."
+			  	}
+		  	},
+			"subclassfeature10" : {
+				name : "One with Nature",
+				source : ["LotL", 19],
+				minlevel : 10,
+				description : "\n   " + "I can cast commune with nature as a ritual.",
+				spellcastingBonus : {
+					name : "Commune with Nature",
+					spells : ["commune with nature"],
+					selection : ["commune with nature"],
+					firstCol : 'R'
+				}
+			},
+			"subclassfeature14" : {
+				name : "Spiritual Might",
+				source : ["LotL", 19],
+				minlevel : 14,
+				description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, must choose the element I chose at 3rd level.",
+				choices : ["Air", "Earth", "Fire", "Water"],
+				"air" : {
+					name : "Air",
+					description : "\n   " + "My movement increases by 20 feet and when I make a successful attack against a creature I can choose to blast it with air and move it 10 feet.",
+					speed : {
+						walk : { spd : "+20", enc : "+20" }
+					}
+				},
+				"earth" : {
+					name : "Earth",
+					description : "\n   " + "I gain a burrow speed of 20 feet and my tremorsense increases to 30 feet. Additionally the ground around you in a 10ft radius is difficult terrain.",
+					vision : [["Tremorsense", 30]],
+					speed : {
+						burrow : { spd : 10, enc : 0 }	// barbarian adds 10 to movement so I put the burrow speed at 10 so it should be 20 on the sheet
+					}
+				},
+				"fire" : {
+					name : "Fire",
+					description : "\n   " + "I am immune to fire damage and am resistant to cold damage. When I take damage from a creature within 5 ft of me I can use elemental fury as a reaction against that creature.",
+					dmgres : ["cold"],
+					savetxt : {
+						immune : ["fire"]
+					},
+					action : ["reaction", "Elemental Fury (when damaged)"]
+				},
+					"water" : {
+	        			name : "Water",
+					description : "\n   " + "I am immune to cold damage and resistent to fire damage. Additionally when I miss an attack I can immediately make another attack once per turn.",
+					dmgres : ["fire"],
+					savetxt : {
+						immune : ["cold"]
+					}
+			  	}
+			}
+		}
+	}
+);
+AddSubClass("fighter", "pro lacer"){
+		regExpSearch : /^(?=.*pro)(?=.*lacer).*$/i,
+		subname : "Pro Lacer",
+		source : ["LotL", 20], 
+		fullname : "Pro Lacer",
+		features : {
+			"subclassfeature3" : { 
+				name : "Chosen by the Elements",
+				source : ["LotL", 20],
+				minlevel : 3,
+				description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, once I choose my element I cannot change it even if I later get to choose again.",
+				choices : ["Air", "Earth", "Fire", "Water"],
+				"air" : {
+					name : "Airlacer",
+					description : "\n   " + "I gain basic Airlacing. (see notes)",
+       	 				toNotesPage : [{
+						name : "Airlacing",
+						source : ["LotL", 66],
+						popupName : "Basic Airlacing",
+						note : [
+							"Initiation Time: 1 action",
+          						"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Airlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You create a harmless sensory effect using air, such as causing leaves to rustle or wind to slam shutters.",
+          						"Until the end of your next turn, ranged weapon attacks against you are made with disadvantage.",
+          						"You create a small blast of air which moves one unattended object within 30 feet that weighs no more than 5 pounds up to 10 feet in any direction.",
+          						"Your movement speed is doubled until the end of your turn.",
+          						"The area you can affect increases by 5 feet and the weight of objects you can move increases by 5 pounds when you reach 5th level (10-foot cube, 10 pounds), 11th level (15-foot cube, 15 pounds), and 17th level (20-foot cube, 20 pounds)."
+						]
+					}]
+				},
+				"earth" : {
+					name : "Earthlacer",
+					description : "\n   " + "I gain basic Earthlacing. (see notes)",
+        				toNotesPage : [{
+						name : "Earthlacing",
+						source : ["LotL", 66],
+						popupName : "Basic Earthlacing",
+						note : [
+							"Initiation Time: 1 action",
+          						"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Earthlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You cause earth to form into simple shapes and animate at your direction.",
+          						"You can cause dirt or stone you target to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain.",
+          						"You can target loose earth, instantly excavating it and depositing it up to 5 feet away. This movement doesn't have enough force to cause damage.",
+          						"You target one stone or earthen wall within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          						"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15-foot cube), and 17th level (20-foot cube)."
+				  		]
+			  		}]
+				},
+				"fire" : {
+					name : "Firelacer",
+					description : "\n   " + "I gain basic Firelacing. (see notes)",
+        				toNotesPage : [{
+						name : "Firelacing",
+						source : ["LotL", 56],
+						popupName : "Basic Firelacing",
+						note : [
+							"Initiation Time: 1 action",
+							"Range: 30 feet",
+          						"Duration: Instantaneous\n",
+          						"Anyone who is an Firelacer can initiate the following effects as an action within a 5-foot cube.\n",
+          						"You cause fire to form into simple shapes and animate at your direction.",
+          						"You can cause a flickering flame to appear from your body (usually in your hand). The flame remains there as long as you concentrate, and harms neither you nor your equipment. The flame sheds bright light in a 30- foot radius and dim light for an additional 30 feet.",
+	          					"You can instantly expand any existing flame in one direction, provided that wood or other fuel is present in the location.",
+	          					"You instantly extinguish any flames within a 5-foot cube.",
+          						"The area you can affect increases by 5 feet and the amount of bright light your fire produces increases by 10 feet when you reach 5th level (10-foot cube, 40 feet of bright light), 11th level (15-foot cube, 50 feet of bright light), and 17th level (20-foot cube, 60 feet of bright light)."
+				  		]
+			  		}]
+				},
+      				"water" : {
+	        			name : "Waterlacer",
+					description : "\n   " + "I gain basic Waterlacing. (see notes)",
+	        			toNotesPage : [{
+						name : "Waterlacing",
+						source : ["LotL", 76],
+						popupName : "Basic Waterlacing",
+						note : [
+							"Initiation Time: 1 action",
+	          					"Range: 30 feet",
+	          					"Duration: Instantaneous\n",
+	          					"Anyone who is an Waterlacer can initiate the following effects as an action within a 5-foot cube.\n",
+	          					"You cause water to form into simple shapes and animate at your direction. This includes all forms of water, such as water vapor or ice, as do other basic lacing effects.",
+	          					"You freeze water. If a creature is in the water, it must use a bonus action to make a DC 5 Strength check to escape.",
+	          					"You concentrate, drawing out all impurities from water. All nonmagical drink is purified and separated from any poison.",
+	          					"You target one wall made of snow or ice within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+	          					"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15th-foot cube), and 17th level (20-foot cube)."
+					  	]
+				  	}]
+		  		},
+			},
+			"subclassfeature7" : {
+				name : "Royal Envoy",
+				source : ["S", 128],
+				minlevel : 7,
+				description : "\n   " + "I gain proficiency and expertise with the Persuasion skill" + "\n   " + "If already proficient, I can choose Animal Handling, Insight, Intimidation, or Perform.",
+				skillstxt : "\n\n" + toUni("Purple Dragon Knight (Royal Envoy)") + ": Persuasion proficiency and expertise; if already proficient, choose one from Animal Handling, Insight, Intimidation, and Performance.",
+				skills : ["Persuasion"],
+			},
+			"subclassfeature10" : {
+				name : "Inspiring Surge",
+				source : ["S", 128],
+				minlevel : 10,
+				description : "\n   " + "When I use my Action Surge, I can inspire an ally within 60 ft that can see or hear me" + "\n   " + "The ally can then use its reaction to make one melee or ranged weapon attack",
+				additional : ["", "", "", "", "", "", "", "", "", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "2 allies", "2 allies", "2 allies"],
+			},
+			"subclassfeature15" : {
+				name : "Bulwark",
+				source : ["S", 128],
+				minlevel : 15,
+				description : "\n   " + "When I use Indomitable to reroll a Int, Wis, or Cha save, I can extend it to an ally" + "\n   " + "The ally can reroll its failed saving throw against the same affect" + "\n   " + "It only works if I'm not incapacitated, the ally is within 60 ft and can see or hear me",
+			},
+		}
+	}
+);
