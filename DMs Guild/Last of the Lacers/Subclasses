@@ -338,175 +338,124 @@ AddSubClass("fighter", "pro-lacer", {
 			source : ["LotL", 20],
 			minlevel : 3,
 			description : "\n   " + "Use the \"Choose Feature\" button above to add a Trick Shot to the third page. Can only use one trick shot per attack.",
+			additional : levels.map(function(n) {
+				if (n < 3) return "";
+				return (n < 7 ? 3 : n < 10 ? 5 : n < 15 ? 7 : 9) + " known";
+			}),
 			extraname : "Trick Shot",
 			extrachoices : ["Broken Base", "Disarming Shot", "Distracting Shot", "Double Shot", "Elemental Assault", "Feinting Shot", "Goading Shot", "Graceful Fighting", "Lunging Shot", "Maneuvering Shot", "Menacing Shot", "Parry", "Rally", "Shot Caller"],
-			"broken base" : {
-				name : "Broken Base",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to attempt to knock the target
-					down. You add the Ki Die to the attack's damage roll, and if the
-					target is Large or smaller, it must make a Strength saving throw.
-					On a failed save, you knock the target prone."
+			"broken base": {
+			        "name": "Broken Base",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to knock the target down. I add the Ki Die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, I knock the target prone."
 			},
-			"disarming shot" : {
-				name : "Disarming Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to attempt to disarm the
-					target, forcing it to drop one item of your choice that it's holding.
-					You add the Ki Die to the attack's damage roll, and the target
-					must make a Strength saving throw. On a failed save, it drops the
-					object you choose. The object lands at its feet."
+			"disarming shot": {
+			        "name": "Disarming Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to disarm the target, forcing it to drop one item of my choice that it's holding. I add the Ki Die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object I choose. The object lands at its feet."
 			},
-			"distracting shot" : {
-				name : "Distracting Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to distract the creature, giving
-					your allies an opening. You add the Ki Die to the attack's damage
-					roll. The next attack roll against the target by an attacker other
-					than you has advantage if the attack is made before the start of
-					your next turn."
+			"distracting shot": {
+			        "name": "Distracting Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to distract the creature, giving my allies an opening. I add the Ki Die to the attack's damage roll. The next attack roll against the target by an attacker other than me has advantage if the attack is made before the start of my next turn."
 			},
-			"double shot" :{
-				name : "Double Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to attempt to damage another
-					creature with the same attack. Choose another creature within 5
-					feet of the original target and within your reach. If the original
-					attack roll would hit the second creature, it takes damage equal
-					to the number you roll on your Ki Die. The damage is of the
-					same type dealt by the original attack."
+			"double shot": {
+			        "name": "Double Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to damage another creature with the same attack. I choose another creature within 5 feet of the original target and within my reach. If the original attack roll would hit the second creature, it takes damage equal to the number I roll on my Ki Die. The damage is of the same type dealt by the original attack."
 			},
-			"elemental assault" : {
-				name : "Elemental Assault",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an
-					elemental attack, you can expend one Ki Die to attempt to drive
-					the target back. You add the Ki Die to the attack's damage roll,
-					and if the target is Large or smaller, it must make a Strength
-					saving throw. On a failed save, you push the target up to 15 feet
-					away from you."
+			"elemental assault": {
+			        "name": "Elemental Assault",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to drive the target back. I add the Ki Die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, I push the target up to 15 feet away from me."
 			},
-			"feinting shot" : {
-				name : "Feinting Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "You can expend on Ki Die and use a bonus
-					action on your turn to feint, choosing one creature within 5 feet
-					of you as your target. You have advantage on your next attack
-					roll against that creature. If that attack hits, add the Ki Die to the
-					attack's damage roll."
+			"feinting shot": {
+			        "name": "Feinting Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   I can expend on Ki Die and use a bonus action on my turn to feint, choosing one creature within 5 feet of me as my target. I have advantage on my next attack roll against that creature. If that attack hits, I add the Ki Die to the attack's damage roll."
 			},
-			"goading shot" : {
-				name : "Goading Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to attempt to goad the target
-					into attacking you. You add the Ki Die to the attack's damage
-					roll, and the target must make a Wisdom saving throw. On a
-					failed save, the target has disadvantage on all attack rolls against
-					targets other than you until the end of your next turn."
+			"goading shot": {
+			        "name": "Goading Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to goad the target into attacking me. I add the Ki Die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than me until the end of my next turn."
 			},
-			"graceful fighting" : {
-				name : "Graceful Fighting",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you move, you can expend one Ki
-					Die, rolling the die and adding the number rolled to your AC
-					until you stop moving."
+			"graceful fighting": {
+			        "name": "Graceful Fighting",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I move, I can expend one Ki Die, rolling the die and adding the number rolled to my AC until I stop moving."
 			},
-			"lunging shot" : {
-				name : "Lunging Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you make an elemental strike on your
-					turn, you can expend one Ki Die to increase the short range of
-					that elemental strike by 10 feet, and the long range by 30 feet. If
-					you hit, you add the Ki Die to the attack's damage roll."
+			"lunging shot": {
+			        "name": "Lunging Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I make an elemental strike on my turn, I can expend one Ki Die to increase the short range of that elemental strike by 10 feet, and the long range by 30 feet. If I hit, I add the Ki Die to the attack's damage roll."
 			},
-			"maneuvering shot" : {
-				name : "Maneuvering Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an
-					elemental attack, you can expend one Ki Die to maneuver one of
-					your comrades into a more advantageous position. You add the
-					Ki Die to the attack's damage roll, and you choose a friendly
-					creature which can see or hear you. That creature can use its
-					reaction to move up to half its speed without provoking
-					opportunity attacks from the target of your attack."
+			"maneuvering shot": {
+			        "name": "Maneuvering Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to maneuver one of my comrades into a more advantageous position. I add the Ki Die to the attack's damage roll, and I choose a friendly creature which can see or hear me. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of my attack."
 			},
-			"menacing shot" : {
-				name : "Menacing Shot",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you hit a creature with an elemental
-					attack, you can expend one Ki Die to attempt to frighten the
-					target. You add the Ki Die to the attack's damage roll, and the
-					target must make a Wisdom saving throw. On a failed save, it is
-					frightened of you until the end of your next turn."
+			"menacing shot": {
+			        "name": "Menacing Shot",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I hit a creature with an elemental attack, I can expend one Ki Die to attempt to frighten the target. I add the Ki Die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of me until the end of my next turn."
 			},
-			"parry" : {
-				name : "Parry",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When another creature which is within 5 feet of you
-					damages you with a weapon attack, you can use your reaction
-					and expend one Ki Die to reduce the damage by the number you
-					roll on your Ki Die + your Strength or Dexterity modifier."
+			"parry": {
+			        "name": "Parry",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When another creature which is within 5 feet of me damages me with a weapon attack, I can use my reaction and expend one Ki Die to reduce the damage by the number I roll on my Ki Die + my Strength or Dexterity modifier."
 			},
-			"rally" : {
-				name : "Rally",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "On your turn, you can use a bonus action and expend
-					one Ki Die to bolster the resolve of one of your companions.
-					When you do so, choose a friendly creature which can see or
-					hear you. That creature gains temporary hit points equal to the
-					Ki Die roll + your Charisma modifier."
+			"rally": {
+			        "name": "Rally",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   On my turn, I can use a bonus action and expend one Ki Die to bolster the resolve of one of my companions. When I do so, I choose a friendly creature which can see or hear me. That creature gains temporary hit points equal to the Ki Die roll + my Charisma modifier."
 			},
-			"shot caller" : {
-				name : "Shot Caller",
-				source : ["LotL", 21],
-				additional : "1 ki die",
-				description : "\n" + "When you take the Attack action on your turn,
-					you can forgo one of your attacks and use a bonus action to
-					direct one of your companions to strike. When you do so, choose
-					a friendly creature which can see or hear you and expend one Ki
-					Die. That creature can immediately use its reaction to make one
-					weapon or elemental attack, adding the Ki Die to the attack's
-					damage roll."
+			"shot caller": {
+			        "name": "Shot Caller",
+			        "source": ["LotL", 21],
+			        "additional": "1 ki die",
+			        "description": "\n" + "   When I take the Attack action on my turn, I can forgo one of my attacks and use a bonus action to direct one of my companions to strike. When I do so, I choose a friendly creature which can see or hear me and expend one Ki Die. That creature can immediately use its reaction to make one weapon or elemental attack, adding the Ki Die to the attack's damage roll."
 			}
 		},
+		"subclassfeature3.4" : {
+			name : "Ki Dice",
+			source : ["LotL", 20],
+			minlevel : 3,
+			description : "\n   " + "I start with four Ki Dice, which are d6s, and I expend one whenever I use a trick shot. I regain them all when I finish a short or long rest. I gain another Ki Die at 7th level and one more at 15th level.",
+			recovery : "short rest",
+			usages : [0, 0, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6],
+			additional : ["", "", "d6", "d6", "d6", "d6", "d6", "d6", "d6", "d8", "d8", "d8", "d8", "d8", "d8", "d8", "d8", "d10", "d10", "d10"]
+		},
 		"subclassfeature7" : {
-			name : "Royal Envoy",
-			source : ["S", 128],
+			name : "Quick Recovery",
+			source : ["LotL", 20],
 			minlevel : 7,
-			description : "\n   " + "I gain proficiency and expertise with the Persuasion skill" + "\n   " + "If already proficient, I can choose Animal Handling, Insight, Intimidation, or Perform.",
-			skillstxt : "\n\n" + toUni("Purple Dragon Knight (Royal Envoy)") + ": Persuasion proficiency and expertise; if already proficient, choose one from Animal Handling, Insight, Intimidation, and Performance.",
-			skills : ["Persuasion"],
+			description : "\n   " + "Beginning at 7th level, I can spend a Ki Die as a bonus action to recover your stamina. Roll the Ki Die. I regain a number of hit points equal to the number rolled plus either my Wisdom modifier (if I am a waterlacer or airlacer) or my Charisma modifier (if I am a firelacer or earthlacer).",
+			action : ["bonus action", "Quick Recovery"]
 		},
 		"subclassfeature10" : {
-			name : "Inspiring Surge",
-			source : ["S", 128],
+			name : "Elemental Master",
+			source : ["LotL", 20],
 			minlevel : 10,
-			description : "\n   " + "When I use my Action Surge, I can inspire an ally within 60 ft that can see or hear me" + "\n   " + "The ally can then use its reaction to make one melee or ranged weapon attack",
-			additional : ["", "", "", "", "", "", "", "", "", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "1 ally", "2 allies", "2 allies", "2 allies"],
+			description : "\n   " + "At 10th level, my Ki Dice turn into d8s. At 18th level, they turn into d10s."
 		},
 		"subclassfeature15" : {
-			name : "Bulwark",
-			source : ["S", 128],
+			name : "Supreme Focus",
+			source : ["LotL", 20],
 			minlevel : 15,
-			description : "\n   " + "When I use Indomitable to reroll a Int, Wis, or Cha save, I can extend it to an ally" + "\n   " + "The ally can reroll its failed saving throw against the same affect" + "\n   " + "It only works if I'm not incapacitated, the ally is within 60 ft and can see or hear me",
+			description : "\n   " + "Starting at 15th level, when I roll initiative and have no Ki Dice remaining, I regain 1 Ki Die."
 		}
 	}
 });
