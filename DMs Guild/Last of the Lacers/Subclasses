@@ -1,12 +1,12 @@
-var iFileName = "Last_of_the_Lacers_SubClasses.js";
+var iFileName = "Incarnate-Last_of_the_Lacers_SubClasses.js";
 RequiredSheetVersion(13);
 
 SourceList.LotL={
-	name : "Last of the Lacers",
+	name : "Incarnate: Last of the Lacers",
 	abbreviation : "LotL",
 	group : "DMs Guild",
 	url : "https://www.dmsguild.com/product/191837/Incarnate-The-Last-of-the-Lacers",
-	date : "2022/02/11"
+	date : "2024/03/21"
 };
 
 AddSubClass("barbarian", "path of the elements", {
