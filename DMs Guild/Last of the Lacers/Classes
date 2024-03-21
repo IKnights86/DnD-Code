@@ -1,0 +1,10 @@
+var iFileName = "Incarnate-Last_of_the_Lacers_Classes.js";
+RequiredSheetVersion(13);
+
+SourceList.LotL={
+	name : "Incarnate: Last of the Lacers",
+	abbreviation : "LotL",
+	group : "DMs Guild",
+	url : "https://www.dmsguild.com/product/191837/Incarnate-The-Last-of-the-Lacers",
+	date : "2024/03/21"
+};
