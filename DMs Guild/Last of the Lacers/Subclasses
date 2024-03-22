@@ -10,21 +10,12 @@ SourceList.LotL={
 };
 
 AddSubClass("barbarian", "path of the elements", {
-
-		regExpSearch : /^(?=.*path)(?=.*of)(?=.*the)(?=.*elements).*$/i, //required; regular expression of what to look for (i.e. now it looks for any entry that has both the words "special" and "me" in it, disregarding capitalization). If this looks too complicated, just write: /specialme/i
-
-		subname : "Path of the Elements", //required; the name of the subclass
-
-		source : ["LotL", 19], //required; the source and the page number. "HB" stands for homebrew. See the "Complete SourceList" for an overview of sources that are already defined. Or define a new source using the "Homebrew Syntax - SourceList.js". // This can be an array of arrays to indicate the things appears in multiple sources. For example, if something appears on page 7 of the Elemental Evil Player's Companion and on page 115 of the Sword Coast Adventure Guide, use the following: [["E", 7], ["S", 115]]
-
-		// after defining the above three, you don't need to define anything more, but you can. Defining more stuff will overwrite the entries as they are given in the ClassList. So if you do not need something to be different than the basics of the class (for example, you subclass uses the same spellcasting ability), then you don't need to define it again.
-		// For the syntax of how to define more stuff, look at the ClassList (see "Homebrew Syntax - ClassList.js"). You can define all the same stuff in the same way. The below are a couple of examples:
-
-		fullname : "Path of the Elements", //if no fullname is defined it will be automatically generated as "Class Name (Subclass name)". In this example that would be: "MyClass (Path of SpecialMe)"
-
-		features : { //unlike the other entries, "features" will not delete all the features from the ClassList, but will add to the features in the ClassList. For this to work properly, the feature object has to be named "subclassfeatureX" and not something appropriate for the feature. The below are the features of the purple Dragon Knight
-
-			"subclassfeature3" : { // has to start with "subclassfeature" followed by a number. Note that the name has to be unique for this subclass, but it can be the same name as one of the features of the class in the ClassList variable. If you use the same name as a feature in the ClassList variable, it will be overwritten with this entry
+		regExpSearch : /^(?=.*path)(?=.*of)(?=.*the)(?=.*elements).*$/i,
+		subname : "Path of the Elements",
+		source : ["LotL", 19],
+		fullname : "Path of the Elements",
+		features : { 
+			"subclassfeature3" : {
 				name : "Chosen Element",
 				source : ["LotL", 19],
 				minlevel : 3,
@@ -76,7 +67,7 @@ AddSubClass("barbarian", "path of the elements", {
         				toNotesPage : [{
 						name : "Firelacing",
 						source : ["LotL", 56],
-						popupName : "Basic Firelacing",
+						popupName : "Basic Firelacing, I cannot use this while raging",
 						note : [
 							"Initiation Time: 1 action",
 							"Range: 30 feet",
@@ -512,6 +503,138 @@ AddSubClass("monk", "way of the shihan", {
 			description :"\n   " + "I gain proficiency with light armor, shields, spring shields, katanas, and shanzi.",
 			weaponProfs : [false, false, ["katana", "shanzi"]],
 			armorProfs : [true, false, false, true]
+	  	},
+		"subclassfeature3.1" : {
+			name : "Silk Threads",
+			source : ["LotL", 31],
+			minlevel : 3,
+			description :"\n   " + "At 3rd level, your Martial Arts features apply when you wear light armor and wield a shield, though you lose the benefits of Unarmored Defense when you do so. In addition, katanas and shanzi are considered monk weapons."
+	  	},
+		"subclassfeature6" : {
+			name : "Gold Insignia",
+			source : ["LotL", 31],
+			minlevel : 6,
+			description :"\n   " + "At 6th level, while I'm wielding a monk weapon or am unarmed, I can use Deflect Missiles against melee attacks. If I reduce the damage to 0, I can spend 1 ki point to force the attacker to make a Dex save. On a failure I disarm the creature, grabbing their weapon or letting it drop."
+		},
+		"subclassfeature11" : {
+			name : "Brave Blood",
+			source : ["LotL", 31],
+			minlevel : 11,
+			description : "\n   " + "At 11th level, I am immune to being frightened. In addition, I can spend 1 ki point as a reaction to use Stillness of Mind to negate charm.",
+			action : ["reaction", "Brave Blood"],
+			savetxt : { immune : ["frightened"] }
+		},
+		"subclassfeature17" : {
+			name : "Warriors Heart",
+			source : ["LotL", 31],
+			minlevel : 17,
+			description : "\n   " + "At 17th level, when I reduce a creature to 0 hp, I can spend 3 ki points to reduce it to 1 hp instead and attempt to charm it.",
+			additional : ["See notes for full description"],
+			toNotesPage : [{
+				name : "Warriors Heart",
+				source : ["LotL", 31],
+				popupName : "Warriors Heart description",
+				note : [
+					"As a true shihan warrior, your honor shines true like a beacon of purity. Starting at 17th level, whenever you would reduce an enemy to 0 hit points, you can instead choose to reduce that enemy to 1 hit point by spending 3 ki points. The target must make a Wisdom saving throw. On a failed save, the target is charmed by you, and acts as though under the effects of both a charm person and command spell. This effect lasts for a number of days equal to your monk level. On a successful save, the creature is immune to this effect for 24 hours.",
+					"The target creature will do as you instruct as though regarding an old friend whom they’ve grown apart from. For the duration of the effect, the creature will feel as though it was in the wrong for any misdeeds it has performed against you or anyone you regard as an ally. This effect allows you to convince trial, banish itself from the area, or other similar actions. This effect cannot be used to command a creature to perform any action that would put its life in direct peril. If you or an ally attacks the creature, this effect ends.",
+					"You can have only one creature under the effect of this feature at a time. You can choose to end the effect at any time without using an action. Once the effect ends, the creature will revert to its true nature and can make a Wisdom check against your ki save DC. On a failed check, the creature assumes the actions it took while under the effect of this feature were its own choices, and may regard you as a kind of adversarial ally, whom they respected enough to listen to. On a successful save, the creature knows that it was charmed by you."
+				]
+			}]
+		}
+	}
+});
+AddSubClass("rogue", "triple threat", {
+	regExpSearch : /^(?=.*triple)(?=.*threat).*$/i,
+	subname : "Triple Threat",
+	source : ["LotL", 31],
+	fullname : "Triple Threat",
+	features : {
+		"subclassfeature3" : {
+			name : "Elemental Power",
+			source : ["LotL", 31],
+			minlevel : 3,
+			description : "\n   " + "Choose fire, air, water, or earth using the \"Choose Feature\" button above, once I choose my element I cannot change it even if I later get to choose again.",
+			choices : ["Air", "Earth", "Fire", "Water"],
+     			"air" : {
+				name : "Airlacer",
+				description : "\n   " + "I gain basic Airlacing. (see notes)",
+        			toNotesPage : [{
+					name : "Airlacing",
+					source : ["LotL", 66],
+					popupName : "Basic Airlacing",
+					note : [
+	  					"Initiation Time: 1 action",
+          					"Range: 30 feet",
+          					"Duration: Instantaneous\n",
+          					"Anyone who is an Airlacer can initiate the following effects as an action within a 5-foot cube.\n",
+         	 				"You create a harmless sensory effect using air, such as causing leaves to rustle or wind to slam shutters.",
+          					"Until the end of your next turn, ranged weapon attacks against you are made with disadvantage.",
+          					"You create a small blast of air which moves one unattended object within 30 feet that weighs no more than 5 pounds up to 10 feet in any direction.",
+          					"Your movement speed is doubled until the end of your turn.",
+          					"The area you can affect increases by 5 feet and the weight of objects you can move increases by 5 pounds when you reach 5th level (10-foot cube, 10 pounds), 11th level (15-foot cube, 15 pounds), and 17th level (20-foot cube, 20 pounds)."
+					]
+				}]
+     			},
+     			"earth" : {
+				name : "Earthlacer",
+				description : "\n   " + "I gain basic Earthlacing. (see notes)",
+        			toNotesPage : [{
+					name : "Earthlacing",
+					source : ["LotL", 66],
+					popupName : "Basic Earthlacing",
+					note : [
+	 		 			"Initiation Time: 1 action",
+          					"Range: 30 feet",
+          					"Duration: Instantaneous\n",
+          					"Anyone who is an Earthlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          					"You cause earth to form into simple shapes and animate at your direction.",
+          					"You can cause dirt or stone you target to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain.",
+          					"You can target loose earth, instantly excavating it and depositing it up to 5 feet away. This movement doesn't have enough force to cause damage.",
+          					"You target one stone or earthen wall within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          					"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15-foot cube), and 17th level (20-foot cube)."
+				  	]
+			  	}]
+			},
+     			"fire" : {
+				name : "Firelacer",
+				description : "\n   " + "I gain basic Firelacing. (see notes)",
+        			toNotesPage : [{
+					name : "Firelacing",
+					source : ["LotL", 56],
+					popupName : "Basic Firelacing",
+					note : [
+	  					"Initiation Time: 1 action",
+          					"Range: 30 feet",
+          					"Duration: Instantaneous\n",
+         	 				"Anyone who is an Firelacer can initiate the following effects as an action within a 5-foot cube.\n",
+         	 				"You cause fire to form into simple shapes and animate at your direction.",
+          					"You can cause a flickering flame to appear from your body (usually in your hand). The flame remains there as long as you concentrate, and harms neither you nor your equipment. The flame sheds bright light in a 30- foot radius and dim light for an additional 30 feet.",
+         	 				"You can instantly expand any existing flame in one direction, provided that wood or other fuel is present in the location.",
+          					"You instantly extinguish any flames within a 5-foot cube.",
+          					"The area you can affect increases by 5 feet and the amount of bright light your fire produces increases by 10 feet when you reach 5th level (10-foot cube, 40 feet of bright light), 11th level (15-foot cube, 50 feet of bright light), and 17th level (20-foot cube, 60 feet of bright light)."
+					]
+				}]
+     			},
+     			"water" : {
+        			name : "Waterlacer",
+				description : "\n   " + "I gain basic Waterlacing. (see notes)",
+        			toNotesPage : [{
+					name : "Waterlacing",
+					source : ["LotL", 76],
+					popupName : "Basic Waterlacing",
+					note : [
+	  					"Initiation Time: 1 action",
+          					"Range: 30 feet",
+          					"Duration: Instantaneous\n",
+          					"Anyone who is an Waterlacer can initiate the following effects as an action within a 5-foot cube.\n",
+          					"You cause water to form into simple shapes and animate at your direction. This includes all forms of water, such as water vapor or ice, as do other basic lacing effects.",
+          					"You freeze water. If a creature is in the water, it must use a bonus action to make a DC 5 Strength check to escape.",
+          					"You concentrate, drawing out all impurities from water. All nonmagical drink is purified and separated from any poison.",
+          					"You target one wall made of snow or ice within 30 feet, creating a 5-foot-radius hole. This creates an opening large enough for a Medium creature to easily walk through. The wall must be less than 5 feet thick in order for this to be effective.",
+          					"The area you can affect increases by 5 feet when you reach 5th level (10-foot cube), 11th level (15th-foot cube), and 17th level (20-foot cube)."
+				  	]
+			  	}]
+		  	}
 	  	},
 		"subclassfeature3.1" : {
 			name : "Silk Threads",
