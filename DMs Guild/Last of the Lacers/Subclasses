@@ -505,11 +505,13 @@ AddSubClass("monk", "way of the shihan", {
 	source : ["LotL", 31],
 	fullname : "Shihan",
 	features : {
-		"subclassfeature3" : {
+		"subclassfeature3" : {		// this feature adds proficiency with spring shields, katanas, and shanzi so make sure you have the code added for those items
 			name : "Bonus Proficiencies",
 			source : ["LotL", 31],
 			minlevel : 3,
-			description :"\n   " + "I gain proficiency with light armor, shields, spring shields, katanas, and shanzi."
+			description :"\n   " + "I gain proficiency with light armor, shields, spring shields, katanas, and shanzi.",
+			weaponProfs : [false, false, ["katana", "shanzi"]],
+			armorProfs : [true, false, false, true]
 	  	},
 		"subclassfeature3.1" : {
 			name : "Silk Threads",
@@ -532,10 +534,21 @@ AddSubClass("monk", "way of the shihan", {
 			savetxt : { immune : ["frightened"] }
 		},
 		"subclassfeature17" : {
-			name : "Paralyzing Strike",
-			source : ["LotL", 30],
+			name : "Warriors Heart",
+			source : ["LotL", 31],
 			minlevel : 17,
-			description : "\n   " + "At 17th level, when I hit a creature not wearing heavy armor, I can spend 4 ki points to attempt to paralyze it. The target must make a Con save , on a failure the target is paralyzed and knocked prone for 1d4 rounds."
+			description : "\n   " + "At 17th level, when I reduce a creature to 0 hp, I can spend 3 ki points to reduce it to 1 hp instead and attempt to charm it.",
+			additional : ["See notes for full description"],
+			toNotesPage : [{
+				name : "Warriors Heart",
+				source : ["LotL", 31],
+				popupName : "Warriors Heart description",
+				note : [
+					"As a true shihan warrior, your honor shines true like a beacon of purity. Starting at 17th level, whenever you would reduce an enemy to 0 hit points, you can instead choose to reduce that enemy to 1 hit point by spending 3 ki points. The target must make a Wisdom saving throw. On a failed save, the target is charmed by you, and acts as though under the effects of both a charm person and command spell. This effect lasts for a number of days equal to your monk level. On a successful save, the creature is immune to this effect for 24 hours.",
+					"The target creature will do as you instruct as though regarding an old friend whom they’ve grown apart from. For the duration of the effect, the creature will feel as though it was in the wrong for any misdeeds it has performed against you or anyone you regard as an ally. This effect allows you to convince trial, banish itself from the area, or other similar actions. This effect cannot be used to command a creature to perform any action that would put its life in direct peril. If you or an ally attacks the creature, this effect ends.",
+					"You can have only one creature under the effect of this feature at a time. You can choose to end the effect at any time without using an action. Once the effect ends, the creature will revert to its true nature and can make a Wisdom check against your ki save DC. On a failed check, the creature assumes the actions it took while under the effect of this feature were its own choices, and may regard you as a kind of adversarial ally, whom they respected enough to listen to. On a successful save, the creature knows that it was charmed by you."
+				]
+			}]
 		}
 	}
 });
