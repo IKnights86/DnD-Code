@@ -187,7 +187,7 @@ AddSubClass("barbarian", "path of the elements", {
 					},
 					action : ["reaction", "Elemental Fury (when damaged)"]
 				},
-					"water" : {
+				"water" : {
 	        			name : "Water",
 					description : "\n   " + "I am immune to cold damage and resistent to fire damage. Additionally when I miss an attack I can immediately make another attack once per turn.",
 					dmgres : ["fire"],
@@ -499,37 +499,37 @@ AddSubClass("monk", "way of the ki blocker", {
 		}
 	}
 });
-AddSubClass("monk", "way of the ki blocker", {
-	regExpSearch : /^(?=.*ki)(?=.*blocker).*$/i,
-	subname : "Way of the Ki Blocker",
-	source : ["LotL", 30],
-	fullname : "Ki Blocker",
+AddSubClass("monk", "way of the shihan", {
+	regExpSearch : /^(?=.*shihan).*$/i,
+	subname : "Way of the Shihan",
+	source : ["LotL", 31],
+	fullname : "Shihan",
 	features : {
 		"subclassfeature3" : {
-			name : "Pressure Points",
-			source : ["LotL", 30],
+			name : "Bonus Proficiencies",
+			source : ["LotL", 31],
 			minlevel : 3,
-			description : desc([
-				"When I hit a creature with an attack from flurry of blows it must make a Con save or gain one of the following weaknesses until the end of my next turn.",
-				"Attack: Disadv. on next attack.   Saving Throw: Disadv. on next Str or Dex Check/Save."
-			])
+			description :"\n   " + "I gain proficiency with light armor, shields, spring shields, katanas, and shanzi."
+	  	},
+		"subclassfeature3.1" : {
+			name : "Silk Threads",
+			source : ["LotL", 31],
+			minlevel : 3,
+			description :"\n   " + "At 3rd level, your Martial Arts features apply when you wear light armor and wield a shield, though you lose the benefits of Unarmored Defense when you do so. In addition, katanas and shanzi are considered monk weapons."
 	  	},
 		"subclassfeature6" : {
-			name : "Ki Blocking",
-			source : ["LotL", 30],
+			name : "Gold Insignia",
+			source : ["LotL", 31],
 			minlevel : 6,
-			description : desc([
-					"At 6th level, when I hit a creature not wearing heavy armor, I can spend 3 ki points to attempt to ki block it. The target must make a Con save , on a failure the target suffers the following effects for a number of rounds equal to my Wis modifier. The target can repeat the saving throw at the end of each of its turns.",
-					"Ki Pool: The target cannot use Ki.   Spells: The target cannot use spell slots."
-			])
+			description :"\n   " + "At 6th level, while I'm wielding a monk weapon or am unarmed, I can use Deflect Missiles against melee attacks. If I reduce the damage to 0, I can spend 1 ki point to force the attacker to make a Dex save. On a failure I disarm the creature, grabbing their weapon or letting it drop."
 		},
 		"subclassfeature11" : {
-			name : "Keen Agility",
-			source : ["LotL", 30],
+			name : "Brave Blood",
+			source : ["LotL", 31],
 			minlevel : 11,
-			description : "\n   " + "At 11th level, I gain proficiency in the Athletics and Acrobatics skills. If I already have proficieny in either of these skills, I instead gain expertise.",
-			skillstxt : "\n\n" + toUni("Ki Blocker (Keen Agility)") + ": Athletics and Acrobatics proficiency; if already proficient, I gain expertise.",
-			skills : ["Athletics", "Acrobatics"]
+			description : "\n   " + "At 11th level, I am immune to being frightened. In addition, I can spend 1 ki point as a reaction to use Stillness of Mind to negate charm.",
+			action : ["reaction", "Brave Blood"],
+			savetxt : { immune : ["frightened"] }
 		},
 		"subclassfeature17" : {
 			name : "Paralyzing Strike",
