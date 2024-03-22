@@ -459,3 +459,83 @@ AddSubClass("fighter", "pro-lacer", {
 		}
 	}
 });
+AddSubClass("monk", "way of the ki blocker", {
+	regExpSearch : /^(?=.*ki)(?=.*blocker).*$/i,
+	subname : "Way of the Ki Blocker",
+	source : ["LotL", 30],
+	fullname : "Ki Blocker",
+	features : {
+		"subclassfeature3" : {
+			name : "Pressure Points",
+			source : ["LotL", 30],
+			minlevel : 3,
+			description : desc([
+				"When I hit a creature with an attack from flurry of blows it must make a Con save or gain one of the following weaknesses until the end of my next turn.",
+				"Attack: Disadv. on next attack.   Saving Throw: Disadv. on next Str or Dex Check/Save."
+			])
+	  	},
+		"subclassfeature6" : {
+			name : "Ki Blocking",
+			source : ["LotL", 30],
+			minlevel : 6,
+			description : desc([
+					"At 6th level, when I hit a creature not wearing heavy armor, I can spend 3 ki points to attempt to ki block it. The target must make a Con save , on a failure the target suffers the following effects for a number of rounds equal to my Wis modifier. The target can repeat the saving throw at the end of each of its turns.",
+					"Ki Pool: The target cannot use Ki.   Spells: The target cannot use spell slots."
+			])
+		},
+		"subclassfeature11" : {
+			name : "Keen Agility",
+			source : ["LotL", 30],
+			minlevel : 11,
+			description : "\n   " + "At 11th level, I gain proficiency in the Athletics and Acrobatics skills. If I already have proficieny in either of these skills, I instead gain expertise.",
+			skillstxt : "\n\n" + toUni("Ki Blocker (Keen Agility)") + ": Athletics and Acrobatics proficiency; if already proficient, I gain expertise.",
+			skills : ["Athletics", "Acrobatics"]
+		},
+		"subclassfeature17" : {
+			name : "Paralyzing Strike",
+			source : ["LotL", 30],
+			minlevel : 17,
+			description : "\n   " + "At 17th level, when I hit a creature not wearing heavy armor, I can spend 4 ki points to attempt to paralyze it. The target must make a Con save , on a failure the target is paralyzed and knocked prone for 1d4 rounds."
+		}
+	}
+});
+AddSubClass("monk", "way of the ki blocker", {
+	regExpSearch : /^(?=.*ki)(?=.*blocker).*$/i,
+	subname : "Way of the Ki Blocker",
+	source : ["LotL", 30],
+	fullname : "Ki Blocker",
+	features : {
+		"subclassfeature3" : {
+			name : "Pressure Points",
+			source : ["LotL", 30],
+			minlevel : 3,
+			description : desc([
+				"When I hit a creature with an attack from flurry of blows it must make a Con save or gain one of the following weaknesses until the end of my next turn.",
+				"Attack: Disadv. on next attack.   Saving Throw: Disadv. on next Str or Dex Check/Save."
+			])
+	  	},
+		"subclassfeature6" : {
+			name : "Ki Blocking",
+			source : ["LotL", 30],
+			minlevel : 6,
+			description : desc([
+					"At 6th level, when I hit a creature not wearing heavy armor, I can spend 3 ki points to attempt to ki block it. The target must make a Con save , on a failure the target suffers the following effects for a number of rounds equal to my Wis modifier. The target can repeat the saving throw at the end of each of its turns.",
+					"Ki Pool: The target cannot use Ki.   Spells: The target cannot use spell slots."
+			])
+		},
+		"subclassfeature11" : {
+			name : "Keen Agility",
+			source : ["LotL", 30],
+			minlevel : 11,
+			description : "\n   " + "At 11th level, I gain proficiency in the Athletics and Acrobatics skills. If I already have proficieny in either of these skills, I instead gain expertise.",
+			skillstxt : "\n\n" + toUni("Ki Blocker (Keen Agility)") + ": Athletics and Acrobatics proficiency; if already proficient, I gain expertise.",
+			skills : ["Athletics", "Acrobatics"]
+		},
+		"subclassfeature17" : {
+			name : "Paralyzing Strike",
+			source : ["LotL", 30],
+			minlevel : 17,
+			description : "\n   " + "At 17th level, when I hit a creature not wearing heavy armor, I can spend 4 ki points to attempt to paralyze it. The target must make a Con save , on a failure the target is paralyzed and knocked prone for 1d4 rounds."
+		}
+	}
+});
