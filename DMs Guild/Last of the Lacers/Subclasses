@@ -637,10 +637,11 @@ AddSubClass("rogue", "triple threat", {
 		  	}
 	  	},
 		"subclassfeature3.1" : {
-			name : "Silk Threads",
-			source : ["LotL", 31],
+			name : "Elemental Dig",
+			source : ["LotL", 32],
 			minlevel : 3,
-			description :"\n   " + "At 3rd level, your Martial Arts features apply when you wear light armor and wield a shield, though you lose the benefits of Unarmored Defense when you do so. In addition, katanas and shanzi are considered monk weapons."
+			description :"\n   " + "Also at 3rd level, when a creature is hit with a weapon attack within 30 feet of you you can use your reaction to add 1d4 Bludg. dmg to the attack. Sneak attack can be applied to this damage.",
+			action : ["reaction", "Elemental Dig"]
 	  	},
 		"subclassfeature6" : {
 			name : "Gold Insignia",
