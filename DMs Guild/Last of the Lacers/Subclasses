@@ -647,11 +647,11 @@ AddSubClass("rogue", "triple threat", {
 			name : "Novice Forms",
 			source : ["LotL", 32],
 			minlevel : 3,
-			description :"\n   " + "Also at 3rd level, I can choose two 1st-level lacing forms of my element (use the \"Choose Feature\" button above). I can use these forms once per short rest.",
+			description :"\n   " + "Also at 3rd level, I can choose two 1st-level lacing forms of my element (use the \"Choose Feature\" button above).",
 			choices : ["Airlacing", "Earthlacing", "Firelacing", "Waterlacing"],
      			"airlacing" : {
 				name : "Airlacing Novice Forms",
-				description : "\n   " + "I can choose two 1st-level airlacing forms.",
+				description : "\n   " + "I can choose two 1st-level airlacing forms. I can use each of these forms once per short rest.",
 				source : ["LotL", 66],
 				spellcastingBonus : {
 					name : "Airlacing Novice Forms",
@@ -663,7 +663,7 @@ AddSubClass("rogue", "triple threat", {
      			},
      			"earthlacing" : {
 				name : "Earthlacing Novice Forms",
-				description : "\n   " + "I can choose two 1st-level earthlacing forms.",
+				description : "\n   " + "I can choose two 1st-level earthlacing forms. I can use each of these forms once per short rest.",
 				source : ["LotL", 87],
         			spellcastingBonus : {
 					name : "Earthlacing Novice Forms",
@@ -675,7 +675,7 @@ AddSubClass("rogue", "triple threat", {
 			},
      			"firelacing" : {
 				name : "Firelacing Novice Forms",
-				description : "\n   " + "I can choose two 1st-level firelacing forms.",
+				description : "\n   " + "I can choose two 1st-level firelacing forms. I can use each of these forms once per short rest.",
         			source : ["LotL", 56],
 				spellcastingBonus : {
 					name : "Firelacing Novice Forms",
@@ -687,7 +687,7 @@ AddSubClass("rogue", "triple threat", {
      			},
      			"waterlacing" : {
         			name : "Waterlacing Novice Forms",
-				description : "\n   " + "I can choose two 1st-level waterlacing forms.",
+				description : "\n   " + "I can choose two 1st-level waterlacing forms. I can use each of these forms once per short rest.",
         			source : ["LotL", 76],
 				spellcastingBonus : {
 					name : "Waterlacing Novice Forms",
@@ -698,36 +698,128 @@ AddSubClass("rogue", "triple threat", {
 				}
 		  	}
 	  	},
-		"subclassfeature6" : {
-			name : "Gold Insignia",
-			source : ["LotL", 31],
-			minlevel : 6,
-			description :"\n   " + "At 6th level, while I'm wielding a monk weapon or am unarmed, I can use Deflect Missiles against melee attacks. If I reduce the damage to 0, I can spend 1 ki point to force the attacker to make a Dex save. On a failure I disarm the creature, grabbing their weapon or letting it drop."
+		"subclassfeature9" : {
+			name : "Elemental Assist",
+			source : ["LotL", 32],
+			minlevel : 9,
+			description :"\n   " + "At 9th level, I can use the help action as a bonus action. Additionally, if I use it to aid an ally to attack a creature, they can be within 30 ft of me.",
+			action : ["bonus action", "Elemental Assist"]
 		},
-		"subclassfeature11" : {
-			name : "Brave Blood",
-			source : ["LotL", 31],
-			minlevel : 11,
-			description : "\n   " + "At 11th level, I am immune to being frightened. In addition, I can spend 1 ki point as a reaction to use Stillness of Mind to negate charm.",
-			action : ["reaction", "Brave Blood"],
-			savetxt : { immune : ["frightened"] }
+		"subclassfeature9.1" : {
+			name : "Intermediate Forms",
+			source : ["LotL", 32],
+			minlevel : 9,
+			description : "\n   " + "Also at 9th level, I can choose two 2nd-level lacing forms of my element (use the \"Choose Feature\" button above).",
+			choices : ["Airlacing", "Earthlacing", "Firelacing", "Waterlacing"],
+     			"airlacing" : {
+				name : "Airlacing Intermediate Forms",
+				description : "\n   " + "I can choose two 2nd-level airlacing forms. I can use each of these forms once per short rest.",
+				source : ["LotL", 66],
+				spellcastingBonus : {
+					name : "Airlacing Intermediate Forms",
+					"class" : "airlacer",
+					level : [2, 2],
+					times : 2,
+					firstCol : "oncesr"
+				}
+     			},
+     			"earthlacing" : {
+				name : "Earthlacing Intermediate Forms",
+				description : "\n   " + "I can choose two 2nd-level earthlacing forms. I can use each of these forms once per short rest.",
+				source : ["LotL", 87],
+        			spellcastingBonus : {
+					name : "Earthlacing Intermediate Forms",
+					"class" : "earthlacer",
+					level : [2, 2],
+					times : 2,
+					firstCol : "oncesr"
+				}
+			},
+     			"firelacing" : {
+				name : "Firelacing Intermediate Forms",
+				description : "\n   " + "I can choose two 2nd-level firelacing forms. I can use each of these forms once per short rest.",
+        			source : ["LotL", 56],
+				spellcastingBonus : {
+					name : "Firelacing Intermediate Forms",
+					"class" : "firelacer",
+					level : [2, 2],
+					times : 2,
+					firstCol : "oncesr"
+				}
+     			},
+     			"waterlacing" : {
+        			name : "Waterlacing Intermediate Forms",
+				description : "\n   " + "I can choose two 2nd-level waterlacing forms. I can use each of these forms once per short rest.",
+        			source : ["LotL", 76],
+				spellcastingBonus : {
+					name : "Waterlacing Intermediate Forms",
+					"class" : "waterlacer",
+					level : [2, 2],
+					times : 2,
+					firstCol : "oncesr"
+				}
+		  	}
+		},
+		"subclassfeature13" : {
+			name : "Strength In Numbers",
+			source : ["LotL", 32],
+			minlevel : 13,
+			description : "\n   " + "At 13th level, I gain a bonus to any Deception, Intimidation, or Persuasion check equal to the number of allies within 10 ft of me, to a maximum of my proficiency bonus. I can use Wisdom instead of Charisma for these checks."
 		},
 		"subclassfeature17" : {
-			name : "Warriors Heart",
-			source : ["LotL", 31],
+			name : "Superior Forms",
+			source : ["LotL", 32],
 			minlevel : 17,
-			description : "\n   " + "At 17th level, when I reduce a creature to 0 hp, I can spend 3 ki points to reduce it to 1 hp instead and attempt to charm it.",
-			additional : ["See notes for full description"],
-			toNotesPage : [{
-				name : "Warriors Heart",
-				source : ["LotL", 31],
-				popupName : "Warriors Heart description",
-				note : [
-					"As a true shihan warrior, your honor shines true like a beacon of purity. Starting at 17th level, whenever you would reduce an enemy to 0 hit points, you can instead choose to reduce that enemy to 1 hit point by spending 3 ki points. The target must make a Wisdom saving throw. On a failed save, the target is charmed by you, and acts as though under the effects of both a charm person and command spell. This effect lasts for a number of days equal to your monk level. On a successful save, the creature is immune to this effect for 24 hours.",
-					"The target creature will do as you instruct as though regarding an old friend whom they’ve grown apart from. For the duration of the effect, the creature will feel as though it was in the wrong for any misdeeds it has performed against you or anyone you regard as an ally. This effect allows you to convince trial, banish itself from the area, or other similar actions. This effect cannot be used to command a creature to perform any action that would put its life in direct peril. If you or an ally attacks the creature, this effect ends.",
-					"You can have only one creature under the effect of this feature at a time. You can choose to end the effect at any time without using an action. Once the effect ends, the creature will revert to its true nature and can make a Wisdom check against your ki save DC. On a failed check, the creature assumes the actions it took while under the effect of this feature were its own choices, and may regard you as a kind of adversarial ally, whom they respected enough to listen to. On a successful save, the creature knows that it was charmed by you."
-				]
-			}]
+			description : "\n   " + "At 17th level, I can choose two 3rd-level lacing forms of my element (use the \"Choose Feature\" button above).",
+			choices : ["Airlacing", "Earthlacing", "Firelacing", "Waterlacing"],
+     			"airlacing" : {
+				name : "Airlacing Superior Forms",
+				description : "\n   " + "I can choose two 3rd-level airlacing forms. I can use each of these forms once per short rest.",
+				source : ["LotL", 66],
+				spellcastingBonus : {
+					name : "Airlacing Superior Forms",
+					"class" : "airlacer",
+					level : [3, 3],
+					times : 2,
+					firstCol : "oncesr"
+				}
+     			},
+     			"earthlacing" : {
+				name : "Earthlacing Superior Forms",
+				description : "\n   " + "I can choose two 3rd-level earthlacing forms. I can use each of these forms once per short rest.",
+				source : ["LotL", 87],
+        			spellcastingBonus : {
+					name : "Earthlacing Superior Forms",
+					"class" : "earthlacer",
+					level : [3, 3],
+					times : 2,
+					firstCol : "oncesr"
+				}
+			},
+     			"firelacing" : {
+				name : "Firelacing Superior Forms",
+				description : "\n   " + "I can choose two 3rd-level firelacing forms. I can use each of these forms once per short rest.",
+        			source : ["LotL", 56],
+				spellcastingBonus : {
+					name : "Firelacing Superior Forms",
+					"class" : "firelacer",
+					level : [3, 3],
+					times : 2,
+					firstCol : "oncesr"
+				}
+     			},
+     			"waterlacing" : {
+        			name : "Waterlacing Superior Forms",
+				description : "\n   " + "I can choose two 3rd-level waterlacing forms. I can use each of these forms once per short rest.",
+        			source : ["LotL", 76],
+				spellcastingBonus : {
+					name : "Waterlacing Superior Forms",
+					"class" : "waterlacer",
+					level : [3, 3],
+					times : 2,
+					firstCol : "oncesr"
+				}
+		  	}
 		}
 	}
 });
