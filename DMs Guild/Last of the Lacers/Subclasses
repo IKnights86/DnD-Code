@@ -195,6 +195,8 @@ AddSubClass("fighter", "pro-lacer", {
 	subname : "Pro-Lacer",
 	source : ["LotL", 20],
 	fullname : "Pro-Lacer",
+	abilitySave : 1,
+	abilitySaveAlt : 2,
 	features : {
 		"subclassfeature3" : {
 			name : "Chosen by the Elements",
