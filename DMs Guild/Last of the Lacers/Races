@@ -30,8 +30,8 @@ RaceList["dragon fire folk"] = {
 		scorestxt : "+2 to Charisma and +1 to Dexterity",
 		scores : [0, 1, 0, 0, 0, 2],
 		trait : "Dragon Fire Folk (+2 Charisma, +1 Dexterity)\n Positive Jing: When you roll a 1 on an attack you can reroll and must take the new roll\n Savage Elements: When you score a critical hit with an elemental attack, roll 1 more damage die\n Dragon Worshipper: You can use Charisma to cast Cause Fear and at 3rd level you can cast Calm Emotions",
-    spellcastingAbility : 6,
-	  features : {
+    		spellcastingAbility : 6,
+	 	features : {
 		  "cause fear" : {
 			  name : "Dragon Worshipper (level 1)",
 			  limfeaname : "Cause Fear",
