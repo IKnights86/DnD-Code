@@ -162,22 +162,20 @@ ClassList["airlacer"] = {
 				name : "Power Blow",
 				extraname : "Ki Feature",
 				source : ["LotL", 24],
-				description : " [1 ki point]" + "\n   " + "When I hit an enemy with elemental strike ",
-				action : ["bonus action", ""]
+				description : " [1 ki point]" + "\n   " + "When I hit an enemy with elemental strike I can force them to make a Str save or be pushed back 10 ft."
 			},
-			"step of the wind" : {
-				name : "Step of the Wind",
+			"surprising angle" : {
+				name : "Surprising Angle",
 				extraname : "Ki Feature",
-				source : [["SRD", 27], ["P", 78]],
-				description : " [1 ki point]" + "\n   " + "As a bonus action, I can either Dash or Disengage; My jump distance doubles when I do so",
-				action : ["bonus action", ""]
+				source : ["LotL", 24],
+				description : " [1 ki point]" + "\n   " + "When I attack with an elemental strike I can hit the target from any angle, ignoring all cover except total cover."
 			},
 			autoSelectExtrachoices : [{
-				extrachoice : "flurry of blows"
+				extrachoice : "deflection"
 			}, {
-				extrachoice : "patient defense"
+				extrachoice : "power blow"
 			}, {
-				extrachoice : "step of the wind"
+				extrachoice : "surprising angle"
 			}]
 		},
 
