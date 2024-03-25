@@ -47,7 +47,7 @@ ClassList["airlacer"] = {
 
 	spellcastingFactor : 2,
 
-	spellcastingKnown : { //Optional; Denotes the amount and type of spells the class has access to
+	spellcastingKnown : {
 
 		spells : [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16],
 
@@ -200,71 +200,73 @@ ClassList["airlacer"] = {
 
 			"superior range" : {
 				name : "Superior Range Fighting Style",
-				description : "\n   " + "The short distance on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
+				description : "\n   " + "The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
 				calcChanges : {
-					atkAdd : [
-						function (fields, v) {
-							if (v.baseWeaponName == 'elemental strike') fields.Range = 30/90 * (v.rangeM ? v.rangeM : 1) + ' ft';
-						},
-						"The short distance on my Elemental Strikes are now 30 ft and the long range is 90 ft."
-					]
+    					atkAdd : [
+        					function (fields, v) {
+            						if (/elemental strike/i.test(v.WeaponTextName)) {
+                						fields.Range = fields.Range.replace(/\b(\d+)\/(\d+)\b/, '30/90');
+            						};
+        					},
+        					"The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft."
+    					],
 				},
 			},
 		},
 
-		"subclassfeature3" : { //You need at least one entry named "subclassfeatureX". It signals the sheet to ask the user for which subclass he would like to have. The level of this feature should match the level the class needs to select a subclass. Once a subclass is selected, any feature with "subclassfeature" in the object name in the class entry will be ignored.
-			name : "Martial Archetype",
-			source : ["P", 72],
-			minlevel : 3,
-			description : "\n   " + "Choose a Martial Archetype you strive to emulate and put it in the \"Class\" field" + "\n   " + "Choose either Champion, Battle Master, Eldritch Knight, or Purple Dragon Knight",
+		"lacing" : {
+			name : "Lacing",
+			source : ["LotL", 25],
+			minlevel : 2,
+			description : "\n   " + "Using ki I can initiate airlacing forms that I know, applying Wisdom as my lacing ability.",
+			additional : levels.map(function (n, idx) {
+				return n < 2 ? "" : [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16][idx] + " forms known";
+			})
 		},
 
-		"subclassfeature3.1" : {
-			name : "", //any feature who's name is empty like this one is, will be ignored. Since v12.5 of the sheet, an entry like this serves no function
-			minlevel : 3,
-		},
-
-		"natural antivenom" : {
-			name : "Natural Antivenom",
-			source : ["UA:MC", 7],
-			minlevel : 9,
+		"prana burst" : {
+			name : "prana burst",
+			source : ["LotL", 25],
+			minlevel : 2,
 			description : desc([
-				"I have advantage on saves vs. poison and resistance to poison damage",
-				"When I use a poultice, in addition to healing, I cure one poison effect on the creature",
-				"I gain proficiency with Constitution saving throws"
+					"When I hit an elemental strike, I can expend 1 ki to do +1d8 damage",
+					"This increases by +1d8 for each ki point added.",
+					"You can only spend a maximum amount of ki depending on your level."
+			])
+			additional : levels.map(function(n) {
+				if (n < 2) return "";
+				return (n < 5 ? 1 : n < 11 ? 2 : n < 17 ? 3 : 4) + " ki maximum";
+			}),
+		},
+
+		"subclassfeature3" : {
+			name : "Elemental Arts",
+			source : ["LotL", 25],
+			minlevel : 3,
+			description : "\n   " + "Choose an Elemental Art you strive to emulate and put it in the \"Class\" field" + "\n   " + "Choose either Ten Animal Style or Eight Palms",
+		},
+
+		"matter skandha" : {
+			name : "Matter Skandha",
+			source : ["LotL", 25],
+			minlevel : 3,
+			description : " [2 ki points]" + desc([
+				"As a reaction whenever I am subject to a melee weapon attack,",
+				"I can take the disengage action and move up to half my movement speed, avoiding the attack."
 			]),
+			action : ["reaction", ""]
+		},
 
-			savetxt : { // Optional; this attribute defines entries to add to the field for "Saving Throw Advantages / Disadvantages"
-
-				text : ["Dex save vs. area effects: fail \u2015 half dmg, success \u2015 no dmg", "Magic can't put me to sleep"], // Optional; this is an array of strings, and each of those strings is added to the field exactly as presented here
-
-				immune : ["poison", "disease"], // Optional; this is an array of strings that the character is immune to. This is put in the field after the text "Immune to ", so in this example it would result in "Immune to poison and disease"
-
-				adv_vs : ["traps", "charmed"] // Optional; this is an array of things that the character has advantage on saves against. This is put in the field after the text "Adv. on saves vs. ", so in this example it would result in "Adv. on saves vs. traps and charmed"
-			},
-
-			dmgres : ["Poison"], //optional; an array of damage types that the class gets resistance against. // If the resistance has a condition attached to it, like only being against nonmagical attacks, substitute the entry in the array with an array of 2: [the damage type, the damage type with the condition]. // For example: [["Bludgeoning", "Bludg. (nonmagical)"], ["Piercing", "Pierc. (nonmagical)"], ["Slashing", "Slash. (nonmagical)"]]
-
-			saves : ["Con"], //optional; an array of the ability scores with which the class feature grants proficiency in saving throws
-
-			toolProfs : [["Musical instrument", 3], ["Thieves' tools", "Dex"]], // optional; this is an array with the tool proficiencies gained. Each entry can be its own array of 2 entries. The first entry is the name of the tool and the second entry is either 1) a number if the tool is yet to be chosen, or 2) the 3-letter ability score abbreviation if the tool is to be listed in the skill section and have a bonus calculated
-
-			languageProfs : [1, "Elvish"], // optional; this is an array of the language proficiencies gained. An entry can either be 1) a string that represents the language learned or 2) a number which is the number of language gained that can be chosen by the player
-
-			speed : { //required; This sets a value for one or more speed modes, and/or a value to be added to a specific speed mode or to all speed modes // the attributes of this object can be "walk", "burrow", "climb", "fly", "swim", and "allModes"
-
-				// all of the following attributes are optional and you can add more ("burrow" isn't part of this example!)
-
-				walk : { spd : 30, enc : 20 }, // the objects "walk", "burrow", "climb", "fly", "swim" are all the same, they are an object with two attributes, 'spd' for the speed in feet, and 'enc' for the encumbered speed in feet.
-
-				climb : { spd : "+50", enc : 0 }, // instead of numbers, you can also have modifiers. Modifiers are a string, starting with a mathematical operator, followed by a number (e.g. "-10", "+20"). // a value that is zero is ignored
-
-				fly : { spd : "walk", enc : 0 }, // instead of a number/modifier, you can also set the attribute to "walk". This makes the speed mode assume the walking speed // Using an underscore as the first character means the value is only added if the value would be non-zero
-
-				swim : { spd : "fixed 60", enc : "fixed 60" }, // if you include the word "fixed" together with a number, the movement mode will be that number, without any modifiers from other sources (like the Monk's speed bonus). However, if another entry that isn't 'fixed' does end up with a higher total while including any modifiers, that speed is used instead
-
-				allModes : "+10" // the 'allModes' attribute can only consist of a modifier. This modifier is applied to all speed modes, both normal and encumbered. It is only applied if the speed mode exists, it won't give the character a burrow speed if it would otherwise have none, for example
-			},
+		"push it" : {
+			name : "Push It",
+			source : ["LotL", 25],
+			minlevel : 7,
+			description : desc([
+				"As a bonus action I can regain 2 ki points, up to my maximum number of ki points.",
+				"After which, I must make a DC 10 Con save or gain 1 level of exhaustion.",
+				"Each time I use this feature the DC increases by 5 and resets when I take a short rest."
+			]),
+			action : ["bonus action", ""]
 		},
 	}
 }
