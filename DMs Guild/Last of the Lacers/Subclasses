@@ -825,3 +825,86 @@ AddSubClass("rogue", "triple threat", {
 		}
 	}
 });
+
+AddSubClass("airlacer", "ten animal arts", {
+	regExpSearch : /^(?=.*ten)(?=.*animal)(?=.*arts).*$/i,
+	subname : "Ten Animal Arts",
+	source : ["LotL", 27],
+	fullname : "Ten Animal Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Animal Style",
+			source : ["LotL", 27],
+			minlevel : 3,
+			description : "\n   " + "At 3rd level, I gain an animal style. (use the \"Choose Feature\" button above).",
+			choices : ["Pigmonkey Swing", "Tapirat in the Grass", "Turtleduck Shell", "Wing of the Peacrane"],
+     			"pigmonkey swing" : {
+				name : "Pigmonkey Swing",
+				source : ["LotL", 27],
+				description : "\n   " + "I can move through the spaces of hostile creatures, no matter the size."
+     			},
+     			"tapirat in the grass" : {
+				name : "Tapirat in the Grass",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use the hide action as a bonus action.",
+				action : ["bonus action", "Hide"]
+			},
+     			"turtleduck shell" : {
+				name : "Turtleduck Shell",
+				source : ["LotL", 27],
+				description : "\n   " + "My base armor class becomes 13 plus Dexterity when not wearing armor.",
+				armorOptions : [{
+					regExpSearch : /justToAddToDropDown/,
+					name : "Turtleduck Shell",
+					source : ["LotL", 27],
+					ac : 13,
+					affectsWildShape : true
+				}],
+				armorAdd : "Turtleduck Shell"
+     			},
+     			"wing of the peacrane" : {
+        			name : "Wing of the Peacrane",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use my Deflection ki feature without expending ki points.",
+        			
+		  	}
+	  	},
+		"subclassfeature3.1" : {
+			name : "Silk Threads",
+			source : ["LotL", 31],
+			minlevel : 3,
+			description :"\n   " + "At 3rd level, your Martial Arts features apply when you wear light armor and wield a shield, though you lose the benefits of Unarmored Defense when you do so. In addition, katanas and shanzi are considered monk weapons."
+	  	},
+		"subclassfeature6" : {
+			name : "Gold Insignia",
+			source : ["LotL", 31],
+			minlevel : 6,
+			description :"\n   " + "At 6th level, while I'm wielding a monk weapon or am unarmed, I can use Deflect Missiles against melee attacks. If I reduce the damage to 0, I can spend 1 ki point to force the attacker to make a Dex save. On a failure I disarm the creature, grabbing their weapon or letting it drop."
+		},
+		"subclassfeature11" : {
+			name : "Brave Blood",
+			source : ["LotL", 31],
+			minlevel : 11,
+			description : "\n   " + "At 11th level, I am immune to being frightened. In addition, I can spend 1 ki point as a reaction to use Stillness of Mind to negate charm.",
+			action : ["reaction", "Brave Blood"],
+			savetxt : { immune : ["frightened"] }
+		},
+		"subclassfeature17" : {
+			name : "Warriors Heart",
+			source : ["LotL", 31],
+			minlevel : 17,
+			description : "\n   " + "At 17th level, when I reduce a creature to 0 hp, I can spend 3 ki points to reduce it to 1 hp instead and attempt to charm it.",
+			additional : ["See notes for full description"],
+			toNotesPage : [{
+				name : "Warriors Heart",
+				source : ["LotL", 31],
+				popupName : "Warriors Heart description",
+				note : [
+					"As a true shihan warrior, your honor shines true like a beacon of purity. Starting at 17th level, whenever you would reduce an enemy to 0 hit points, you can instead choose to reduce that enemy to 1 hit point by spending 3 ki points. The target must make a Wisdom saving throw. On a failed save, the target is charmed by you, and acts as though under the effects of both a charm person and command spell. This effect lasts for a number of days equal to your monk level. On a successful save, the creature is immune to this effect for 24 hours.",
+					"The target creature will do as you instruct as though regarding an old friend whom they’ve grown apart from. For the duration of the effect, the creature will feel as though it was in the wrong for any misdeeds it has performed against you or anyone you regard as an ally. This effect allows you to convince trial, banish itself from the area, or other similar actions. This effect cannot be used to command a creature to perform any action that would put its life in direct peril. If you or an ally attacks the creature, this effect ends.",
+					"You can have only one creature under the effect of this feature at a time. You can choose to end the effect at any time without using an action. Once the effect ends, the creature will revert to its true nature and can make a Wisdom check against your ki save DC. On a failed check, the creature assumes the actions it took while under the effect of this feature were its own choices, and may regard you as a kind of adversarial ally, whom they respected enough to listen to. On a successful save, the creature knows that it was charmed by you."
+				]
+			}]
+		}
+	}
+});
