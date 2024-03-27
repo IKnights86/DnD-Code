@@ -218,21 +218,24 @@ ClassList["airlacer"] = {
 			name : "Lacing",
 			source : ["LotL", 25],
 			minlevel : 2,
-			description : "\n   " + "Using ki I can initiate airlacing forms that I know, applying Wisdom as my lacing ability.",
+			description : desc([
+					"Using ki I can initiate airlacing forms that I know, applying Wisdom as my lacing ability.",
+					"You can add the forms using the spell sheet."
+			]),
 			additional : levels.map(function (n, idx) {
 				return n < 2 ? "" : [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16][idx] + " forms known";
 			})
 		},
 
 		"prana burst" : {
-			name : "prana burst",
+			name : "Prana Burst",
 			source : ["LotL", 25],
 			minlevel : 2,
 			description : desc([
 					"When I hit an elemental strike, I can expend 1 ki to do +1d8 damage",
 					"This increases by +1d8 for each ki point added.",
 					"You can only spend a maximum amount of ki depending on your level."
-			])
+			]),
 			additional : levels.map(function(n) {
 				if (n < 2) return "";
 				return (n < 5 ? 1 : n < 11 ? 2 : n < 17 ? 3 : 4) + " ki maximum";
@@ -251,8 +254,8 @@ ClassList["airlacer"] = {
 			source : ["LotL", 25],
 			minlevel : 3,
 			description : " [2 ki points]" + desc([
-				"As a reaction whenever I am subject to a melee weapon attack,",
-				"I can take the disengage action and move up to half my movement speed, avoiding the attack."
+				"As a reaction whenever I am subject to a melee weapon attack, I can take the disengage",
+				"action and move up to half my movement speed, avoiding the attack."
 			]),
 			action : ["reaction", ""]
 		},
@@ -268,6 +271,45 @@ ClassList["airlacer"] = {
 			]),
 			action : ["bonus action", ""]
 		},
+
+		"sensation skandha" : {
+			name : "Sensation Skandha",
+			source : ["LotL", 26],
+			minlevel : 7,
+			description : "\n   " + "My Dexterity saves vs. areas of effect negate damage on success and halve it on failure",
+			savetxt : { text : ["Dex save vs. area effects: fail \u2015 half dmg, success \u2015 no dmg"] }
+		},
+
+		"cognition skandha" : {
+			name : "Cognition Skandha",
+			source : ["LotL", 26],
+			minlevel : 11,
+			description : desc([
+				"If I can hear, I know the location of all invisible/hidden creatures within 60 feet of me.",
+				"Additionally, I am acclimated to elevations up to 20,000 feet."
+			]),
+			vision : [["Cognition Skandha", 60]]
+		},
+
+		"volition skandha" : {
+			name : "Volition Skandha",
+			source : ["LotL", 26],
+			minlevel : 15,
+			description : desc([
+				"I don't suffer fraility from old age and magic can't age me."
+			])
+		},
+
+		"discernment skandha" : {
+			name : "Discernment Skandha",
+			source : ["LotL", 26],
+			minlevel : 20,
+			description : desc([
+				"When an attacker I can see hits me with a ranged attack,",
+				"I can use my reaction to make them reroll the attack and they must use the second roll."
+			]),
+			action : ["reaction", ""]
+		}
 	}
 }
 
