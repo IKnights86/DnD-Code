@@ -852,9 +852,9 @@ AddSubClass("airlacer", "ten animal arts", {
      			"turtleduck shell" : {
 				name : "Turtleduck Shell",
 				source : ["LotL", 27],
-				description : "\n   " + "My base armor class becomes 13 plus Dexterity when not wearing armor.",
+				description : "\n   " + "When I am not wearing armor, my AC is 13 + Dexterity modifier",
 				armorOptions : [{
-					regExpSearch : /justToAddToDropDown/,
+					regExpSearch : /^(?=.*(turtleduck))(?=.*(shell)).*$/i,
 					name : "Turtleduck Shell",
 					source : ["LotL", 27],
 					ac : 13,
@@ -869,42 +869,110 @@ AddSubClass("airlacer", "ten animal arts", {
         			
 		  	}
 	  	},
-		"subclassfeature3.1" : {
-			name : "Silk Threads",
-			source : ["LotL", 31],
-			minlevel : 3,
-			description :"\n   " + "At 3rd level, your Martial Arts features apply when you wear light armor and wield a shield, though you lose the benefits of Unarmored Defense when you do so. In addition, katanas and shanzi are considered monk weapons."
-	  	},
 		"subclassfeature6" : {
-			name : "Gold Insignia",
-			source : ["LotL", 31],
+			name : "Bestial Strike",
+			source : ["LotL", 27],
 			minlevel : 6,
-			description :"\n   " + "At 6th level, while I'm wielding a monk weapon or am unarmed, I can use Deflect Missiles against melee attacks. If I reduce the damage to 0, I can spend 1 ki point to force the attacker to make a Dex save. On a failure I disarm the creature, grabbing their weapon or letting it drop."
+			description : "\n   " + "At 6th level, I gain a bestial strike. (use the \"Choose Feature\" button above).",
+			choices : ["Dragon Breath", "Fangs of the Snakamander", "Talpatian Venom"],
+     			"dragon breath" : {
+				name : "Dragon Breath",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, each other creature must make a Dexterity saving throw.",
+					"On a failure, they take an amount of damage equal to my ki ability modifier."
+				])
+     			},
+     			"fangs of the snakamander" : {
+				name : "Fangs of the Snakamander",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target takes the strike's damage again at the beginning of its next turn."
+				])
+     			},
+     			"talpatian venom" : {
+				name : "Talpatian Venom",
+				source : ["LotL", 27],
+				description : " [2 ki points]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target is incapacitated until the beginning of my next turn."
+				])
+     			}
+	  	},
+		"subclassfeature10" : {
+			name : "Savage Fighter",
+			source : ["LotL", 27],
+			minlevel : 10,
+			description : "\n   " + "At 10th level, I can choose a second fighting style using the \"Choose Feature\" button above.",
+			choices : ["Archery", "Defense", "Power Strikes", "Superior Range"],
+
+			"archery" : FightingStyles.archery,
+
+			"defense" : FightingStyles.defense,
+
+			"power strikes" : {
+				name : "Power Strikes Fighting Style",
+				description : "\n   " + "Reroll 1 or 2 on damage for my Elemental Strikes.",
+				calcChanges : {
+					atkAdd : ["if (WeaponName.match(/elemental strike/i)) {fields.Description += ', Re-roll 1 or 2 on damage die';}; ", "Reroll 1 or 2 on damage for my Elemental Strikes."],
+				}
+			},
+
+			"superior range" : {
+				name : "Superior Range Fighting Style",
+				description : "\n   " + "The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
+				calcChanges : {
+    					atkAdd : [
+        					function (fields, v) {
+            						if (/elemental strike/i.test(v.WeaponTextName)) {
+                						fields.Range = fields.Range.replace(/\b(\d+)\/(\d+)\b/, '30/90');
+            						};
+        					},
+        					"The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft."
+    					],
+				},
+			}
 		},
-		"subclassfeature11" : {
-			name : "Brave Blood",
-			source : ["LotL", 31],
-			minlevel : 11,
-			description : "\n   " + "At 11th level, I am immune to being frightened. In addition, I can spend 1 ki point as a reaction to use Stillness of Mind to negate charm.",
-			action : ["reaction", "Brave Blood"],
-			savetxt : { immune : ["frightened"] }
+		"subclassfeature14" : {
+			name : "Animalian Arts",
+			source : ["LotL", 27],
+			minlevel : 14,
+			description : " [1 ki point]" + desc([
+				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+			]),
 		},
-		"subclassfeature17" : {
-			name : "Warriors Heart",
-			source : ["LotL", 31],
-			minlevel : 17,
-			description : "\n   " + "At 17th level, when I reduce a creature to 0 hp, I can spend 3 ki points to reduce it to 1 hp instead and attempt to charm it.",
-			additional : ["See notes for full description"],
-			toNotesPage : [{
-				name : "Warriors Heart",
-				source : ["LotL", 31],
-				popupName : "Warriors Heart description",
-				note : [
-					"As a true shihan warrior, your honor shines true like a beacon of purity. Starting at 17th level, whenever you would reduce an enemy to 0 hit points, you can instead choose to reduce that enemy to 1 hit point by spending 3 ki points. The target must make a Wisdom saving throw. On a failed save, the target is charmed by you, and acts as though under the effects of both a charm person and command spell. This effect lasts for a number of days equal to your monk level. On a successful save, the creature is immune to this effect for 24 hours.",
-					"The target creature will do as you instruct as though regarding an old friend whom they’ve grown apart from. For the duration of the effect, the creature will feel as though it was in the wrong for any misdeeds it has performed against you or anyone you regard as an ally. This effect allows you to convince trial, banish itself from the area, or other similar actions. This effect cannot be used to command a creature to perform any action that would put its life in direct peril. If you or an ally attacks the creature, this effect ends.",
-					"You can have only one creature under the effect of this feature at a time. You can choose to end the effect at any time without using an action. Once the effect ends, the creature will revert to its true nature and can make a Wisdom check against your ki save DC. On a failed check, the creature assumes the actions it took while under the effect of this feature were its own choices, and may regard you as a kind of adversarial ally, whom they respected enough to listen to. On a successful save, the creature knows that it was charmed by you."
-				]
-			}]
-		}
+		"subclassfeature18" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 18,
+			description : "\n   " + "At 18th level, I gain a beast mastery. (use the \"Choose Feature\" button above).",
+			choices : ["Armor of the Liondillo", "Jaws of the Whiskergator", "Rise of the Phoenix"],
+     			"armor of the liondillo" : {
+				name : "Armor of the Liondillo",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"As a reaction when I am attacked, I can gain resistance to all damage types used in the attack", 
+					"until the start of my next turn. The resistance is included in the initial attack damage."
+				]),
+				action : ["reaction", ""]
+     			},
+     			"jaws of the whiskergator" : {
+				name : "Jaws of the Whiskergator",
+				source : ["LotL", 27],
+				description : " [3 ki points]" + desc([
+					"When I use this feature, the damage of my elemental strike is maximized until the start",
+					"of my next turn. This damage doesn't include additional features like Prana Burst."
+				])
+     			},
+     			"rise of the phoenix" : {
+				name : "Rise of the Phoenix",
+				source : ["LotL", 27],
+				description : " [1 ki point + number of times feature used]" + desc([
+					"When I am reduced to 0 hit points but not killed outright, I can instead drop to 1 hit point.",
+					"Each time I use this ability the cost of it rises by 1 ki point, the cost resets on a long rest."
+				])
+     			}
+	  	}
 	}
 });
