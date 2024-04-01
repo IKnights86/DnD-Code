@@ -976,3 +976,515 @@ AddSubClass("airlacer", "ten animal arts", {
 	  	}
 	}
 });
+
+AddSubClass("earthlacer", "ten animal arts", {
+	regExpSearch : /^(?=.*ten)(?=.*animal)(?=.*arts).*$/i,
+	subname : "Ten Animal Arts",
+	source : ["LotL", 27],
+	fullname : "Ten Animal Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Animal Style",
+			source : ["LotL", 27],
+			minlevel : 3,
+			description : "\n   " + "At 3rd level, I gain an animal style. (use the \"Choose Feature\" button above).",
+			choices : ["Pigmonkey Swing", "Tapirat in the Grass", "Turtleduck Shell", "Wing of the Peacrane"],
+     			"pigmonkey swing" : {
+				name : "Pigmonkey Swing",
+				source : ["LotL", 27],
+				description : "\n   " + "I can move through the spaces of hostile creatures, no matter the size."
+     			},
+     			"tapirat in the grass" : {
+				name : "Tapirat in the Grass",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use the hide action as a bonus action.",
+				action : ["bonus action", "Hide"]
+			},
+     			"turtleduck shell" : {
+				name : "Turtleduck Shell",
+				source : ["LotL", 27],
+				description : "\n   " + "When I am not wearing armor, my AC is 13 + Dexterity modifier",
+				armorOptions : [{
+					regExpSearch : /^(?=.*(turtleduck))(?=.*(shell)).*$/i,
+					name : "Turtleduck Shell",
+					source : ["LotL", 27],
+					ac : 13,
+					affectsWildShape : true
+				}],
+				armorAdd : "Turtleduck Shell"
+     			},
+     			"wing of the peacrane" : {
+        			name : "Wing of the Peacrane",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use my Deflection ki feature without expending ki points.",
+        			
+		  	}
+	  	},
+		"subclassfeature6" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I gain a bestial strike. (use the \"Choose Feature\" button above).",
+			choices : ["Dragon Breath", "Fangs of the Snakamander", "Talpatian Venom"],
+     			"dragon breath" : {
+				name : "Dragon Breath",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, each other creature must make a Dexterity saving throw.",
+					"On a failure, they take an amount of damage equal to my ki ability modifier."
+				])
+     			},
+     			"fangs of the snakamander" : {
+				name : "Fangs of the Snakamander",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target takes the strike's damage again at the beginning of its next turn."
+				])
+     			},
+     			"talpatian venom" : {
+				name : "Talpatian Venom",
+				source : ["LotL", 27],
+				description : " [2 ki points]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target is incapacitated until the beginning of my next turn."
+				])
+     			}
+	  	},
+		"subclassfeature10" : {
+			name : "Savage Fighter",
+			source : ["LotL", 27],
+			minlevel : 10,
+			description : "\n   " + "At 10th level, I can choose a second fighting style using the \"Choose Feature\" button above.",
+			choices : ["Archery", "Defense", "Power Strikes", "Superior Range"],
+
+			"archery" : FightingStyles.archery,
+
+			"defense" : FightingStyles.defense,
+
+			"power strikes" : {
+				name : "Power Strikes Fighting Style",
+				description : "\n   " + "Reroll 1 or 2 on damage for my Elemental Strikes.",
+				calcChanges : {
+					atkAdd : ["if (WeaponName.match(/elemental strike/i)) {fields.Description += ', Re-roll 1 or 2 on damage die';}; ", "Reroll 1 or 2 on damage for my Elemental Strikes."],
+				}
+			},
+
+			"superior range" : {
+				name : "Superior Range Fighting Style",
+				description : "\n   " + "The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
+				calcChanges : {
+    					atkAdd : [
+        					function (fields, v) {
+            						if (/elemental strike/i.test(v.WeaponTextName)) {
+                						fields.Range = fields.Range.replace(/\b(\d+)\/(\d+)\b/, '30/90');
+            						};
+        					},
+        					"The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft."
+    					],
+				},
+			}
+		},
+		"subclassfeature14" : {
+			name : "Animalian Arts",
+			source : ["LotL", 27],
+			minlevel : 14,
+			description : " [1 ki point]" + desc([
+				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+			]),
+		},
+		"subclassfeature18" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 18,
+			description : "\n   " + "At 18th level, I gain a beast mastery. (use the \"Choose Feature\" button above).",
+			choices : ["Armor of the Liondillo", "Jaws of the Whiskergator", "Rise of the Phoenix"],
+     			"armor of the liondillo" : {
+				name : "Armor of the Liondillo",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"As a reaction when I am attacked, I can gain resistance to all damage types used in the attack", 
+					"until the start of my next turn. The resistance is included in the initial attack damage."
+				]),
+				action : ["reaction", ""]
+     			},
+     			"jaws of the whiskergator" : {
+				name : "Jaws of the Whiskergator",
+				source : ["LotL", 27],
+				description : " [3 ki points]" + desc([
+					"When I use this feature, the damage of my elemental strike is maximized until the start",
+					"of my next turn. This damage doesn't include additional features like Prana Burst."
+				])
+     			},
+     			"rise of the phoenix" : {
+				name : "Rise of the Phoenix",
+				source : ["LotL", 27],
+				description : " [1 ki point + number of times feature used]" + desc([
+					"When I am reduced to 0 hit points but not killed outright, I can instead drop to 1 hit point.",
+					"Each time I use this ability the cost of it rises by 1 ki point, the cost resets on a long rest."
+				])
+     			}
+	  	}
+	}
+});
+
+AddSubClass("firelacer", "ten animal arts", {
+	regExpSearch : /^(?=.*ten)(?=.*animal)(?=.*arts).*$/i,
+	subname : "Ten Animal Arts",
+	source : ["LotL", 27],
+	fullname : "Ten Animal Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Animal Style",
+			source : ["LotL", 27],
+			minlevel : 3,
+			description : "\n   " + "At 3rd level, I gain an animal style. (use the \"Choose Feature\" button above).",
+			choices : ["Pigmonkey Swing", "Tapirat in the Grass", "Turtleduck Shell", "Wing of the Peacrane"],
+     			"pigmonkey swing" : {
+				name : "Pigmonkey Swing",
+				source : ["LotL", 27],
+				description : "\n   " + "I can move through the spaces of hostile creatures, no matter the size."
+     			},
+     			"tapirat in the grass" : {
+				name : "Tapirat in the Grass",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use the hide action as a bonus action.",
+				action : ["bonus action", "Hide"]
+			},
+     			"turtleduck shell" : {
+				name : "Turtleduck Shell",
+				source : ["LotL", 27],
+				description : "\n   " + "When I am not wearing armor, my AC is 13 + Dexterity modifier",
+				armorOptions : [{
+					regExpSearch : /^(?=.*(turtleduck))(?=.*(shell)).*$/i,
+					name : "Turtleduck Shell",
+					source : ["LotL", 27],
+					ac : 13,
+					affectsWildShape : true
+				}],
+				armorAdd : "Turtleduck Shell"
+     			},
+     			"wing of the peacrane" : {
+        			name : "Wing of the Peacrane",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use my Deflection ki feature without expending ki points.",
+        			
+		  	}
+	  	},
+		"subclassfeature6" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I gain a bestial strike. (use the \"Choose Feature\" button above).",
+			choices : ["Dragon Breath", "Fangs of the Snakamander", "Talpatian Venom"],
+     			"dragon breath" : {
+				name : "Dragon Breath",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, each other creature must make a Dexterity saving throw.",
+					"On a failure, they take an amount of damage equal to my ki ability modifier."
+				])
+     			},
+     			"fangs of the snakamander" : {
+				name : "Fangs of the Snakamander",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target takes the strike's damage again at the beginning of its next turn."
+				])
+     			},
+     			"talpatian venom" : {
+				name : "Talpatian Venom",
+				source : ["LotL", 27],
+				description : " [2 ki points]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target is incapacitated until the beginning of my next turn."
+				])
+     			}
+	  	},
+		"subclassfeature10" : {
+			name : "Savage Fighter",
+			source : ["LotL", 27],
+			minlevel : 10,
+			description : "\n   " + "At 10th level, I can choose a second fighting style using the \"Choose Feature\" button above.",
+			choices : ["Archery", "Defense", "Power Strikes", "Superior Range"],
+
+			"archery" : FightingStyles.archery,
+
+			"defense" : FightingStyles.defense,
+
+			"power strikes" : {
+				name : "Power Strikes Fighting Style",
+				description : "\n   " + "Reroll 1 or 2 on damage for my Elemental Strikes.",
+				calcChanges : {
+					atkAdd : ["if (WeaponName.match(/elemental strike/i)) {fields.Description += ', Re-roll 1 or 2 on damage die';}; ", "Reroll 1 or 2 on damage for my Elemental Strikes."],
+				}
+			},
+
+			"superior range" : {
+				name : "Superior Range Fighting Style",
+				description : "\n   " + "The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
+				calcChanges : {
+    					atkAdd : [
+        					function (fields, v) {
+            						if (/elemental strike/i.test(v.WeaponTextName)) {
+                						fields.Range = fields.Range.replace(/\b(\d+)\/(\d+)\b/, '30/90');
+            						};
+        					},
+        					"The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft."
+    					],
+				},
+			}
+		},
+		"subclassfeature14" : {
+			name : "Animalian Arts",
+			source : ["LotL", 27],
+			minlevel : 14,
+			description : " [1 ki point]" + desc([
+				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+			]),
+		},
+		"subclassfeature18" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 18,
+			description : "\n   " + "At 18th level, I gain a beast mastery. (use the \"Choose Feature\" button above).",
+			choices : ["Armor of the Liondillo", "Jaws of the Whiskergator", "Rise of the Phoenix"],
+     			"armor of the liondillo" : {
+				name : "Armor of the Liondillo",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"As a reaction when I am attacked, I can gain resistance to all damage types used in the attack", 
+					"until the start of my next turn. The resistance is included in the initial attack damage."
+				]),
+				action : ["reaction", ""]
+     			},
+     			"jaws of the whiskergator" : {
+				name : "Jaws of the Whiskergator",
+				source : ["LotL", 27],
+				description : " [3 ki points]" + desc([
+					"When I use this feature, the damage of my elemental strike is maximized until the start",
+					"of my next turn. This damage doesn't include additional features like Prana Burst."
+				])
+     			},
+     			"rise of the phoenix" : {
+				name : "Rise of the Phoenix",
+				source : ["LotL", 27],
+				description : " [1 ki point + number of times feature used]" + desc([
+					"When I am reduced to 0 hit points but not killed outright, I can instead drop to 1 hit point.",
+					"Each time I use this ability the cost of it rises by 1 ki point, the cost resets on a long rest."
+				])
+     			}
+	  	}
+	}
+});
+
+AddSubClass("waterlacer", "ten animal arts", {
+	regExpSearch : /^(?=.*ten)(?=.*animal)(?=.*arts).*$/i,
+	subname : "Ten Animal Arts",
+	source : ["LotL", 27],
+	fullname : "Ten Animal Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Animal Style",
+			source : ["LotL", 27],
+			minlevel : 3,
+			description : "\n   " + "At 3rd level, I gain an animal style. (use the \"Choose Feature\" button above).",
+			choices : ["Pigmonkey Swing", "Tapirat in the Grass", "Turtleduck Shell", "Wing of the Peacrane"],
+     			"pigmonkey swing" : {
+				name : "Pigmonkey Swing",
+				source : ["LotL", 27],
+				description : "\n   " + "I can move through the spaces of hostile creatures, no matter the size."
+     			},
+     			"tapirat in the grass" : {
+				name : "Tapirat in the Grass",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use the hide action as a bonus action.",
+				action : ["bonus action", "Hide"]
+			},
+     			"turtleduck shell" : {
+				name : "Turtleduck Shell",
+				source : ["LotL", 27],
+				description : "\n   " + "When I am not wearing armor, my AC is 13 + Dexterity modifier",
+				armorOptions : [{
+					regExpSearch : /^(?=.*(turtleduck))(?=.*(shell)).*$/i,
+					name : "Turtleduck Shell",
+					source : ["LotL", 27],
+					ac : 13,
+					affectsWildShape : true
+				}],
+				armorAdd : "Turtleduck Shell"
+     			},
+     			"wing of the peacrane" : {
+        			name : "Wing of the Peacrane",
+				source : ["LotL", 27],
+				description : "\n   " + "I can use my Deflection ki feature without expending ki points.",
+        			
+		  	}
+	  	},
+		"subclassfeature6" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I gain a bestial strike. (use the \"Choose Feature\" button above).",
+			choices : ["Dragon Breath", "Fangs of the Snakamander", "Talpatian Venom"],
+     			"dragon breath" : {
+				name : "Dragon Breath",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, each other creature must make a Dexterity saving throw.",
+					"On a failure, they take an amount of damage equal to my ki ability modifier."
+				])
+     			},
+     			"fangs of the snakamander" : {
+				name : "Fangs of the Snakamander",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target takes the strike's damage again at the beginning of its next turn."
+				])
+     			},
+     			"talpatian venom" : {
+				name : "Talpatian Venom",
+				source : ["LotL", 27],
+				description : " [2 ki points]" + desc([
+					"After I hit with an elemental strike, that creature must make a Constitution saving throw.",
+					"On a failure, the target is incapacitated until the beginning of my next turn."
+				])
+     			}
+	  	},
+		"subclassfeature10" : {
+			name : "Savage Fighter",
+			source : ["LotL", 27],
+			minlevel : 10,
+			description : "\n   " + "At 10th level, I can choose a second fighting style using the \"Choose Feature\" button above.",
+			choices : ["Archery", "Defense", "Power Strikes", "Superior Range"],
+
+			"archery" : FightingStyles.archery,
+
+			"defense" : FightingStyles.defense,
+
+			"power strikes" : {
+				name : "Power Strikes Fighting Style",
+				description : "\n   " + "Reroll 1 or 2 on damage for my Elemental Strikes.",
+				calcChanges : {
+					atkAdd : ["if (WeaponName.match(/elemental strike/i)) {fields.Description += ', Re-roll 1 or 2 on damage die';}; ", "Reroll 1 or 2 on damage for my Elemental Strikes."],
+				}
+			},
+
+			"superior range" : {
+				name : "Superior Range Fighting Style",
+				description : "\n   " + "The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft.",
+				calcChanges : {
+    					atkAdd : [
+        					function (fields, v) {
+            						if (/elemental strike/i.test(v.WeaponTextName)) {
+                						fields.Range = fields.Range.replace(/\b(\d+)\/(\d+)\b/, '30/90');
+            						};
+        					},
+        					"The short range on my Elemental Strikes are now 30 ft and the long range is 90 ft."
+    					],
+				},
+			}
+		},
+		"subclassfeature14" : {
+			name : "Animalian Arts",
+			source : ["LotL", 27],
+			minlevel : 14,
+			description : " [1 ki point]" + desc([
+				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+			]),
+		},
+		"subclassfeature18" : {
+			name : "Bestial Strike",
+			source : ["LotL", 27],
+			minlevel : 18,
+			description : "\n   " + "At 18th level, I gain a beast mastery. (use the \"Choose Feature\" button above).",
+			choices : ["Armor of the Liondillo", "Jaws of the Whiskergator", "Rise of the Phoenix"],
+     			"armor of the liondillo" : {
+				name : "Armor of the Liondillo",
+				source : ["LotL", 27],
+				description : " [1 ki point]" + desc([
+					"As a reaction when I am attacked, I can gain resistance to all damage types used in the attack", 
+					"until the start of my next turn. The resistance is included in the initial attack damage."
+				]),
+				action : ["reaction", ""]
+     			},
+     			"jaws of the whiskergator" : {
+				name : "Jaws of the Whiskergator",
+				source : ["LotL", 27],
+				description : " [3 ki points]" + desc([
+					"When I use this feature, the damage of my elemental strike is maximized until the start",
+					"of my next turn. This damage doesn't include additional features like Prana Burst."
+				])
+     			},
+     			"rise of the phoenix" : {
+				name : "Rise of the Phoenix",
+				source : ["LotL", 27],
+				description : " [1 ki point + number of times feature used]" + desc([
+					"When I am reduced to 0 hit points but not killed outright, I can instead drop to 1 hit point.",
+					"Each time I use this ability the cost of it rises by 1 ki point, the cost resets on a long rest."
+				])
+     			}
+	  	}
+	}
+});
+
+AddSubClass("airlacer", "eight palm arts", {
+	regExpSearch : /^(?=.*eight)(?=.*palm)(?=.*arts).*$/i,
+	subname : "Eight Palm Arts",
+	source : ["LotL", 28],
+	fullname : "Eight Palm Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Fancy Dancer",
+			source : ["LotL", 28],
+			minlevel : 3,
+			description : desc([
+				"At 3rd level, I can use my Deflection feature on melee attacks against me. If I reduce the",
+				"damage to 0, the target has disadvantage on attacks against me and I can move up to my",
+				"speed but not more than 5 feet from the target."
+			])
+	  	},
+		"subclassfeature6" : {
+			name : "Leaf in the Wind",
+			source : ["LotL", 28],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, my speed increases by 10 feet and my jump distance is doubled.",
+			speed : { allModes : "+10" }
+	  	},
+		"subclassfeature10" : {
+			name : "Blind Monk",
+			source : ["LotL", 28],
+			minlevel : 10,
+			description : " [2 ki points]" + desc([
+				"At 10th level, I am immune to the blinded conditioned if I am not also deafened. Additionally,",
+				"as a reaction when I am grappled or restrained I can spend 2 ki points to escape from it."
+			]),
+			savetxt : { text : ["I am immune to being blinded if I'm not deafened"] },
+			action : ["reaction", ""]
+		},
+		"subclassfeature14" : {
+			name : "Twinkle Toes",
+			source : ["LotL", 28],
+			minlevel : 14,
+			description : desc([
+				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+			]),
+			skills : ["Acrobatics", "Sleight of Hand", "Stealth"],
+			addMod : { type : "skill", field : "Init", mod : "max(Prof|0)", text : "I can add my Proficiency bonus to initiative rolls." }
+		},
+		"subclassfeature18" : {
+			name : "Air Master",
+			source : ["LotL", 28],
+			minlevel : 18,
+			description : desc([
+				"At 18th level, I gain a fly speed and I don't take fall damage if I'm not incapacitated or",
+				"otherwise restrained. I can spend 2 ki points to double my fly speed for 1 minute."
+			]),
+			speed : {
+				fly : { spd : "walk", enc : "walk" }
+			}
+	  	}
+	}
+});
