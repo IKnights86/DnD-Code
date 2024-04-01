@@ -1469,7 +1469,7 @@ AddSubClass("airlacer", "eight palm arts", {
 			source : ["LotL", 28],
 			minlevel : 14,
 			description : desc([
-				"If I roll less than a 10 on an ability check where I add my proficiency bonus, I can make it a 10."
+				"At 14th level, I gain proficiency in all dexterity skills. If I'm already proficient, I gain expertise."
 			]),
 			skills : ["Acrobatics", "Sleight of Hand", "Stealth"],
 			addMod : { type : "skill", field : "Init", mod : "max(Prof|0)", text : "I can add my Proficiency bonus to initiative rolls." }
