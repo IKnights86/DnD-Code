@@ -14,7 +14,7 @@ AddSubClass("barbarian", "path of the elements", {
 		subname : "Path of the Elements",
 		source : ["LotL", 19],
 		fullname : "Path of the Elements",
-		features : { 
+		features : {
 			"subclassfeature3" : {
 				name : "Chosen Element",
 				source : ["LotL", 19],
@@ -1485,6 +1485,85 @@ AddSubClass("airlacer", "eight palm arts", {
 			speed : {
 				fly : { spd : "walk", enc : "walk" }
 			}
+	  	}
+	}
+});
+
+AddSubClass("firelacer", "eastern shaolin arts", {
+	regExpSearch : /^(?=.*eastern)(?=.*shaolin)(?=.*arts).*$/i,
+	subname : "Eastern Shaolin Arts",
+	source : ["LotL", 28],
+	fullname : "Eastern Shaolin Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Dancing Dragon",
+			source : ["LotL", 28],
+			minlevel : 3,
+			description : desc([
+				"At 3rd level, I can enter a stance as a bonus action that lasts until the start of my next turn."
+			]),
+			additional : "see third page",
+			action : ["bonus action", ""],
+			"low stance" : {
+				name : "Low Stance",
+				extraname : "Dancing Dragon Stance",
+				source : ["LotL", 28],
+				description : "\n   " + "In low stance, I have advantage on attack rolls against prone targets."
+			},
+			"high stance" : {
+				name : "High Stance",
+				extraname : "Dancing Dragon Stance",
+				source : ["LotL", 28],
+				description : "\n   " + "In high stance, I make Dexterity saving throws with advantage."
+			},
+			"power stance" : {
+				name : "Power Stance",
+				extraname : "Dancing Dragon Stance",
+				source : ["LotL", 28],
+				description : "\n   " + "In power stance, checks I make to shove or push a target have advantage."
+			},
+			autoSelectExtrachoices : [{
+				extrachoice : "low stance"
+			}, {
+				extrachoice : "high stance"
+			}, {
+				extrachoice : "power stance"
+			}]
+	  	},
+		"subclassfeature6" : {
+			name : "Draconic Power",
+			source : ["LotL", 28],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I can deal extra fire damage equal to my Cha modifier on opportunity attacks.",
+			additional : "1 Ki Point"
+	  	},
+		"subclassfeature10" : {
+			name : "Draconic Presence",
+			source : ["LotL", 28],
+			minlevel : 10,
+			description : desc([
+				"At 10th level, I can choose to succeed a saving throw against charmed or frightened."
+			]),
+			limfeaname : "Draconic Presence",
+			usages : 1,
+			recovery : "short rest"
+		},
+		"subclassfeature14" : {
+			name : "Wreathed in Flame",
+			source : ["LotL", 28],
+			minlevel : 14,
+			description : desc([
+				"At 14th level, I gain resistance to fire damage."
+			]),
+			dmgres : ["Fire"]
+		},
+		"subclassfeature18" : {
+			name : "True Fire",
+			source : ["LotL", 28],
+			minlevel : 18,
+			description : desc([
+				"At 18th level, I deal full fire damage to resistant creatures and half damage to immune ones."
+			])
 	  	}
 	}
 });
