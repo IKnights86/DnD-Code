@@ -1567,3 +1567,55 @@ AddSubClass("firelacer", "eastern shaolin arts", {
 	  	}
 	}
 });
+
+AddSubClass("waterlacer", "moon arts", {
+	regExpSearch : /^(?=.*moon)(?=.*arts).*$/i,
+	subname : "Moon Arts",
+	source : ["LotL", 28],
+	fullname : "Moon Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Push and Pull",
+			source : ["LotL", 29],
+			minlevel : 3,
+			description : " [2 Ki Points]" + desc([
+				"At 3rd level, when an ally is attacked in melee within 5 feet of me, I can redirect that attack.",
+				"The attacker must make a Dexterity save, on a fail I choose a new target within 5 feet of them."
+			]),
+			additional : "New target can be nothing",
+			action : ["reaction", ""]
+	  	},
+		"subclassfeature6" : {
+			name : "Sink and Float",
+			source : ["LotL", 29],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I can take two reactions per round. Both refresh on my turn."
+	  	},
+		"subclassfeature10" : {
+			name : "Life and Death",
+			source : ["LotL", 29],
+			minlevel : 10,
+			description : desc([
+				"At 10th level, while in the presence of a natural body of water, I heal the maximum amount."
+			])
+		},
+		"subclassfeature14" : {
+			name : "Moon and Ocean",
+			source : ["LotL", 29],
+			minlevel : 14,
+			description : " [1 Ki Point]" + desc([
+				"At 14th level, when I initiate a form I can protect Wis modifier number of creatures from it.",
+				"These creatures are immune to the form and suffer none of its effects."
+			])
+		},
+		"subclassfeature18" : {
+			name : "Eternal Dance",
+			source : ["LotL", 29],
+			minlevel : 18,
+			description : desc([
+				"At 18th level, I choose two 1st level forms and one 2nd level form that I know.",
+				"These forms are automatically initiated 1 level higher at no additional ki cost when I use them."
+			])
+	  	}
+	}
+});
