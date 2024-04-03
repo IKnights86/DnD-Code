@@ -1619,3 +1619,60 @@ AddSubClass("waterlacer", "moon arts", {
 	  	}
 	}
 });
+
+AddSubClass("earthlacer", "western mantis arts", {
+	regExpSearch : /^(?=.*western)(?=.*mantis)(?=.*arts).*$/i,
+	subname : "Western Mantis Arts",
+	source : ["LotL", 29],
+	fullname : "Western Mantis Arts",
+	features : {
+		"subclassfeature3" : {
+			name : "Neutral Jing",
+			source : ["LotL", 29],
+			minlevel : 3,
+			description : desc([
+				"At 3rd level, when I take the Ready action I am also under the effects of the Dodge action.",
+				"This lasts until I use my reaction or until the start of my next turn."
+			])
+	  	},
+		"subclassfeature6" : {
+			name : "Sure-Footed",
+			source : ["LotL", 29],
+			minlevel : 6,
+			description : "\n   " + "At 6th level, I can use my reaction to negate being knocked prone or moved against my will.",
+			additional : "1 Ki Point",
+			action : ["reaction", ""]
+	  	},
+		"subclassfeature10" : {
+			name : "Earth's Embrace",
+			source : ["LotL", 29],
+			minlevel : 10,
+			description : desc([
+				"At 10th level, I gain 20 feet of tremorsense."
+			]),
+			vision : [["Tremorsense", 20]]
+		},
+		"subclassfeature14" : {
+			name : "Badger Glide",
+			source : ["LotL", 29],
+			minlevel : 14,
+			description : " [1 Ki Point]" + desc([
+				"At 14th level, as a bonus action I can gain a burrow speed equal to my walking speed."
+			]),
+			additional : "Lasts 1 minute",
+			action : ["bonus action", ""]
+		},
+		"subclassfeature18" : {
+			name : "Precise Step",
+			source : ["LotL", 29],
+			minlevel : 18,
+			description : desc([
+				"At 18th level, any critical hit against me is a normal attack.",
+				"Additionally, whenever I score a critical hit I can add an extra damage die to the damage."
+			]),
+			calcChanges : {
+				atkAdd : ["{fields.Description += ', Additional damage die on critical';}; ", "Whenever I score a critical hit I can add an extra damage die to the damage."],
+			}
+	  	}
+	}
+});
