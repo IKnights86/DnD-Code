@@ -388,5 +388,37 @@ SpellsList["backfire"] = {
 	save : "Dex",
 	description : "Cast when taking dmg, crea that dealt dmg 2d10+1d10/SL Fire dmg; save halves",
 	descriptionFull : "I create a whirl of fire, and the creature that damaged me is momentarily surrounded by flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one. When I initiate this form at a higher level, the damage increases by 1d10 for each level above 1st.",
-	firstCol : "2"
+	firstCol : "2K"
+}
+
+SpellsList["battering flames"] = {
+	name : "Battering Flames",
+	source : ["LotL", 57],
+	classes : ["firelacer"],
+	level : 1,
+	school : "Fire",
+	time : "1 a",
+	range : "S:10-ft rad",
+	rangeMetric : "S:3-m rad",
+	duration : "Instantaneous",
+	save : "Dex",
+	description : "10-ft rad of me all crea 2d6+1d6/SL Bludg. dmg; save half; on fail creature loses reaction",
+	descriptionMetric : "3-m rad of me all crea 2d6+1d6/SL Bludg. dmg; save half; on fail creature loses reaction",
+	descriptionFull : "Tendrils of fire erupt from you and batter all creatures within 10 ft of me. Each creature in the area must make a Dexterity saving throw. On a failed save, a target takes 2d6 bludgeoning damage and can't take reactions until its next turn. On a successful save, the creature takes half as much damage, but suffers no other effect. When you initiate this form at a higher level, the damage increases by 1d6 for each level above 1st.",
+	firstCol : "2K"
+}
+
+SpellsList["blazing missile"] = {
+	name : "Blazing Missile",
+	source : ["LotL", 57],
+	classes : ["firelacer"],
+	level : 1,
+	school : "Fire",
+	time : "1 a",
+	range : "60 ft",
+	duration : "Instantaneous",
+	description : "3+1/SL darts hit creature(s) I can see for 1d4+1 Fire dmg per dart",
+	descriptionFull : "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4+1 fire damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several." + AtHigherLevels + "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot above 1st.",
+	ritual : true,
+	firstCol : "2K"
 }
