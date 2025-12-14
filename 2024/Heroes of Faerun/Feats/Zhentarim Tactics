@@ -1,0 +1,37 @@
+var iFileName = "zhentarimruffian.js";
+RequiredSheetVersion("13.2.3");
+SourceList.FRHoF = {
+    name: "Forgotten Realms - Heroes of Faerun",
+    abbreviation: "FRHoF",
+    abbreviationSpellsheet: "HF",
+    group: "2024 Sources",
+    url: "http://dnd2024.wikidot.com/feat:zhentarim-tactics",
+    date: "2025/11/11",
+};
+
+FeatsList["zhentarim tactics"] = {
+    name: "Zhentarim Tactics",
+    source: [
+        ["FRHoF", 0]
+    ],
+    regExpSearch: /^(?=.*zhentarim)(?=.*tactics).*$/i,
+    description: "+1 Dex or Cha, I can make opportunity attack against creature that hits me with melee attack within 5 ft, and when I finish a LR, I gain expertise in a skill I am proficient with until my next LR.",
+    descriptionFull: desc([
+        "You gain the following benefits",
+        "Ability Score Increase : Increase my Dexterity or Charisma score by 1, to a maximum of 20."
+        "Retaliate : Immediately after a creature within 5 feet of me hits me with a melee attack, I can make an Opportunity Attack against that creature.",
+        "Versatile Merc : When I finish a Long Rest, choose a skill in which I have proficiency. I have Expertise in that skill until I finish my next Long Rest.",
+    ]),
+    choices: ["Dexterity", "Charisma"],
+    "dexterity": {
+        description: "I can make opportunity attack against creature that hits me with melee attack within 5 ft. When I finish a long rest, I gain expertise in a skill I am proficient with until I finish my next long rest. [+1 Dexterity]"
+    },
+    "charisma": {
+        description: "I can make opportunity attack against creature that hits me with melee attack within 5 ft. When I finish a long rest, I gain expertise in a skill I am proficient with until I finish my next long rest. [+1 Charisma]"
+    },
+    action: ["reaction", " (after melee hit against me)"],
+    prerequisite: "Level 4 or higher, Zhentarim Ruffian Feat",
+    prereqeval: function(v) {
+        return v.characterLevel >= 4;
+    },
+};
