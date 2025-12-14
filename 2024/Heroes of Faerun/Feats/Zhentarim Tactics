@@ -1,4 +1,4 @@
-var iFileName = "zhentarimruffian.js";
+var iFileName = "zhentarimtactics.js";
 RequiredSheetVersion("13.2.3");
 SourceList.FRHoF = {
     name: "Forgotten Realms - Heroes of Faerun",
